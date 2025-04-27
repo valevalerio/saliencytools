@@ -35,6 +35,13 @@ def normalize_mask(mask):
     mask = mask / np.max(mask)
     mask = 2 * mask - 1
     return mask
+def normalize_mask_0_1(mask):
+    """
+    Normalize the mask to the range [0, 1]
+    """
+    mask = mask - np.min(mask)
+    mask = mask / np.max(mask)
+    return mask
 def clip_mask(mask):
     """
     Clip the mask to the range [-1, 1]
@@ -153,6 +160,27 @@ def jaccard_distance(a, b):
 
 # specify the names of the metrics
 
+# in the __init__.py file we import the functions and classes we want to expose as this:
+# from .maskcompare import (
+#     normalize_mask,
+#     clip_mask,
+#     cosine_distance,
+#     emd,
+#     correlation_distance,
+#     czenakowski_distance,
+#     l2_distance,
+#     mean_absolute_error,
+#     sign_agreement_ratio,
+#     sign_distance,
+#     intersection_over_union,
+#     jaccard_index,
+#     jaccard_distance,
+#     ssim,
+#     psnr,
+#     mean_squared_error,
+#     )
+# and we add the __name__ attribute to the functions to make them more readable
+
 cosine_distance.__name__ = "$ShapGap_{Cosine}$"
 euclidean_distance.__name__ = "$ShapGap_{L2}$"
 emd.__name__ = "Earth Mover's Distance"
@@ -165,3 +193,14 @@ mean_squared_error.__name__ = "MSE"
 ssim.__name__ = "Structural Similarity"
 psnr.__name__ = "Peak Signal Noise Ratio"
 czenakowski_distance.__name__ = "Czekanowski Distance"
+jaccard_distance.__name__ = "Jaccard Distance"
+jaccard_index.__name__ = "Jaccard Index"
+
+
+
+
+
+
+
+
+

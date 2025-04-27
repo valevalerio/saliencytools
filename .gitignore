@@ -1,5 +1,6 @@
 data/*
 src/__pycache__
+*.pyc
 *.png
 .vscode/settings.json
 .Readm2.md
@@ -8,3 +9,7 @@ src/__pycache__
 top_levels.txt
 *.egg-info
 index.rst
+# Ignore Sphinx build artifacts
+docs/*build/
+docs/make.bat
+docs/Makefile
