@@ -18,7 +18,8 @@ In order to have a fair comparison, the metrics should be computed on the same s
 # Usage
 
 ```python
-import SaliencyMetrics as sm
+from SaliencyMetrics import ssim, psnr, emd
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -31,7 +32,8 @@ ground_truth_map = np.random.rand(28*28).reshape(28, 28)
 # create a random binary mask
 
 # use all the metrics to compare the saliency map with the ground truth map
-for metric in sm.metrics:
+for metric in [ssim, psnr, emd]:
+    
     print(f"{metric.__name__}: {metric(saliency_map, ground_truth_map)}")
     
 
