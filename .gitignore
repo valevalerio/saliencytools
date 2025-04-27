@@ -8,8 +8,6 @@ src/__pycache__
 *.tar.gz
 top_levels.txt
 *.egg-info
-index.rst
 # Ignore Sphinx build artifacts
 docs/*build/
 docs/make.bat
-docs/Makefile
