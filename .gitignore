@@ -1,3 +1,10 @@
 data/*
 src/__pycache__
 *.png
+.vscode/settings.json
+.Readm2.md
+*.whl
+*.tar.gz
+top_levels.txt
+*.egg-info
+index.rst
