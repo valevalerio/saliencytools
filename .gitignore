@@ -12,3 +12,4 @@ top_levels.txt
 docs/*build/
 docs/make.bat
 Makefile
+*.pdf
