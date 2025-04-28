@@ -4,7 +4,7 @@ so we use this file to expose the classes and functions we want to be available
 to the user, this mean we can import the classes and functions from the package
 without using the module name
 """
-from .src.maskcompare import (
+from .saliencytools.maskcompare import (
     normalize_mask,
     clip_mask,
     normalize_mask_0_1,

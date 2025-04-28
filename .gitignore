@@ -1,5 +1,5 @@
 data/*
-src/__pycache__
+saliencytools/__pycache__
 *.pyc
 *.png
 .vscode/settings.json

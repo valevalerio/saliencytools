@@ -1,6 +1,6 @@
 """ This Module is used to check the coherency of the metrics implemented in the project."""
 
-from SaliencyMetrics import (
+from saliencytools import (
     normalize_mask_0_1,
     clip_mask,
     euclidean_distance,

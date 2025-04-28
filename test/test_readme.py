@@ -1,4 +1,4 @@
-from SaliencyMetrics import ssim, psnr, emd
+from saliencytools import ssim, psnr, emd
 
 import numpy as np
 import matplotlib.pyplot as plt
