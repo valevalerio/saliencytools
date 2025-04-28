@@ -195,12 +195,3 @@ psnr.__name__ = "Peak Signal Noise Ratio"
 czenakowski_distance.__name__ = "Czekanowski Distance"
 jaccard_distance.__name__ = "Jaccard Distance"
 jaccard_index.__name__ = "Jaccard Index"
-
-
-
-
-
-
-
-
-
