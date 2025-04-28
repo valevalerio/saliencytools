@@ -3,7 +3,6 @@
 ![Tests](https://github.com/valevalerio/saliencytools/actions/workflows/test.yml/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![PyPI version](https://img.shields.io/pypi/v/saliencytools)](https://pypi.org/project/saliencytools/)
-![Documentation Status](https://img.shields.io/website?url=https://valevalerio.github.io/saliencytools/)
 [![Documentation Status](https://img.shields.io/website?url=https://valevalerio.github.io/saliencytools/)](https://valevalerio.github.io/saliencytools/)
 
 
