@@ -1,6 +1,6 @@
 [project]
 name = "SaliencyMetrics"
-version = "0.2"
+version = "0.22.1"
 authors = [
   { name="Valerio Bonsignori", email="valerio.bonsignori@phd.unipi.it" },
 ]
