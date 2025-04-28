@@ -1,7 +1,8 @@
 maskcompare module
 ==================
 
-.. automodule:: maskcompare
+.. automodule:: saliencytools.maskcompare
    :members:
    :undoc-members:
    :show-inheritance:
+

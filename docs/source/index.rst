@@ -13,7 +13,6 @@ Welcome to saliencytools's documentation!
    installation
    usage
    maskcompare
-.. todo:: Add more examples and visualizations to make the documentation more engaging.
 
 Indices and tables
 ==================
