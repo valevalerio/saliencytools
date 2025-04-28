@@ -1,0 +1,587 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>saliencytools.maskcompare &mdash; saliencytools  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            saliencytools
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../maskcompare.html">maskcompare module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.clip_mask"><code class="docutils literal notranslate"><span class="pre">clip_mask()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.correlation_distance"><code class="docutils literal notranslate"><span class="pre">correlation_distance()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.cosine_distance"><code class="docutils literal notranslate"><span class="pre">cosine_distance()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.czenakowski_distance"><code class="docutils literal notranslate"><span class="pre">czenakowski_distance()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.emd"><code class="docutils literal notranslate"><span class="pre">emd()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.euclidean_distance"><code class="docutils literal notranslate"><span class="pre">euclidean_distance()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.intersection_over_union"><code class="docutils literal notranslate"><span class="pre">intersection_over_union()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.jaccard_distance"><code class="docutils literal notranslate"><span class="pre">jaccard_distance()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.jaccard_index"><code class="docutils literal notranslate"><span class="pre">jaccard_index()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.mean_absolute_error"><code class="docutils literal notranslate"><span class="pre">mean_absolute_error()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.mean_squared_error"><code class="docutils literal notranslate"><span class="pre">mean_squared_error()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.normalize_mask"><code class="docutils literal notranslate"><span class="pre">normalize_mask()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.normalize_mask_0_1"><code class="docutils literal notranslate"><span class="pre">normalize_mask_0_1()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.psnr"><code class="docutils literal notranslate"><span class="pre">psnr()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.sign_agreement_ratio"><code class="docutils literal notranslate"><span class="pre">sign_agreement_ratio()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.sign_distance"><code class="docutils literal notranslate"><span class="pre">sign_distance()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.ssim"><code class="docutils literal notranslate"><span class="pre">ssim()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">saliencytools</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">saliencytools.maskcompare</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for saliencytools.maskcompare</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">This module contains functions to compare different saliency maps using various metrics.</span>
+
+<span class="sd">Metrics implemented:</span>
+<span class="sd">    - ResNet Feature Similarity (exclude the last layer, compare the extracted features)</span>
+<span class="sd">    - ShapGap Cosine</span>
+<span class="sd">    - ShapGap L2</span>
+<span class="sd">    - Earth Mover&#39;s Distance (EMD)</span>
+<span class="sd">    - Mean Absolute Error (MAE)</span>
+<span class="sd">    - Sign Agreement Ratio (SAR)</span>
+<span class="sd">    - Sign Distance</span>
+<span class="sd">    - Intersection over Union (IoU)</span>
+<span class="sd">    - Correlation Distance</span>
+<span class="sd">    - Mean Squared Error (MSE)</span>
+<span class="sd">    - Peak Signal-to-Noise Ratio (PSNR)</span>
+<span class="sd">    - Czekanowski Distance</span>
+<span class="sd">    - Jaccard Index</span>
+<span class="sd">    - Jaccard Distance</span>
+<span class="sd">    - Structural Similarity Index Measure (SSIM)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn.functional</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">F</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">skimage</span><span class="w"> </span><span class="kn">import</span> <span class="n">metrics</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">wasserstein_distance</span>
+
+<span class="c1"># Normalization functions</span>
+<div class="viewcode-block" id="normalize_mask">
+<a class="viewcode-back" href="../../maskcompare.html#saliencytools.maskcompare.normalize_mask">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">normalize_mask</span><span class="p">(</span><span class="n">mask</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Normalize the mask to the range [-1, 1].</span>
+
+<span class="sd">    This function rescales the input saliency map to the range [-1, 1], </span>
+<span class="sd">    ensuring that the values are standardized for further processing. </span>
+<span class="sd">    This normalization is particularly useful when working with metrics </span>
+<span class="sd">    or models that expect inputs in this range.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        mask (numpy.ndarray): Input saliency map. This is a 2D or 3D array </span>
+<span class="sd">                              representing the saliency values of an image.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        numpy.ndarray: Normalized saliency map with values in the range [-1, 1].</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">mask</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">mask</span></div>
+
+
+<div class="viewcode-block" id="normalize_mask_0_1">
+<a class="viewcode-back" href="../../maskcompare.html#saliencytools.maskcompare.normalize_mask_0_1">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">normalize_mask_0_1</span><span class="p">(</span><span class="n">mask</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Normalize the input saliency map to the range [0, 1].</span>
+
+<span class="sd">    This function ensures that the values in the input saliency map are scaled </span>
+<span class="sd">    to lie within the range [0, 1]. This is useful for standardizing the input </span>
+<span class="sd">    data for further processing or comparison, especially when working with </span>
+<span class="sd">    metrics that require normalized inputs.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        mask (numpy.ndarray): Input saliency map. This is a 2D or 3D array </span>
+<span class="sd">                              representing the saliency values of an image, </span>
+<span class="sd">                              where higher values indicate greater importance.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        numpy.ndarray: Normalized saliency map with values in the range [0, 1]. </span>
+<span class="sd">                       The output has the same shape as the input.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">mask</span></div>
+
+
+<div class="viewcode-block" id="clip_mask">
+<a class="viewcode-back" href="../../maskcompare.html#saliencytools.maskcompare.clip_mask">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">clip_mask</span><span class="p">(</span><span class="n">mask</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Clip the mask to the range [-1, 1].</span>
+
+<span class="sd">    This function ensures that the values in the input saliency map do not </span>
+<span class="sd">    exceed the range [-1, 1]. This is useful for preventing outliers or </span>
+<span class="sd">    extreme values from affecting downstream computations.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        mask (numpy.ndarray): Input saliency map. This is a 2D or 3D array </span>
+<span class="sd">                              representing the saliency values of an image.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        numpy.ndarray: Clipped saliency map with values constrained to [-1, 1].</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></div>
+
+
+<span class="c1"># Distance metrics</span>
+<div class="viewcode-block" id="euclidean_distance">
+<a class="viewcode-back" href="../../maskcompare.html#saliencytools.maskcompare.euclidean_distance">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">euclidean_distance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the Euclidean distance between two images.</span>
+
+<span class="sd">    The Euclidean distance measures the straight-line distance between </span>
+<span class="sd">    corresponding pixels in two images. It captures the overall magnitude </span>
+<span class="sd">    of differences between the two images.</span>
+
+<span class="sd">    Reference:</span>
+<span class="sd">        Commonly used in image processing and computer vision literature, also known as Frobenius norm.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        a (numpy.ndarray): First image.</span>
+<span class="sd">        b (numpy.ndarray): Second image.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: Euclidean distance, representing the magnitude of differences.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="cosine_distance">
+<a class="viewcode-back" href="../../maskcompare.html#saliencytools.maskcompare.cosine_distance">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">cosine_distance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the cosine distance between two vectors.</span>
+
+<span class="sd">    The cosine distance measures the angular difference between two vectors </span>
+<span class="sd">    in a high-dimensional space. It is useful for comparing the orientation </span>
+<span class="sd">    of two saliency maps rather than their magnitude.</span>
+
+<span class="sd">    Reference:</span>
+<span class="sd">        Commonly used in vector similarity and machine learning literature.</span>
+<span class="sd">        </span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        a (numpy.ndarray): First image.</span>
+<span class="sd">        b (numpy.ndarray): Second image.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: Cosine distance, representing the angular difference.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">b</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="emd">
+<a class="viewcode-back" href="../../maskcompare.html#saliencytools.maskcompare.emd">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">emd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the Earth Mover&#39;s Distance (EMD) between two images.</span>
+
+<span class="sd">    The EMD measures the minimum cost of transforming one distribution </span>
+<span class="sd">    into another. It is particularly useful for comparing saliency maps </span>
+<span class="sd">    with spatial distributions of importance.</span>
+
+<span class="sd">    Reference:</span>
+<span class="sd">        Y. Rubner, C. Tomasi &amp;  L. J. Guibas (2000) &quot;The earth mover&#39;s distance as a metric for image retrieval.&quot;</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        a (numpy.ndarray): First image.</span>
+<span class="sd">        b (numpy.ndarray): Second image.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: Earth Mover&#39;s Distance, representing the cost of transformation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">wasserstein_distance</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">b</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="mean_absolute_error">
+<a class="viewcode-back" href="../../maskcompare.html#saliencytools.maskcompare.mean_absolute_error">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">mean_absolute_error</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the Mean Absolute Error (MAE) between two images.</span>
+
+<span class="sd">    The MAE measures the average absolute difference between corresponding </span>
+<span class="sd">    pixels in two images. It captures the overall deviation in pixel values.</span>
+
+<span class="sd">    Reference:</span>
+<span class="sd">        Commonly used in regression analysis and image processing.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        a (numpy.ndarray): First image.</span>
+<span class="sd">        b (numpy.ndarray): Second image.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: Mean Absolute Error, representing the average deviation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="sign_agreement_ratio">
+<a class="viewcode-back" href="../../maskcompare.html#saliencytools.maskcompare.sign_agreement_ratio">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">sign_agreement_ratio</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the Sign Agreement Ratio (SAR) between two images.</span>
+
+<span class="sd">    The SAR measures the proportion of pixels where the signs of the values </span>
+<span class="sd">    in two images agree. It captures the consistency in the direction of </span>
+<span class="sd">    importance between two saliency maps.</span>
+
+<span class="sd">    Reference:</span>
+<span class="sd">        A. M. Nevill, G. Atkinson (1997) &quot;Assessing agreement between measurements recorded on a ratio scale&quot; in sports medicine and sports science</span>
+
+
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        a (numpy.ndarray): First image.</span>
+<span class="sd">        b (numpy.ndarray): Second image.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: Sign Agreement Ratio, representing the proportion of agreement.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">b</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="sign_distance">
+<a class="viewcode-back" href="../../maskcompare.html#saliencytools.maskcompare.sign_distance">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">sign_distance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the Sign Distance between two images.</span>
+
+<span class="sd">    The Sign Distance measures the proportion of pixels where the signs of </span>
+<span class="sd">    the values in two images differ. It is the complement of the Sign </span>
+<span class="sd">    Agreement Ratio and captures the inconsistency in the direction of </span>
+<span class="sd">    importance.</span>
+
+<span class="sd">    Reference:</span>
+<span class="sd">        Metric commonly used in image processing and computer vision.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        a (numpy.ndarray): First image.</span>
+<span class="sd">        b (numpy.ndarray): Second image.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: Sign Distance, representing the proportion of disagreement.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">!=</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">b</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="intersection_over_union">
+<a class="viewcode-back" href="../../maskcompare.html#saliencytools.maskcompare.intersection_over_union">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">intersection_over_union</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the Intersection over Union (IoU) between two images.</span>
+
+<span class="sd">    The IoU measures the overlap between two saliency maps by comparing </span>
+<span class="sd">    the intersection and union of their pixel values. It is commonly used </span>
+<span class="sd">    to evaluate the similarity of binary or thresholded saliency maps.</span>
+
+<span class="sd">    Reference:</span>
+<span class="sd">        Commonly used in object detection and segmentation literature.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        a (numpy.ndarray): First image.</span>
+<span class="sd">        b (numpy.ndarray): Second image.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: Intersection over Union, representing the overlap ratio.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="n">intersection</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+    <span class="n">union</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">intersection</span> <span class="o">/</span> <span class="n">union</span></div>
+
+
+<div class="viewcode-block" id="correlation_distance">
+<a class="viewcode-back" href="../../maskcompare.html#saliencytools.maskcompare.correlation_distance">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">correlation_distance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the Correlation Distance between two images.</span>
+
+<span class="sd">    The Correlation Distance measures the linear relationship between </span>
+<span class="sd">    corresponding pixel values in two images. It captures how well the </span>
+<span class="sd">    variations in one image are correlated with the other.</span>
+
+<span class="sd">    Reference:</span>
+<span class="sd">        Commonly used in statistics and signal processing.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        a (numpy.ndarray): First image.</span>
+<span class="sd">        b (numpy.ndarray): Second image.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: Correlation Distance, representing the inverse of correlation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="mean_squared_error">
+<a class="viewcode-back" href="../../maskcompare.html#saliencytools.maskcompare.mean_squared_error">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">mean_squared_error</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the Mean Squared Error (MSE) between two images.</span>
+
+<span class="sd">    The MSE measures the average squared difference between corresponding </span>
+<span class="sd">    pixels in two images. It emphasizes larger deviations more than the </span>
+<span class="sd">    Mean Absolute Error.</span>
+
+<span class="sd">    Reference:</span>
+<span class="sd">        Commonly used in regression analysis and image processing.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        a (numpy.ndarray): First image.</span>
+<span class="sd">        b (numpy.ndarray): Second image.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: Mean Squared Error, representing the average squared deviation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ssim">
+<a class="viewcode-back" href="../../maskcompare.html#saliencytools.maskcompare.ssim">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">ssim</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the Structural Similarity Index Measure (SSIM) between two images.</span>
+
+<span class="sd">    The SSIM evaluates the perceptual similarity between two images by </span>
+<span class="sd">    considering luminance, contrast, and structure. It is widely used for </span>
+<span class="sd">    assessing image quality and similarity.</span>
+
+<span class="sd">    Reference:</span>
+<span class="sd">        Wang, Z., Bovik, A. C., Sheikh, H. R., &amp; Simoncelli, E. P. (2004). </span>
+<span class="sd">        &quot;Image quality assessment: From error visibility to structural similarity.&quot;</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        a (numpy.ndarray): First image.</span>
+<span class="sd">        b (numpy.ndarray): Second image.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: SSIM value, representing the perceptual similarity.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">metrics</span><span class="o">.</span><span class="n">structural_similarity</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">full</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                              <span class="n">data_range</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">b</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">b</span><span class="o">.</span><span class="n">min</span><span class="p">())))</span> <span class="o">/</span> <span class="mi">2</span></div>
+
+
+<div class="viewcode-block" id="psnr">
+<a class="viewcode-back" href="../../maskcompare.html#saliencytools.maskcompare.psnr">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">psnr</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the Peak Signal-to-Noise Ratio (PSNR) between two images.</span>
+
+<span class="sd">    The PSNR measures the ratio between the maximum possible pixel value </span>
+<span class="sd">    and the mean squared error. It is commonly used to evaluate the quality </span>
+<span class="sd">    of reconstructed images.</span>
+
+<span class="sd">    Reference:</span>
+<span class="sd">        Huynh-Thu, Q., &amp; Ghanbari, M. (2008). </span>
+<span class="sd">        &quot;Scope of validity of PSNR in image/video quality assessment.&quot;</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        a (numpy.ndarray): First image.</span>
+<span class="sd">        b (numpy.ndarray): Second image.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: PSNR value, representing the signal-to-noise ratio.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">metrics</span><span class="o">.</span><span class="n">peak_signal_noise_ratio</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span>
+                                           <span class="n">data_range</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">b</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">b</span><span class="o">.</span><span class="n">min</span><span class="p">()))</span></div>
+
+
+<div class="viewcode-block" id="czenakowski_distance">
+<a class="viewcode-back" href="../../maskcompare.html#saliencytools.maskcompare.czenakowski_distance">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">czenakowski_distance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the Czekanowski Distance between two images.</span>
+
+<span class="sd">    The Czekanowski Distance measures the dissimilarity between two images </span>
+<span class="sd">    based on the ratio of their minimum and total pixel values. It is useful </span>
+<span class="sd">    for comparing distributions with overlapping regions.</span>
+
+<span class="sd">    Reference:</span>
+<span class="sd">        T. SORENSEN (1948) &quot;A method of establishing groups of equal amplitude in plant sociology based on similarity of species content and its application to analyses of the vegetation on danish commons.&quot; Biologiske Skrifter.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        a (numpy.ndarray): First image.</span>
+<span class="sd">        b (numpy.ndarray): Second image.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: Czekanowski Distance, representing the dissimilarity.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sum_of_minimums</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+    <span class="n">sum_of_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">sum_of_values</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>  <span class="c1"># If both images are all zeros, they&#39;re identical</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sum_of_minimums</span><span class="p">)</span> <span class="o">/</span> <span class="n">sum_of_values</span></div>
+
+
+<div class="viewcode-block" id="jaccard_index">
+<a class="viewcode-back" href="../../maskcompare.html#saliencytools.maskcompare.jaccard_index">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">jaccard_index</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the Jaccard Index between two images.</span>
+
+<span class="sd">    The Jaccard Index measures the similarity between two images by comparing </span>
+<span class="sd">    the intersection and union of their pixel values. It is commonly used for </span>
+<span class="sd">    evaluating binary or thresholded saliency maps.</span>
+
+<span class="sd">    Reference:</span>
+<span class="sd">        Commonly used in set theory and image segmentation literature.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        a (numpy.ndarray): First image.</span>
+<span class="sd">        b (numpy.ndarray): Second image.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: Jaccard Index, representing the similarity ratio.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="n">intersection</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+    <span class="n">union</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">union</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>  <span class="c1"># If both images are all zeros, they&#39;re identical</span>
+    <span class="k">return</span> <span class="n">intersection</span> <span class="o">/</span> <span class="n">union</span></div>
+
+
+<div class="viewcode-block" id="jaccard_distance">
+<a class="viewcode-back" href="../../maskcompare.html#saliencytools.maskcompare.jaccard_distance">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">jaccard_distance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the Jaccard Distance between two images.</span>
+
+<span class="sd">    The Jaccard Distance is the complement of the Jaccard Index and measures </span>
+<span class="sd">    the dissimilarity between two images. It is useful for evaluating the </span>
+<span class="sd">    differences between binary or thresholded saliency maps.</span>
+
+<span class="sd">    Reference:</span>
+<span class="sd">        Commonly used in set theory and image segmentation literature.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        a (numpy.ndarray): First image.</span>
+<span class="sd">        b (numpy.ndarray): Second image.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: Jaccard Distance, representing the dissimilarity ratio.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">jaccard_index</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span></div>
+
+
+<span class="c1"># Assign readable names to metrics</span>
+<span class="n">cosine_distance</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;$ShapGap_</span><span class="si">{Cosine}</span><span class="s2">$&quot;</span>
+<span class="n">euclidean_distance</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;$ShapGap_</span><span class="si">{L2}</span><span class="s2">$&quot;</span>
+<span class="n">emd</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;Earth Mover&#39;s Distance&quot;</span>
+<span class="n">mean_absolute_error</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;MAE&quot;</span>
+<span class="n">sign_agreement_ratio</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;Sign Agreement Ratio&quot;</span>
+<span class="n">sign_distance</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;Sign Distance&quot;</span>
+<span class="n">intersection_over_union</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;Intersection over Union&quot;</span>
+<span class="n">correlation_distance</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;Correlation Distance&quot;</span>
+<span class="n">mean_squared_error</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;MSE&quot;</span>
+<span class="n">ssim</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;SSIM&quot;</span>
+<span class="n">psnr</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;PSNR&quot;</span>
+<span class="n">czenakowski_distance</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;Czekanowski Distance&quot;</span>
+<span class="n">jaccard_distance</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;Jaccard Distance&quot;</span>
+<span class="n">jaccard_index</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;Jaccard Index&quot;</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Valerio Bonsignori.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

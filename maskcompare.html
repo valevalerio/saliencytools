@@ -46,7 +46,26 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">maskcompare module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">maskcompare module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.clip_mask"><code class="docutils literal notranslate"><span class="pre">clip_mask()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.correlation_distance"><code class="docutils literal notranslate"><span class="pre">correlation_distance()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.cosine_distance"><code class="docutils literal notranslate"><span class="pre">cosine_distance()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.czenakowski_distance"><code class="docutils literal notranslate"><span class="pre">czenakowski_distance()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.emd"><code class="docutils literal notranslate"><span class="pre">emd()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.euclidean_distance"><code class="docutils literal notranslate"><span class="pre">euclidean_distance()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.intersection_over_union"><code class="docutils literal notranslate"><span class="pre">intersection_over_union()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.jaccard_distance"><code class="docutils literal notranslate"><span class="pre">jaccard_distance()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.jaccard_index"><code class="docutils literal notranslate"><span class="pre">jaccard_index()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.mean_absolute_error"><code class="docutils literal notranslate"><span class="pre">mean_absolute_error()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.mean_squared_error"><code class="docutils literal notranslate"><span class="pre">mean_squared_error()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.normalize_mask"><code class="docutils literal notranslate"><span class="pre">normalize_mask()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.normalize_mask_0_1"><code class="docutils literal notranslate"><span class="pre">normalize_mask_0_1()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.psnr"><code class="docutils literal notranslate"><span class="pre">psnr()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.sign_agreement_ratio"><code class="docutils literal notranslate"><span class="pre">sign_agreement_ratio()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.sign_distance"><code class="docutils literal notranslate"><span class="pre">sign_distance()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.ssim"><code class="docutils literal notranslate"><span class="pre">ssim()</span></code></a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -73,8 +92,488 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="maskcompare-module">
-<h1>maskcompare module<a class="headerlink" href="#maskcompare-module" title="Link to this heading"></a></h1>
+  <section id="module-saliencytools.maskcompare">
+<span id="maskcompare-module"></span><h1>maskcompare module<a class="headerlink" href="#module-saliencytools.maskcompare" title="Link to this heading"></a></h1>
+<p>This module contains functions to compare different saliency maps using various metrics.</p>
+<dl class="simple">
+<dt>Metrics implemented:</dt><dd><ul class="simple">
+<li><p>ResNet Feature Similarity (exclude the last layer, compare the extracted features)</p></li>
+<li><p>ShapGap Cosine</p></li>
+<li><p>ShapGap L2</p></li>
+<li><p>Earth Mover’s Distance (EMD)</p></li>
+<li><p>Mean Absolute Error (MAE)</p></li>
+<li><p>Sign Agreement Ratio (SAR)</p></li>
+<li><p>Sign Distance</p></li>
+<li><p>Intersection over Union (IoU)</p></li>
+<li><p>Correlation Distance</p></li>
+<li><p>Mean Squared Error (MSE)</p></li>
+<li><p>Peak Signal-to-Noise Ratio (PSNR)</p></li>
+<li><p>Czekanowski Distance</p></li>
+<li><p>Jaccard Index</p></li>
+<li><p>Jaccard Distance</p></li>
+<li><p>Structural Similarity Index Measure (SSIM)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="saliencytools.maskcompare.clip_mask">
+<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">clip_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#clip_mask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.clip_mask" title="Link to this definition"></a></dt>
+<dd><p>Clip the mask to the range [-1, 1].</p>
+<p>This function ensures that the values in the input saliency map do not
+exceed the range [-1, 1]. This is useful for preventing outliers or
+extreme values from affecting downstream computations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mask</strong> (<em>numpy.ndarray</em>) – Input saliency map. This is a 2D or 3D array
+representing the saliency values of an image.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Clipped saliency map with values constrained to [-1, 1].</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saliencytools.maskcompare.correlation_distance">
+<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">correlation_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#correlation_distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.correlation_distance" title="Link to this definition"></a></dt>
+<dd><p>Compute the Correlation Distance between two images.</p>
+<p>The Correlation Distance measures the linear relationship between
+corresponding pixel values in two images. It captures how well the
+variations in one image are correlated with the other.</p>
+<dl class="simple">
+<dt>Reference:</dt><dd><p>Commonly used in statistics and signal processing.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>numpy.ndarray</em>) – First image.</p></li>
+<li><p><strong>b</strong> (<em>numpy.ndarray</em>) – Second image.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Correlation Distance, representing the inverse of correlation.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saliencytools.maskcompare.cosine_distance">
+<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">cosine_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#cosine_distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.cosine_distance" title="Link to this definition"></a></dt>
+<dd><p>Compute the cosine distance between two vectors.</p>
+<p>The cosine distance measures the angular difference between two vectors
+in a high-dimensional space. It is useful for comparing the orientation
+of two saliency maps rather than their magnitude.</p>
+<dl class="simple">
+<dt>Reference:</dt><dd><p>Commonly used in vector similarity and machine learning literature.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>numpy.ndarray</em>) – First image.</p></li>
+<li><p><strong>b</strong> (<em>numpy.ndarray</em>) – Second image.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Cosine distance, representing the angular difference.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saliencytools.maskcompare.czenakowski_distance">
+<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">czenakowski_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#czenakowski_distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.czenakowski_distance" title="Link to this definition"></a></dt>
+<dd><p>Compute the Czekanowski Distance between two images.</p>
+<p>The Czekanowski Distance measures the dissimilarity between two images
+based on the ratio of their minimum and total pixel values. It is useful
+for comparing distributions with overlapping regions.</p>
+<dl class="simple">
+<dt>Reference:</dt><dd><ol class="upperalpha simple" start="20">
+<li><p>SORENSEN (1948) “A method of establishing groups of equal amplitude in plant sociology based on similarity of species content and its application to analyses of the vegetation on danish commons.” Biologiske Skrifter.</p></li>
+</ol>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>numpy.ndarray</em>) – First image.</p></li>
+<li><p><strong>b</strong> (<em>numpy.ndarray</em>) – Second image.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Czekanowski Distance, representing the dissimilarity.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saliencytools.maskcompare.emd">
+<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">emd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#emd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.emd" title="Link to this definition"></a></dt>
+<dd><p>Compute the Earth Mover’s Distance (EMD) between two images.</p>
+<p>The EMD measures the minimum cost of transforming one distribution
+into another. It is particularly useful for comparing saliency maps
+with spatial distributions of importance.</p>
+<dl class="simple">
+<dt>Reference:</dt><dd><ol class="upperalpha simple" start="25">
+<li><p>Rubner, C. Tomasi &amp;  L. J. Guibas (2000) “The earth mover’s distance as a metric for image retrieval.”</p></li>
+</ol>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>numpy.ndarray</em>) – First image.</p></li>
+<li><p><strong>b</strong> (<em>numpy.ndarray</em>) – Second image.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Earth Mover’s Distance, representing the cost of transformation.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saliencytools.maskcompare.euclidean_distance">
+<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">euclidean_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#euclidean_distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.euclidean_distance" title="Link to this definition"></a></dt>
+<dd><p>Compute the Euclidean distance between two images.</p>
+<p>The Euclidean distance measures the straight-line distance between
+corresponding pixels in two images. It captures the overall magnitude
+of differences between the two images.</p>
+<dl class="simple">
+<dt>Reference:</dt><dd><p>Commonly used in image processing and computer vision literature, also known as Frobenius norm.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>numpy.ndarray</em>) – First image.</p></li>
+<li><p><strong>b</strong> (<em>numpy.ndarray</em>) – Second image.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Euclidean distance, representing the magnitude of differences.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saliencytools.maskcompare.intersection_over_union">
+<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">intersection_over_union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#intersection_over_union"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.intersection_over_union" title="Link to this definition"></a></dt>
+<dd><p>Compute the Intersection over Union (IoU) between two images.</p>
+<p>The IoU measures the overlap between two saliency maps by comparing
+the intersection and union of their pixel values. It is commonly used
+to evaluate the similarity of binary or thresholded saliency maps.</p>
+<dl class="simple">
+<dt>Reference:</dt><dd><p>Commonly used in object detection and segmentation literature.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>numpy.ndarray</em>) – First image.</p></li>
+<li><p><strong>b</strong> (<em>numpy.ndarray</em>) – Second image.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Intersection over Union, representing the overlap ratio.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saliencytools.maskcompare.jaccard_distance">
+<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">jaccard_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#jaccard_distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.jaccard_distance" title="Link to this definition"></a></dt>
+<dd><p>Compute the Jaccard Distance between two images.</p>
+<p>The Jaccard Distance is the complement of the Jaccard Index and measures
+the dissimilarity between two images. It is useful for evaluating the
+differences between binary or thresholded saliency maps.</p>
+<dl class="simple">
+<dt>Reference:</dt><dd><p>Commonly used in set theory and image segmentation literature.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>numpy.ndarray</em>) – First image.</p></li>
+<li><p><strong>b</strong> (<em>numpy.ndarray</em>) – Second image.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Jaccard Distance, representing the dissimilarity ratio.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saliencytools.maskcompare.jaccard_index">
+<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">jaccard_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#jaccard_index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.jaccard_index" title="Link to this definition"></a></dt>
+<dd><p>Compute the Jaccard Index between two images.</p>
+<p>The Jaccard Index measures the similarity between two images by comparing
+the intersection and union of their pixel values. It is commonly used for
+evaluating binary or thresholded saliency maps.</p>
+<dl class="simple">
+<dt>Reference:</dt><dd><p>Commonly used in set theory and image segmentation literature.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>numpy.ndarray</em>) – First image.</p></li>
+<li><p><strong>b</strong> (<em>numpy.ndarray</em>) – Second image.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Jaccard Index, representing the similarity ratio.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saliencytools.maskcompare.mean_absolute_error">
+<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">mean_absolute_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#mean_absolute_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.mean_absolute_error" title="Link to this definition"></a></dt>
+<dd><p>Compute the Mean Absolute Error (MAE) between two images.</p>
+<p>The MAE measures the average absolute difference between corresponding
+pixels in two images. It captures the overall deviation in pixel values.</p>
+<dl class="simple">
+<dt>Reference:</dt><dd><p>Commonly used in regression analysis and image processing.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>numpy.ndarray</em>) – First image.</p></li>
+<li><p><strong>b</strong> (<em>numpy.ndarray</em>) – Second image.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Mean Absolute Error, representing the average deviation.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saliencytools.maskcompare.mean_squared_error">
+<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">mean_squared_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#mean_squared_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.mean_squared_error" title="Link to this definition"></a></dt>
+<dd><p>Compute the Mean Squared Error (MSE) between two images.</p>
+<p>The MSE measures the average squared difference between corresponding
+pixels in two images. It emphasizes larger deviations more than the
+Mean Absolute Error.</p>
+<dl class="simple">
+<dt>Reference:</dt><dd><p>Commonly used in regression analysis and image processing.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>numpy.ndarray</em>) – First image.</p></li>
+<li><p><strong>b</strong> (<em>numpy.ndarray</em>) – Second image.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Mean Squared Error, representing the average squared deviation.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saliencytools.maskcompare.normalize_mask">
+<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">normalize_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#normalize_mask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.normalize_mask" title="Link to this definition"></a></dt>
+<dd><p>Normalize the mask to the range [-1, 1].</p>
+<p>This function rescales the input saliency map to the range [-1, 1],
+ensuring that the values are standardized for further processing.
+This normalization is particularly useful when working with metrics
+or models that expect inputs in this range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mask</strong> (<em>numpy.ndarray</em>) – Input saliency map. This is a 2D or 3D array
+representing the saliency values of an image.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Normalized saliency map with values in the range [-1, 1].</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saliencytools.maskcompare.normalize_mask_0_1">
+<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">normalize_mask_0_1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#normalize_mask_0_1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.normalize_mask_0_1" title="Link to this definition"></a></dt>
+<dd><p>Normalize the input saliency map to the range [0, 1].</p>
+<p>This function ensures that the values in the input saliency map are scaled
+to lie within the range [0, 1]. This is useful for standardizing the input
+data for further processing or comparison, especially when working with
+metrics that require normalized inputs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mask</strong> (<em>numpy.ndarray</em>) – Input saliency map. This is a 2D or 3D array
+representing the saliency values of an image,
+where higher values indicate greater importance.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Normalized saliency map with values in the range [0, 1].</dt><dd><p>The output has the same shape as the input.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saliencytools.maskcompare.psnr">
+<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">psnr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#psnr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.psnr" title="Link to this definition"></a></dt>
+<dd><p>Compute the Peak Signal-to-Noise Ratio (PSNR) between two images.</p>
+<p>The PSNR measures the ratio between the maximum possible pixel value
+and the mean squared error. It is commonly used to evaluate the quality
+of reconstructed images.</p>
+<dl class="simple">
+<dt>Reference:</dt><dd><p>Huynh-Thu, Q., &amp; Ghanbari, M. (2008).
+“Scope of validity of PSNR in image/video quality assessment.”</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>numpy.ndarray</em>) – First image.</p></li>
+<li><p><strong>b</strong> (<em>numpy.ndarray</em>) – Second image.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>PSNR value, representing the signal-to-noise ratio.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saliencytools.maskcompare.sign_agreement_ratio">
+<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">sign_agreement_ratio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#sign_agreement_ratio"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.sign_agreement_ratio" title="Link to this definition"></a></dt>
+<dd><p>Compute the Sign Agreement Ratio (SAR) between two images.</p>
+<p>The SAR measures the proportion of pixels where the signs of the values
+in two images agree. It captures the consistency in the direction of
+importance between two saliency maps.</p>
+<dl class="simple">
+<dt>Reference:</dt><dd><ol class="upperalpha simple">
+<li><ol class="upperalpha simple" start="13">
+<li><p>Nevill, G. Atkinson (1997) “Assessing agreement between measurements recorded on a ratio scale” in sports medicine and sports science</p></li>
+</ol>
+</li>
+</ol>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>numpy.ndarray</em>) – First image.</p></li>
+<li><p><strong>b</strong> (<em>numpy.ndarray</em>) – Second image.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sign Agreement Ratio, representing the proportion of agreement.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saliencytools.maskcompare.sign_distance">
+<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">sign_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#sign_distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.sign_distance" title="Link to this definition"></a></dt>
+<dd><p>Compute the Sign Distance between two images.</p>
+<p>The Sign Distance measures the proportion of pixels where the signs of
+the values in two images differ. It is the complement of the Sign
+Agreement Ratio and captures the inconsistency in the direction of
+importance.</p>
+<dl class="simple">
+<dt>Reference:</dt><dd><p>Metric commonly used in image processing and computer vision.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>numpy.ndarray</em>) – First image.</p></li>
+<li><p><strong>b</strong> (<em>numpy.ndarray</em>) – Second image.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sign Distance, representing the proportion of disagreement.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saliencytools.maskcompare.ssim">
+<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">ssim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#ssim"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.ssim" title="Link to this definition"></a></dt>
+<dd><p>Compute the Structural Similarity Index Measure (SSIM) between two images.</p>
+<p>The SSIM evaluates the perceptual similarity between two images by
+considering luminance, contrast, and structure. It is widely used for
+assessing image quality and similarity.</p>
+<dl class="simple">
+<dt>Reference:</dt><dd><p>Wang, Z., Bovik, A. C., Sheikh, H. R., &amp; Simoncelli, E. P. (2004).
+“Image quality assessment: From error visibility to structural similarity.”</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>numpy.ndarray</em>) – First image.</p></li>
+<li><p><strong>b</strong> (<em>numpy.ndarray</em>) – Second image.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>SSIM value, representing the perceptual similarity.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 
