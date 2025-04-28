@@ -6,6 +6,10 @@
 Welcome to saliencytools's documentation!
 ===========================================
 
+This is the documentation for saliencytools, a Python package for analyzing
+saliency maps. It provides tools for comparing saliency maps.
+
+
 .. toctree::
    :maxdepth: 4
    :caption: Contents:
@@ -14,9 +18,9 @@ Welcome to saliencytools's documentation!
    usage
    maskcompare
 
+
 Indices and tables
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
