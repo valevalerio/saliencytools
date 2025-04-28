@@ -10,7 +10,8 @@ The package includes the following metrics:
 - **SSIM (Structural Similarity Index)**: A perceptual metric that quantifies the similarity between two images. It considers changes in structural information, luminance, and contrast.
 - **PSNR (Peak Signal-to-Noise Ratio)**: A metric that measures the ratio between the maximum possible power of a signal and the power of corrupting noise. It is often used to assess the quality of reconstructed images.
 - **EMD (Earth Mover's Distance)**: A metric that measures the distance between two probability distributions over a region D. It is often used in computer vision and image retrieval tasks.
-```tutorial.ipynb``` is an oiginal way used to check and test the different metrics. 
+
+```tutorial.ipynb``` is an original way used to check and test the different metrics. 
 # Installation
 
 ```pip install SaliencyMetrics```

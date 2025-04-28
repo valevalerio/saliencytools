@@ -11,3 +11,4 @@ top_levels.txt
 # Ignore Sphinx build artifacts
 docs/*build/
 docs/make.bat
+Makefile
