@@ -8,7 +8,7 @@
   <title>saliencytools.maskcompare &mdash; saliencytools  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=5c837eb0" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
@@ -109,6 +109,7 @@
 <span class="sd">    - Jaccard Index</span>
 <span class="sd">    - Jaccard Distance</span>
 <span class="sd">    - Structural Similarity Index Measure (SSIM)</span>
+
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -122,14 +123,18 @@
 <div class="viewcode-block" id="make_histogram">
 <a class="viewcode-back" href="../../maskcompare.html#saliencytools.maskcompare.make_histogram">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">make_histogram</span><span class="p">(</span><span class="n">mask</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">bins</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">256</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert continuous values to discrete distribution</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert continuous values to discrete distribution.</span>
+
 <span class="sd">    This function takes a saliency map and converts it into a histogram representation.</span>
 <span class="sd">    The histogram is normalized to ensure that the sum of all bins equals 1,</span>
 <span class="sd">    making it suitable for comparing distributions.</span>
+
 <span class="sd">    Parameters:</span>
 <span class="sd">        mask (numpy.ndarray): Input saliency map. This is a 2D or 3D array </span>
 <span class="sd">                              representing the saliency values of an image.</span>
 <span class="sd">        bins (int): Number of bins for the histogram. Default is 256.</span>
+
 <span class="sd">    Returns:</span>
 <span class="sd">        numpy.ndarray: Normalized histogram of the saliency map. The sum of all </span>
 <span class="sd">                       bins equals 1, representing the distribution of saliency values.</span>
@@ -314,7 +319,7 @@
 <span class="sd">    with spatial distributions of importance.</span>
 
 <span class="sd">    Reference:</span>
-<span class="sd">        - Rubner, Y., Tomasi, C., &amp; Guibas, L. J. (2000). The Earth Mover&#39;s Distance as a Metric for Image Retrieval. *International Journal of Computer Vision*, 40(2), 99–121. https://doi.org/10.1023/A:1026543900054</span>
+<span class="sd">        - Rubner, Y., Tomasi, C., &amp; Guibas, L. J. (2000). The Earth Mover&#39;s Distance as a Metric for Image Retrieval. *International Journal of Computer Vision*, 40(2), 99-121. https://doi.org/10.1023/A:1026543900054</span>
 
 <span class="sd">    Parameters:</span>
 <span class="sd">        a (numpy.ndarray): First image.</span>
@@ -498,7 +503,7 @@
 <span class="sd">    assessing image quality and similarity.</span>
 
 <span class="sd">    Reference:</span>
-<span class="sd">        - Wang, Z., Bovik, A. C., Sheikh, H. R., &amp; Simoncelli, E. P. (2004). Image quality assessment: From error visibility to structural similarity. *IEEE Transactions on Image Processing*, 13(4), 600–612. https://doi.org/10.1109/TIP.2003.819861</span>
+<span class="sd">        - Wang, Z., Bovik, A. C., Sheikh, H. R., &amp; Simoncelli, E. P. (2004). Image quality assessment: From error visibility to structural similarity. *IEEE Transactions on Image Processing*, 13(4), 600-612. https://doi.org/10.1109/TIP.2003.819861</span>
 <span class="sd">    Parameters:</span>
 <span class="sd">        a (numpy.ndarray): First image.</span>
 <span class="sd">        b (numpy.ndarray): Second image.</span>
