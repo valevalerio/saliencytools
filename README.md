@@ -54,6 +54,14 @@ Some preprocessing is explored to check different ways to compute the distance.
 
 ![Example](https://raw.githubusercontent.com/valevalerio/saliencytools/docs/_static/heatmap.png)
 
+<!-- add another image but this time visible-->
+![Example](https://raw.githubusercontent.com/valevalerio/saliencytools/docs/_static/heatmap2.png)
+
+![Example](https://raw.githubusercontent.com/valevalerio/saliencytools/docs/_static/heatmap3.png)
+
+![Example](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Camposanto_Monumentale_di_Pisa_%2816813099494%29.jpg/960px-Camposanto_Monumentale_di_Pisa_%2816813099494%29.jpg)
+
+
 From the above images we can see that the F1 score changes depending on the metric used and the preprocessing applied. **In this case** the best metric is the Sign Agreement ratio (both without preprocessing and by clipping the saliency maps in -1, 1).
 The SSIM metric is the second best, without any preprocessing.
 For instance, the Jaccard metric is not good without preprocessing.

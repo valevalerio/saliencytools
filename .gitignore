@@ -1,7 +1,6 @@
 data/*
 saliencytools/__pycache__
 *.pyc
-*.png
 .vscode/settings.json
 .Readm2.md
 *.whl
@@ -13,3 +12,5 @@ docs/*build/
 docs/make.bat
 Makefile
 *.pdf
+*.png
+!docs/_static/heatmap.png # keep the heatmap.png file for documentation
