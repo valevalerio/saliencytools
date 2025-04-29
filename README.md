@@ -54,13 +54,14 @@ Some preprocessing is explored to check different ways to compute the distance.
 
 
 ![F1_scores](https://valevalerio.github.io/saliencytools/_static/heatmap.png)
-![F1_scores](https://github.com/valevalerio/saliencytools/blob/gh-pages/_static/heatmap.png)
-![F1_scores](https://raw.githubusercontent.com/valevalerio/saliencytools/gh-pages/_static/heatmap.png)
-![F1_scores](https://raw.githubusercontent.com/valevalerio/saliencytools/refs/heads/gh-pages/_static/heatmap.png)
+
 <!-- add another image but this time visible
-![Example](https://raw.githubusercontent.com/valevalerio/saliencytools/docs/_static/heatmap.png)
-![F1_scores](https://<username>.github.io/<repository>/_static/heatmap.png)
-![Example](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Camposanto_Monumentale_di_Pisa_%2816813099494%29.jpg/960px-Camposanto_Monumentale_di_Pisa_%2816813099494%29.jpg)
+They are both visible. What changes is where they redirect to.
+I had to put the image in the _static folder under the doc/source/_static folder.
+By the use of the workflow of sphinx-gallery, the image is copied to the _static folder of the gh-pages branch.
+The image is visible in the README.md file, not anywhere in the documentation.
+![F1_scores](https://github.com/valevalerio/saliencytools/blob/gh-pages/_static/heatmap.png)
+
 -->
 
 
