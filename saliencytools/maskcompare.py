@@ -24,8 +24,25 @@ import torch.nn.functional as F
 import torch
 from skimage import metrics
 from scipy.stats import wasserstein_distance
+from scipy.ndimage import sobel
 
-# Normalization functions
+# ============= Normalization Functions =============
+def make_histogram(mask: np.ndarray, bins: int = 256) -> np.ndarray:
+    """Convert continuous values to discrete distribution
+    This function takes a saliency map and converts it into a histogram representation.
+    The histogram is normalized to ensure that the sum of all bins equals 1,
+    making it suitable for comparing distributions.
+    Parameters:
+        mask (numpy.ndarray): Input saliency map. This is a 2D or 3D array 
+                              representing the saliency values of an image.
+        bins (int): Number of bins for the histogram. Default is 256.
+    Returns:
+        numpy.ndarray: Normalized histogram of the saliency map. The sum of all 
+                       bins equals 1, representing the distribution of saliency values.
+    """
+    hist, _ = np.histogram(mask, bins=bins, density=True)
+    return hist / (np.sum(hist) + 1e-8)
+
 def normalize_mask(mask):
     """
     Normalize the mask to the range [-1, 1].
@@ -86,7 +103,7 @@ def clip_mask(mask):
     """
     return np.clip(mask, -1, 1)
 
-# Distance metrics
+# ============= Geometric Distances =============
 def euclidean_distance(a, b):
     """
     Compute the Euclidean distance between two images.
@@ -130,26 +147,6 @@ def cosine_distance(a, b):
     b = b.flatten()
     return 1 - np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
 
-def emd(a, b):
-    """
-    Compute the Earth Mover's Distance (EMD) between two images.
-
-    The EMD measures the minimum cost of transforming one distribution 
-    into another. It is particularly useful for comparing saliency maps 
-    with spatial distributions of importance.
-
-    Reference:
-        Y. Rubner, C. Tomasi &  L. J. Guibas (2000) "The earth mover's distance as a metric for image retrieval."
-
-    Parameters:
-        a (numpy.ndarray): First image.
-        b (numpy.ndarray): Second image.
-
-    Returns:
-        float: Earth Mover's Distance, representing the cost of transformation.
-    """
-    return wasserstein_distance(a.flatten(), b.flatten())
-
 def mean_absolute_error(a, b):
     """
     Compute the Mean Absolute Error (MAE) between two images.
@@ -169,76 +166,48 @@ def mean_absolute_error(a, b):
     """
     return np.mean(np.abs(a - b))
 
-def sign_agreement_ratio(a, b):
+def mean_squared_error(a, b):
     """
-    Compute the Sign Agreement Ratio (SAR) between two images.
+    Compute the Mean Squared Error (MSE) between two images.
 
-    The SAR measures the proportion of pixels where the signs of the values 
-    in two images agree. It captures the consistency in the direction of 
-    importance between two saliency maps.
+    The MSE measures the average squared difference between corresponding 
+    pixels in two images. It emphasizes larger deviations more than the 
+    Mean Absolute Error.
 
     Reference:
-        A. M. Nevill, G. Atkinson (1997) "Assessing agreement between measurements recorded on a ratio scale" in sports medicine and sports science
-
-
+        Commonly used in regression analysis and image processing.
 
     Parameters:
         a (numpy.ndarray): First image.
         b (numpy.ndarray): Second image.
 
     Returns:
-        float: Sign Agreement Ratio, representing the proportion of agreement.
+        float: Mean Squared Error, representing the average squared deviation.
     """
-    a = a.flatten()
-    b = b.flatten()
-    return 1 - np.mean(np.sign(a) == np.sign(b))
+    return np.mean((a - b) ** 2)
 
-def sign_distance(a, b):
+# ============= Distribution/Statistical Distances =============
+def emd(a, b,bins=256):
     """
-    Compute the Sign Distance between two images.
+    Compute the Earth Mover's Distance (EMD) between two images.
 
-    The Sign Distance measures the proportion of pixels where the signs of 
-    the values in two images differ. It is the complement of the Sign 
-    Agreement Ratio and captures the inconsistency in the direction of 
-    importance.
+    The EMD measures the minimum cost of transforming one distribution 
+    into another. It is particularly useful for comparing saliency maps 
+    with spatial distributions of importance.
 
     Reference:
-        Metric commonly used in image processing and computer vision.
+        - Rubner, Y., Tomasi, C., & Guibas, L. J. (2000). The Earth Mover's Distance as a Metric for Image Retrieval. *International Journal of Computer Vision*, 40(2), 99–121. https://doi.org/10.1023/A:1026543900054
 
     Parameters:
         a (numpy.ndarray): First image.
         b (numpy.ndarray): Second image.
 
     Returns:
-        float: Sign Distance, representing the proportion of disagreement.
+        float: Earth Mover's Distance, representing the cost of transformation.
     """
-    a = a.flatten()
-    b = b.flatten()
-    return np.mean(np.sign(a) != np.sign(b))
-
-def intersection_over_union(a, b):
-    """
-    Compute the Intersection over Union (IoU) between two images.
-
-    The IoU measures the overlap between two saliency maps by comparing 
-    the intersection and union of their pixel values. It is commonly used 
-    to evaluate the similarity of binary or thresholded saliency maps.
-
-    Reference:
-        Commonly used in object detection and segmentation literature.
-
-    Parameters:
-        a (numpy.ndarray): First image.
-        b (numpy.ndarray): Second image.
-
-    Returns:
-        float: Intersection over Union, representing the overlap ratio.
-    """
-    a = a.flatten()
-    b = b.flatten()
-    intersection = np.sum(np.minimum(a, b))
-    union = np.sum(np.maximum(a, b))
-    return 1 - intersection / union
+    a_hist = make_histogram(a, bins)
+    b_hist = make_histogram(b, bins)
+    return wasserstein_distance(np.arange(bins), np.arange(bins), a_hist, b_hist)
 
 def correlation_distance(a, b):
     """
@@ -262,48 +231,6 @@ def correlation_distance(a, b):
     b = b.flatten()
     return 1 - np.corrcoef(a, b)[0, 1]
 
-def mean_squared_error(a, b):
-    """
-    Compute the Mean Squared Error (MSE) between two images.
-
-    The MSE measures the average squared difference between corresponding 
-    pixels in two images. It emphasizes larger deviations more than the 
-    Mean Absolute Error.
-
-    Reference:
-        Commonly used in regression analysis and image processing.
-
-    Parameters:
-        a (numpy.ndarray): First image.
-        b (numpy.ndarray): Second image.
-
-    Returns:
-        float: Mean Squared Error, representing the average squared deviation.
-    """
-    return np.mean((a - b) ** 2)
-
-def ssim(a, b):
-    """
-    Compute the Structural Similarity Index Measure (SSIM) between two images.
-
-    The SSIM evaluates the perceptual similarity between two images by 
-    considering luminance, contrast, and structure. It is widely used for 
-    assessing image quality and similarity.
-
-    Reference:
-        Wang, Z., Bovik, A. C., Sheikh, H. R., & Simoncelli, E. P. (2004). 
-        "Image quality assessment: From error visibility to structural similarity."
-
-    Parameters:
-        a (numpy.ndarray): First image.
-        b (numpy.ndarray): Second image.
-
-    Returns:
-        float: SSIM value, representing the perceptual similarity.
-    """
-    return (1 - metrics.structural_similarity(a, b, full=False,
-                                              data_range=np.maximum(a.max(), b.max()) - np.minimum(a.min(), b.min()))) / 2
-
 def psnr(a, b):
     """
     Compute the Peak Signal-to-Noise Ratio (PSNR) between two images.
@@ -323,33 +250,10 @@ def psnr(a, b):
     Returns:
         float: PSNR value, representing the signal-to-noise ratio.
     """
-    return metrics.peak_signal_noise_ratio(a, b,
+    return 1/metrics.peak_signal_noise_ratio(a, b,
                                            data_range=np.maximum(a.max(), b.max()) - np.minimum(a.min(), b.min()))
 
-def czenakowski_distance(a, b):
-    """
-    Compute the Czekanowski Distance between two images.
-
-    The Czekanowski Distance measures the dissimilarity between two images 
-    based on the ratio of their minimum and total pixel values. It is useful 
-    for comparing distributions with overlapping regions.
-
-    Reference:
-        T. SORENSEN (1948) "A method of establishing groups of equal amplitude in plant sociology based on similarity of species content and its application to analyses of the vegetation on danish commons." Biologiske Skrifter.
-
-    Parameters:
-        a (numpy.ndarray): First image.
-        b (numpy.ndarray): Second image.
-
-    Returns:
-        float: Czekanowski Distance, representing the dissimilarity.
-    """
-    sum_of_minimums = np.sum(np.minimum(a, b))
-    sum_of_values = np.sum(a + b)
-    if sum_of_values == 0:
-        return 0  # If both images are all zeros, they're identical
-    return 1 - (2 * sum_of_minimums) / sum_of_values
-
+# ============= Set-Theoretic Distances ==========
 def jaccard_index(a, b):
     """
     Compute the Jaccard Index between two images.
@@ -396,18 +300,106 @@ def jaccard_distance(a, b):
     """
     return 1 - jaccard_index(a, b)
 
+def czenakowski_distance(a, b):
+    """
+    Compute the Czekanowski Distance between two images.
+
+    The Czekanowski Distance measures the dissimilarity between two images 
+    based on the ratio of their minimum and total pixel values. It is useful 
+    for comparing distributions with overlapping regions.
+
+    Reference:
+        T. SORENSEN (1948) "A method of establishing groups of equal amplitude in plant sociology based on similarity of species content and its application to analyses of the vegetation on danish commons." Biologiske Skrifter.
+
+    Parameters:
+        a (numpy.ndarray): First image.
+        b (numpy.ndarray): Second image.
+
+    Returns:
+        float: Czekanowski Distance, representing the dissimilarity.
+    """
+    sum_of_minimums = np.sum(np.minimum(a, b))
+    sum_of_values = np.sum(a + b)
+    if sum_of_values == 0:
+        return 0  # If both images are all zeros, they're identical
+    return 1 - (2 * sum_of_minimums) / sum_of_values
+
+# ============= Binary Distances =================
+def sign_agreement_ratio(a, b):
+    """
+    Compute the Sign Agreement Ratio (SAR) between two images.
+
+    The SAR measures the proportion of pixels where the signs of the values 
+    in two images agree. It captures the consistency in the direction of 
+    importance between two saliency maps.
+
+    Reference:
+        A. M. Nevill, G. Atkinson (1997) "Assessing agreement between measurements recorded on a ratio scale" in sports medicine and sports science
+
+
+
+    Parameters:
+        a (numpy.ndarray): First image.
+        b (numpy.ndarray): Second image.
+
+    Returns:
+        float: Sign Agreement Ratio, representing the proportion of agreement.
+    """
+    a = a.flatten()
+    b = b.flatten()
+    return 1 - np.mean(np.sign(a) == np.sign(b))
+
+# ============= Structural Distances =============
+def ssim(a, b):
+    """
+    Compute the Structural Similarity Index Measure (SSIM) between two images.
+
+    The SSIM evaluates the perceptual similarity between two images by 
+    considering luminance, contrast, and structure. It is widely used for 
+    assessing image quality and similarity.
+
+    Reference:
+        - Wang, Z., Bovik, A. C., Sheikh, H. R., & Simoncelli, E. P. (2004). Image quality assessment: From error visibility to structural similarity. *IEEE Transactions on Image Processing*, 13(4), 600–612. https://doi.org/10.1109/TIP.2003.819861
+    Parameters:
+        a (numpy.ndarray): First image.
+        b (numpy.ndarray): Second image.
+
+    Returns:
+        float: SSIM value, representing the perceptual similarity.
+    """
+    if np.allclose(a, b):
+        return 0
+    return (1 - metrics.structural_similarity(a, b, full=False,
+                                              data_range=np.maximum(a.max(), b.max()) - np.minimum(a.min(), b.min()))) / 2
+
+# ============= Pixel-wise Distances ============= 
+# These functions return an distance matrix so that we can visualize the distance between each pixel in the two images
+# abs_error_lambda = lambda a, b: np.abs(a - b)
+# squared_error_lambda = lambda a, b: (a - b) ** 2
+# minkowski_lambda = lambda a, b: np.linalg.norm(a - b, ord=2)
+
+
+
+
 # Assign readable names to metrics
-cosine_distance.__name__ = "$ShapGap_{Cosine}$"
+# ------------- Geometric metrics
 euclidean_distance.__name__ = "$ShapGap_{L2}$"
-emd.__name__ = "Earth Mover's Distance"
+cosine_distance.__name__ = "$ShapGap_{Cosine}$"
 mean_absolute_error.__name__ = "MAE"
-sign_agreement_ratio.__name__ = "Sign Agreement Ratio"
-sign_distance.__name__ = "Sign Distance"
-intersection_over_union.__name__ = "Intersection over Union"
-correlation_distance.__name__ = "Correlation Distance"
 mean_squared_error.__name__ = "MSE"
-ssim.__name__ = "SSIM"
+
+# ------------- Distribution/Statistical metrics
+emd.__name__ = "Earth Mover's Distance"
+correlation_distance.__name__ = "Correlation Distance"
 psnr.__name__ = "PSNR"
-czenakowski_distance.__name__ = "Czekanowski Distance"
-jaccard_distance.__name__ = "Jaccard Distance"
+
+# ------------- Set Theory metrics
 jaccard_index.__name__ = "Jaccard Index"
+jaccard_distance.__name__ = "Jaccard Distance"
+czenakowski_distance.__name__ = "Czekanowski Distance"
+
+# ------------- Binary metrics
+sign_agreement_ratio.__name__ = "Sign Agreement Ratio"
+
+# ------------- Structural metrics
+ssim.__name__ = "SSIM"

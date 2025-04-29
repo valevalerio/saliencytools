@@ -16,4 +16,4 @@ def test_readme():
 
     # use all the metrics to compare the saliency map with the ground truth map
     for metric in [ssim, psnr, emd]:
-        f"{metric.__name__}: {metric(saliency_map, ground_truth_map)}"
+        print(f"{metric.__name__}: {metric(saliency_map, ground_truth_map)}")
