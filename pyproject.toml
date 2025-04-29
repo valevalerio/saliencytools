@@ -17,3 +17,4 @@ license-files = ["LICEN[CS]E*"]
 [project.urls]
 Homepage = "https://github.com/valevalerio/saliencytools"
 Issues = "https://github.com/valevalerio/saliencytools/issues"
+Documentation = "https://valevalerio.github.io/saliencytools/"
