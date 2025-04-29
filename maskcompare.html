@@ -53,16 +53,15 @@
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.czenakowski_distance"><code class="docutils literal notranslate"><span class="pre">czenakowski_distance()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.emd"><code class="docutils literal notranslate"><span class="pre">emd()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.euclidean_distance"><code class="docutils literal notranslate"><span class="pre">euclidean_distance()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.intersection_over_union"><code class="docutils literal notranslate"><span class="pre">intersection_over_union()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.jaccard_distance"><code class="docutils literal notranslate"><span class="pre">jaccard_distance()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.jaccard_index"><code class="docutils literal notranslate"><span class="pre">jaccard_index()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.make_histogram"><code class="docutils literal notranslate"><span class="pre">make_histogram()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.mean_absolute_error"><code class="docutils literal notranslate"><span class="pre">mean_absolute_error()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.mean_squared_error"><code class="docutils literal notranslate"><span class="pre">mean_squared_error()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.normalize_mask"><code class="docutils literal notranslate"><span class="pre">normalize_mask()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.normalize_mask_0_1"><code class="docutils literal notranslate"><span class="pre">normalize_mask_0_1()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.psnr"><code class="docutils literal notranslate"><span class="pre">psnr()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.sign_agreement_ratio"><code class="docutils literal notranslate"><span class="pre">sign_agreement_ratio()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.sign_distance"><code class="docutils literal notranslate"><span class="pre">sign_distance()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.ssim"><code class="docutils literal notranslate"><span class="pre">ssim()</span></code></a></li>
 </ul>
 </li>
@@ -221,15 +220,15 @@ for comparing distributions with overlapping regions.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="saliencytools.maskcompare.emd">
-<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">emd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#emd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.emd" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">emd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#emd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.emd" title="Link to this definition"></a></dt>
 <dd><p>Compute the Earth Mover’s Distance (EMD) between two images.</p>
 <p>The EMD measures the minimum cost of transforming one distribution
 into another. It is particularly useful for comparing saliency maps
 with spatial distributions of importance.</p>
 <dl class="simple">
-<dt>Reference:</dt><dd><ol class="upperalpha simple" start="25">
-<li><p>Rubner, C. Tomasi &amp;  L. J. Guibas (2000) “The earth mover’s distance as a metric for image retrieval.”</p></li>
-</ol>
+<dt>Reference:</dt><dd><ul class="simple">
+<li><p>Rubner, Y., Tomasi, C., &amp; Guibas, L. J. (2000). The Earth Mover’s Distance as a Metric for Image Retrieval. <em>International Journal of Computer Vision</em>, 40(2), 99–121. <a class="reference external" href="https://doi.org/10.1023/A:1026543900054">https://doi.org/10.1023/A:1026543900054</a></p></li>
+</ul>
 </dd>
 </dl>
 <dl class="field-list simple">
@@ -268,33 +267,6 @@ of differences between the two images.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Euclidean distance, representing the magnitude of differences.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="saliencytools.maskcompare.intersection_over_union">
-<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">intersection_over_union</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#intersection_over_union"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.intersection_over_union" title="Link to this definition"></a></dt>
-<dd><p>Compute the Intersection over Union (IoU) between two images.</p>
-<p>The IoU measures the overlap between two saliency maps by comparing
-the intersection and union of their pixel values. It is commonly used
-to evaluate the similarity of binary or thresholded saliency maps.</p>
-<dl class="simple">
-<dt>Reference:</dt><dd><p>Commonly used in object detection and segmentation literature.</p>
-</dd>
-</dl>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>a</strong> (<em>numpy.ndarray</em>) – First image.</p></li>
-<li><p><strong>b</strong> (<em>numpy.ndarray</em>) – Second image.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Intersection over Union, representing the overlap ratio.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
@@ -352,6 +324,34 @@ evaluating binary or thresholded saliency maps.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saliencytools.maskcompare.make_histogram">
+<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">make_histogram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">256</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#make_histogram"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.make_histogram" title="Link to this definition"></a></dt>
+<dd><p>Convert continuous values to discrete distribution
+This function takes a saliency map and converts it into a histogram representation.
+The histogram is normalized to ensure that the sum of all bins equals 1,
+making it suitable for comparing distributions.
+:param mask: Input saliency map. This is a 2D or 3D array</p>
+<blockquote>
+<div><p>representing the saliency values of an image.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bins</strong> (<em>int</em>) – Number of bins for the histogram. Default is 256.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Normalized histogram of the saliency map. The sum of all</dt><dd><p>bins equals 1, representing the distribution of saliency values.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
 </dd>
 </dl>
 </dd></dl>
@@ -519,34 +519,6 @@ importance between two saliency maps.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="saliencytools.maskcompare.sign_distance">
-<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">sign_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#sign_distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.sign_distance" title="Link to this definition"></a></dt>
-<dd><p>Compute the Sign Distance between two images.</p>
-<p>The Sign Distance measures the proportion of pixels where the signs of
-the values in two images differ. It is the complement of the Sign
-Agreement Ratio and captures the inconsistency in the direction of
-importance.</p>
-<dl class="simple">
-<dt>Reference:</dt><dd><p>Metric commonly used in image processing and computer vision.</p>
-</dd>
-</dl>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>a</strong> (<em>numpy.ndarray</em>) – First image.</p></li>
-<li><p><strong>b</strong> (<em>numpy.ndarray</em>) – Second image.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Sign Distance, representing the proportion of disagreement.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="saliencytools.maskcompare.ssim">
 <span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">ssim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#ssim"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.ssim" title="Link to this definition"></a></dt>
 <dd><p>Compute the Structural Similarity Index Measure (SSIM) between two images.</p>
@@ -554,8 +526,9 @@ importance.</p>
 considering luminance, contrast, and structure. It is widely used for
 assessing image quality and similarity.</p>
 <dl class="simple">
-<dt>Reference:</dt><dd><p>Wang, Z., Bovik, A. C., Sheikh, H. R., &amp; Simoncelli, E. P. (2004).
-“Image quality assessment: From error visibility to structural similarity.”</p>
+<dt>Reference:</dt><dd><ul class="simple">
+<li><p>Wang, Z., Bovik, A. C., Sheikh, H. R., &amp; Simoncelli, E. P. (2004). Image quality assessment: From error visibility to structural similarity. <em>IEEE Transactions on Image Processing</em>, 13(4), 600–612. <a class="reference external" href="https://doi.org/10.1109/TIP.2003.819861">https://doi.org/10.1109/TIP.2003.819861</a></p></li>
+</ul>
 </dd>
 </dl>
 <dl class="field-list simple">
