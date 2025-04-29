@@ -52,10 +52,14 @@ Some preprocessing is explored to check different ways to compute the distance.
 ```N``` stands for Normalization of the saliency maps in 0, 1.
 ```S``` stands for the application of the sobel filter to the saliency maps, so that the edges are more influencing.
 
-![Example](https://raw.githubusercontent.com/valevalerio/saliencytools/docs/_static/heatmap.png)
 
 ![F1_scores](https://valevalerio.github.io/saliencytools/_static/heatmap.png)
+![F1_scores](https://github.com/valevalerio/saliencytools/blob/gh-pages/_static/heatmap.png)
+![F1_scores](https://raw.githubusercontent.com/valevalerio/saliencytools/gh-pages/_static/heatmap.png)
+![F1_scores](https://raw.githubusercontent.com/valevalerio/saliencytools/refs/heads/gh-pages/_static/heatmap.png)
 <!-- add another image but this time visible
+![Example](https://raw.githubusercontent.com/valevalerio/saliencytools/docs/_static/heatmap.png)
+![F1_scores](https://<username>.github.io/<repository>/_static/heatmap.png)
 ![Example](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Camposanto_Monumentale_di_Pisa_%2816813099494%29.jpg/960px-Camposanto_Monumentale_di_Pisa_%2816813099494%29.jpg)
 -->
 
