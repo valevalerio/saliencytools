@@ -54,18 +54,25 @@ Some preprocessing is explored to check different ways to compute the distance.
 
 ![Example](https://raw.githubusercontent.com/valevalerio/saliencytools/docs/_static/heatmap.png)
 
-<!-- add another image but this time visible-->
-![Example](https://raw.githubusercontent.com/valevalerio/saliencytools/docs/_static/heatmap2.png)
-
-![Example](https://raw.githubusercontent.com/valevalerio/saliencytools/docs/_static/heatmap3.png)
-
+![F1_scores](https://valevalerio.github.io/saliencytools/_static/heatmap.png)
+<!-- add another image but this time visible
 ![Example](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Camposanto_Monumentale_di_Pisa_%2816813099494%29.jpg/960px-Camposanto_Monumentale_di_Pisa_%2816813099494%29.jpg)
+-->
 
 
 From the above images we can see that the F1 score changes depending on the metric used and the preprocessing applied. **In this case** the best metric is the Sign Agreement ratio (both without preprocessing and by clipping the saliency maps in -1, 1).
 The SSIM metric is the second best, without any preprocessing.
 For instance, the Jaccard metric is not good without preprocessing.
 
+## Metrics to add
+
+from https://ar5iv.labs.arxiv.org/html/1604.03605
+
+- [] Area under ROC Curve 	AUC 	
+- [] Shuffled AUC 	sAUC 	
+- [] Normalized Scanpath Saliency 	NSS 	
+- [] Kullback-Leibler divergence 	KL 	[23, 49, 68, 88]
+- [] Information Gain 	IG 	[45, 46] 
 
 # Why Saliencytools?
 This package is **needed** since other alternatives are not stable, not maintained or trustable. They are not specific for images, they don't exploit ```numpy``` or ```scipy```, and they are not modular. The documentation of some is clear, yet the the examples are not complete. 

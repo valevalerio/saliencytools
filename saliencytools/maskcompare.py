@@ -17,6 +17,7 @@ Metrics implemented:
     - Jaccard Index
     - Jaccard Distance
     - Structural Similarity Index Measure (SSIM)
+
 """
 
 import numpy as np
@@ -28,14 +29,18 @@ from scipy.ndimage import sobel
 
 # ============= Normalization Functions =============
 def make_histogram(mask: np.ndarray, bins: int = 256) -> np.ndarray:
-    """Convert continuous values to discrete distribution
+    """
+    Convert continuous values to discrete distribution.
+
     This function takes a saliency map and converts it into a histogram representation.
     The histogram is normalized to ensure that the sum of all bins equals 1,
     making it suitable for comparing distributions.
+
     Parameters:
         mask (numpy.ndarray): Input saliency map. This is a 2D or 3D array 
                               representing the saliency values of an image.
         bins (int): Number of bins for the histogram. Default is 256.
+
     Returns:
         numpy.ndarray: Normalized histogram of the saliency map. The sum of all 
                        bins equals 1, representing the distribution of saliency values.
@@ -196,7 +201,7 @@ def emd(a, b,bins=256):
     with spatial distributions of importance.
 
     Reference:
-        - Rubner, Y., Tomasi, C., & Guibas, L. J. (2000). The Earth Mover's Distance as a Metric for Image Retrieval. *International Journal of Computer Vision*, 40(2), 99–121. https://doi.org/10.1023/A:1026543900054
+        - Rubner, Y., Tomasi, C., & Guibas, L. J. (2000). The Earth Mover's Distance as a Metric for Image Retrieval. *International Journal of Computer Vision*, 40(2), 99-121. https://doi.org/10.1023/A:1026543900054
 
     Parameters:
         a (numpy.ndarray): First image.
@@ -359,7 +364,7 @@ def ssim(a, b):
     assessing image quality and similarity.
 
     Reference:
-        - Wang, Z., Bovik, A. C., Sheikh, H. R., & Simoncelli, E. P. (2004). Image quality assessment: From error visibility to structural similarity. *IEEE Transactions on Image Processing*, 13(4), 600–612. https://doi.org/10.1109/TIP.2003.819861
+        - Wang, Z., Bovik, A. C., Sheikh, H. R., & Simoncelli, E. P. (2004). Image quality assessment: From error visibility to structural similarity. *IEEE Transactions on Image Processing*, 13(4), 600-612. https://doi.org/10.1109/TIP.2003.819861
     Parameters:
         a (numpy.ndarray): First image.
         b (numpy.ndarray): Second image.
