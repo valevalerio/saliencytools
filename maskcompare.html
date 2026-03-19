@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>maskcompare module &mdash; saliencytools  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
       <link rel="stylesheet" type="text/css" href="_static/custom.css?v=5c837eb0" />
 
   
@@ -47,6 +47,7 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">maskcompare module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.auc_judd"><code class="docutils literal notranslate"><span class="pre">auc_judd()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.clip_mask"><code class="docutils literal notranslate"><span class="pre">clip_mask()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.correlation_distance"><code class="docutils literal notranslate"><span class="pre">correlation_distance()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.cosine_distance"><code class="docutils literal notranslate"><span class="pre">cosine_distance()</span></code></a></li>
@@ -55,6 +56,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.euclidean_distance"><code class="docutils literal notranslate"><span class="pre">euclidean_distance()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.jaccard_distance"><code class="docutils literal notranslate"><span class="pre">jaccard_distance()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.jaccard_index"><code class="docutils literal notranslate"><span class="pre">jaccard_index()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.kl_divergence"><code class="docutils literal notranslate"><span class="pre">kl_divergence()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.make_histogram"><code class="docutils literal notranslate"><span class="pre">make_histogram()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.mean_absolute_error"><code class="docutils literal notranslate"><span class="pre">mean_absolute_error()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.mean_squared_error"><code class="docutils literal notranslate"><span class="pre">mean_squared_error()</span></code></a></li>
@@ -111,9 +113,59 @@
 <li><p>Jaccard Index</p></li>
 <li><p>Jaccard Distance</p></li>
 <li><p>Structural Similarity Index Measure (SSIM)</p></li>
+<li><p>KL Divergence (symmetric / Jeffrey divergence)</p></li>
+<li><p>AUC-Judd (symmetric pairwise variant)</p></li>
 </ul>
 </dd>
 </dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="saliencytools.maskcompare.auc_judd">
+<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">auc_judd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prediction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#auc_judd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.auc_judd" title="Link to this definition"></a></dt>
+<dd><p>Compute the AUC-Judd distance between a predicted saliency map and a
+reference map.</p>
+<p>AUC-Judd (Judd et al., 2009) evaluates how well a predicted saliency map
+recovers the salient regions of a reference map.  The reference is
+binarised at its mean to produce a fixation mask; the prediction is then
+treated as a continuous classifier of those fixated pixels, and the Area
+Under the ROC Curve (AUC) is reported.</p>
+<p><strong>Convention</strong>: <code class="docutils literal notranslate"><span class="pre">auc_judd(prediction,</span> <span class="pre">reference)</span></code> — the <em>second</em> argument
+always provides the fixation mask.  This matches the intended use case:
+<code class="docutils literal notranslate"><span class="pre">auc_judd(lime_map,</span> <span class="pre">shap_map)</span></code> measures how well the LIME explanation
+recovers the regions SHAP considers important, not the reverse.</p>
+<p><strong>Asymmetry</strong>: <code class="docutils literal notranslate"><span class="pre">auc_judd(a,</span> <span class="pre">b)</span> <span class="pre">!=</span> <span class="pre">auc_judd(b,</span> <span class="pre">a)</span></code> in general.
+The metric therefore does not satisfy the symmetry axiom of a metric space.
+It is listed alongside SSIM and PSNR as a documented exception in the
+formal validation suite.</p>
+<p>In the proxy benchmark, <code class="docutils literal notranslate"><span class="pre">metric_fn(test_image,</span> <span class="pre">prototype)</span></code> places the
+test image in the prediction role and the prototype in the reference role,
+which is the natural direction: the prototype is the trusted reference, the
+test image is the explanation being evaluated.</p>
+<dl class="simple">
+<dt>Reference:</dt><dd><p>Judd et al. (2009). “Learning to predict where humans look.” ICCV.
+Bylinskii et al. (2017). “What do different evaluation metrics
+tell us about saliency models?” IEEE TPAMI, arXiv:1604.03605.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prediction</strong> (<em>numpy.ndarray</em>) – Predicted saliency map (the map being
+evaluated, e.g. from LIME or Integrated Gradients).</p></li>
+<li><p><strong>reference</strong> (<em>numpy.ndarray</em>) – Reference saliency map whose above-mean
+pixels define the fixation mask (e.g. a SHAP explanation or a
+prototype).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>AUC-Judd distance in [0, 1].  0 means perfect recovery of the
+reference’s salient regions; 0.5 is chance level.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="saliencytools.maskcompare.clip_mask">
 <span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">clip_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#clip_mask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.clip_mask" title="Link to this definition"></a></dt>
@@ -321,6 +373,40 @@ evaluating binary or thresholded saliency maps.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Jaccard Index, representing the similarity ratio.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saliencytools.maskcompare.kl_divergence">
+<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">kl_divergence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#kl_divergence"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.kl_divergence" title="Link to this definition"></a></dt>
+<dd><p>Compute the symmetric KL divergence (Jeffrey divergence) between two images.</p>
+<p>The standard KL(P || Q^D) from Bylinskii et al. (2017) is asymmetric:
+it measures how well a saliency prediction P approximates a ground-truth
+fixation map Q^D.  Since both maps here are peers (neither is ground truth),
+we use the symmetric variant KL(a||b) + KL(b||a), which penalises
+false positives and false negatives equally.</p>
+<p>Both maps are shifted to be non-negative and normalised to sum to 1
+(probability distributions) before computation.  A small epsilon
+(1e-10) is added for numerical stability, following the regularisation
+strategy of the MIT Saliency Benchmark.</p>
+<dl class="simple">
+<dt>Reference:</dt><dd><p>Bylinskii et al. (2017). “What do different evaluation metrics
+tell us about saliency models?” IEEE TPAMI, arXiv:1604.03605.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>numpy.ndarray</em>) – First image.</p></li>
+<li><p><strong>b</strong> (<em>numpy.ndarray</em>) – Second image.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Symmetric KL divergence (&gt;= 0; 0 iff a == b after normalisation).</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
