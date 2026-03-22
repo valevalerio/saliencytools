@@ -1,0 +1,1040 @@
+{"seed": 0, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.518071734, "elapsed_time": 2.820332, "clip": true, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "SSIM", "f1_score": 0.455709852, "elapsed_time": 59.341126, "clip": true, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "MAE", "f1_score": 0.508020056, "elapsed_time": 2.475431, "clip": true, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "Czekanowski Distance", "f1_score": 0.512209299, "elapsed_time": 3.132799, "clip": true, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "Jaccard Distance", "f1_score": 0.512209299, "elapsed_time": 3.350595, "clip": true, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.431890606, "elapsed_time": 2.478759, "clip": true, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "Correlation Distance", "f1_score": 0.449342173, "elapsed_time": 17.632488, "clip": true, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.411933422, "elapsed_time": 1.607226, "clip": true, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "MSE", "f1_score": 0.411933422, "elapsed_time": 2.537316, "clip": true, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "PSNR", "f1_score": 0.411933422, "elapsed_time": 10.750134, "clip": true, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.255071328, "elapsed_time": 76.784258, "clip": true, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "KL Divergence", "f1_score": 0.41095431, "elapsed_time": 7.92095, "clip": true, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.472857918, "elapsed_time": 2.876318, "clip": true, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "SSIM", "f1_score": 0.524697809, "elapsed_time": 59.71973, "clip": true, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "MAE", "f1_score": 0.563355444, "elapsed_time": 2.475789, "clip": true, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "Czekanowski Distance", "f1_score": 0.565153708, "elapsed_time": 3.181455, "clip": true, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "Jaccard Distance", "f1_score": 0.565153708, "elapsed_time": 3.545414, "clip": true, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.511246844, "elapsed_time": 2.530341, "clip": true, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "Correlation Distance", "f1_score": 0.515547294, "elapsed_time": 17.678189, "clip": true, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.507679155, "elapsed_time": 1.548597, "clip": true, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "MSE", "f1_score": 0.507679155, "elapsed_time": 2.48279, "clip": true, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "PSNR", "f1_score": 0.507679155, "elapsed_time": 10.696876, "clip": true, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.304445649, "elapsed_time": 74.109759, "clip": true, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "KL Divergence", "f1_score": 0.451672482, "elapsed_time": 7.865317, "clip": true, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.56522449, "elapsed_time": 2.847235, "clip": true, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "SSIM", "f1_score": 0.482780521, "elapsed_time": 59.186799, "clip": true, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "MAE", "f1_score": 0.508020056, "elapsed_time": 2.440664, "clip": true, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "Czekanowski Distance", "f1_score": 0.466388774, "elapsed_time": 3.135653, "clip": true, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "Jaccard Distance", "f1_score": 0.466421468, "elapsed_time": 3.491925, "clip": true, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.451055156, "elapsed_time": 2.524758, "clip": true, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "Correlation Distance", "f1_score": 0.449342173, "elapsed_time": 17.527789, "clip": true, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.411933422, "elapsed_time": 1.545987, "clip": true, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "MSE", "f1_score": 0.411933422, "elapsed_time": 2.482671, "clip": true, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "PSNR", "f1_score": 0.411933422, "elapsed_time": 11.086036, "clip": true, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.255091235, "elapsed_time": 75.344136, "clip": true, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "KL Divergence", "f1_score": 0.411436143, "elapsed_time": 7.798525, "clip": true, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.616166078, "elapsed_time": 2.840104, "clip": true, "normalize": false, "sobel": false}
+{"seed": 0, "saliency_metric": "SSIM", "f1_score": 0.560349144, "elapsed_time": 59.63727, "clip": true, "normalize": false, "sobel": false}
+{"seed": 0, "saliency_metric": "MAE", "f1_score": 0.563355444, "elapsed_time": 2.49812, "clip": true, "normalize": false, "sobel": false}
+{"seed": 0, "saliency_metric": "Czekanowski Distance", "f1_score": 0.08555411, "elapsed_time": 3.15479, "clip": true, "normalize": false, "sobel": false}
+{"seed": 0, "saliency_metric": "Jaccard Distance", "f1_score": 0.136175428, "elapsed_time": 3.529135, "clip": true, "normalize": false, "sobel": false}
+{"seed": 0, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.515971477, "elapsed_time": 2.455026, "clip": true, "normalize": false, "sobel": false}
+{"seed": 0, "saliency_metric": "Correlation Distance", "f1_score": 0.515547294, "elapsed_time": 17.617309, "clip": true, "normalize": false, "sobel": false}
+{"seed": 0, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.507679155, "elapsed_time": 1.562402, "clip": true, "normalize": false, "sobel": false}
+{"seed": 0, "saliency_metric": "MSE", "f1_score": 0.507679155, "elapsed_time": 2.472839, "clip": true, "normalize": false, "sobel": false}
+{"seed": 0, "saliency_metric": "PSNR", "f1_score": 0.507679155, "elapsed_time": 10.733937, "clip": true, "normalize": false, "sobel": false}
+{"seed": 0, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.304666195, "elapsed_time": 73.835812, "clip": true, "normalize": false, "sobel": false}
+{"seed": 0, "saliency_metric": "KL Divergence", "f1_score": 0.45085683, "elapsed_time": 7.795231, "clip": true, "normalize": false, "sobel": false}
+{"seed": 0, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.100090188, "elapsed_time": 2.816285, "clip": false, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "SSIM", "f1_score": 0.46161369, "elapsed_time": 58.805207, "clip": false, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "MAE", "f1_score": 0.422446209, "elapsed_time": 2.416758, "clip": false, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "Czekanowski Distance", "f1_score": 0.424266442, "elapsed_time": 3.0988, "clip": false, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "Jaccard Distance", "f1_score": 0.424266442, "elapsed_time": 3.349954, "clip": false, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.393695247, "elapsed_time": 2.463355, "clip": false, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "Correlation Distance", "f1_score": 0.425706859, "elapsed_time": 17.489165, "clip": false, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.389386076, "elapsed_time": 1.608449, "clip": false, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "MSE", "f1_score": 0.389386076, "elapsed_time": 2.529848, "clip": false, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "PSNR", "f1_score": 0.389386076, "elapsed_time": 11.039135, "clip": false, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.2328769, "elapsed_time": 74.438324, "clip": false, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "KL Divergence", "f1_score": 0.386471294, "elapsed_time": 7.809059, "clip": false, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.118244963, "elapsed_time": 2.81071, "clip": false, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "SSIM", "f1_score": 0.531655426, "elapsed_time": 59.083764, "clip": false, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "MAE", "f1_score": 0.542362301, "elapsed_time": 2.477846, "clip": false, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "Czekanowski Distance", "f1_score": 0.543887664, "elapsed_time": 3.140215, "clip": false, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "Jaccard Distance", "f1_score": 0.543887664, "elapsed_time": 3.284727, "clip": false, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.491797598, "elapsed_time": 2.500721, "clip": false, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "Correlation Distance", "f1_score": 0.501429388, "elapsed_time": 17.4742, "clip": false, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.489635291, "elapsed_time": 1.567524, "clip": false, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "MSE", "f1_score": 0.489635291, "elapsed_time": 2.493262, "clip": false, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "PSNR", "f1_score": 0.489635291, "elapsed_time": 11.292586, "clip": false, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.345194178, "elapsed_time": 74.315795, "clip": false, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "KL Divergence", "f1_score": 0.408831705, "elapsed_time": 7.801605, "clip": false, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.56522449, "elapsed_time": 2.796682, "clip": false, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "SSIM", "f1_score": 0.513694069, "elapsed_time": 59.183264, "clip": false, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "MAE", "f1_score": 0.49376973, "elapsed_time": 2.480367, "clip": false, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "Czekanowski Distance", "f1_score": 0.083399533, "elapsed_time": 3.12067, "clip": false, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "Jaccard Distance", "f1_score": 0.120995893, "elapsed_time": 3.568855, "clip": false, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.425706859, "elapsed_time": 2.48132, "clip": false, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "Correlation Distance", "f1_score": 0.425706859, "elapsed_time": 17.600668, "clip": false, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.38143974, "elapsed_time": 1.605525, "clip": false, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "MSE", "f1_score": 0.38143974, "elapsed_time": 2.520845, "clip": false, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "PSNR", "f1_score": 0.387582147, "elapsed_time": 11.261676, "clip": false, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.232887351, "elapsed_time": 73.645517, "clip": false, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "KL Divergence", "f1_score": 0.384047339, "elapsed_time": 7.876399, "clip": false, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.616166078, "elapsed_time": 2.839907, "clip": false, "normalize": false, "sobel": false}
+{"seed": 0, "saliency_metric": "SSIM", "f1_score": 0.578998963, "elapsed_time": 58.827398, "clip": false, "normalize": false, "sobel": false}
+{"seed": 0, "saliency_metric": "MAE", "f1_score": 0.54663638, "elapsed_time": 2.419787, "clip": false, "normalize": false, "sobel": false}
+{"seed": 0, "saliency_metric": "Czekanowski Distance", "f1_score": 0.076994388, "elapsed_time": 3.071585, "clip": false, "normalize": false, "sobel": false}
+{"seed": 0, "saliency_metric": "Jaccard Distance", "f1_score": 0.067341247, "elapsed_time": 3.48374, "clip": false, "normalize": false, "sobel": false}
+{"seed": 0, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.501429388, "elapsed_time": 2.477059, "clip": false, "normalize": false, "sobel": false}
+{"seed": 0, "saliency_metric": "Correlation Distance", "f1_score": 0.501429388, "elapsed_time": 17.324051, "clip": false, "normalize": false, "sobel": false}
+{"seed": 0, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.486317043, "elapsed_time": 1.545272, "clip": false, "normalize": false, "sobel": false}
+{"seed": 0, "saliency_metric": "MSE", "f1_score": 0.486317043, "elapsed_time": 2.423464, "clip": false, "normalize": false, "sobel": false}
+{"seed": 0, "saliency_metric": "PSNR", "f1_score": 0.487512242, "elapsed_time": 10.760055, "clip": false, "normalize": false, "sobel": false}
+{"seed": 0, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.344975249, "elapsed_time": 73.527486, "clip": false, "normalize": false, "sobel": false}
+{"seed": 0, "saliency_metric": "KL Divergence", "f1_score": 0.404382878, "elapsed_time": 7.801545, "clip": false, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.477819782, "elapsed_time": 2.814316, "clip": true, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "SSIM", "f1_score": 0.446099747, "elapsed_time": 59.478736, "clip": true, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "MAE", "f1_score": 0.473860862, "elapsed_time": 2.52228, "clip": true, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "Czekanowski Distance", "f1_score": 0.473659498, "elapsed_time": 3.17573, "clip": true, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "Jaccard Distance", "f1_score": 0.473659498, "elapsed_time": 3.401739, "clip": true, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.418093559, "elapsed_time": 2.483325, "clip": true, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "Correlation Distance", "f1_score": 0.453857045, "elapsed_time": 17.472806, "clip": true, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.398745135, "elapsed_time": 1.569566, "clip": true, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "MSE", "f1_score": 0.398745135, "elapsed_time": 2.516083, "clip": true, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "PSNR", "f1_score": 0.398745135, "elapsed_time": 11.020798, "clip": true, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.281716046, "elapsed_time": 75.363354, "clip": true, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "KL Divergence", "f1_score": 0.403728162, "elapsed_time": 7.902868, "clip": true, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.439863608, "elapsed_time": 2.784926, "clip": true, "normalize": true, "sobel": false}
+{"seed": 1, "saliency_metric": "SSIM", "f1_score": 0.524070967, "elapsed_time": 58.994678, "clip": true, "normalize": true, "sobel": false}
+{"seed": 1, "saliency_metric": "MAE", "f1_score": 0.536383446, "elapsed_time": 2.396353, "clip": true, "normalize": true, "sobel": false}
+{"seed": 1, "saliency_metric": "Czekanowski Distance", "f1_score": 0.536369918, "elapsed_time": 3.070599, "clip": true, "normalize": true, "sobel": false}
+{"seed": 1, "saliency_metric": "Jaccard Distance", "f1_score": 0.536369918, "elapsed_time": 3.517247, "clip": true, "normalize": true, "sobel": false}
+{"seed": 1, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.50168121, "elapsed_time": 2.477736, "clip": true, "normalize": true, "sobel": false}
+{"seed": 1, "saliency_metric": "Correlation Distance", "f1_score": 0.528468945, "elapsed_time": 17.42353, "clip": true, "normalize": true, "sobel": false}
+{"seed": 1, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.492940597, "elapsed_time": 1.545705, "clip": true, "normalize": true, "sobel": false}
+{"seed": 1, "saliency_metric": "MSE", "f1_score": 0.492940597, "elapsed_time": 2.452719, "clip": true, "normalize": true, "sobel": false}
+{"seed": 1, "saliency_metric": "PSNR", "f1_score": 0.492940597, "elapsed_time": 10.737851, "clip": true, "normalize": true, "sobel": false}
+{"seed": 1, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.335931335, "elapsed_time": 74.035285, "clip": true, "normalize": true, "sobel": false}
+{"seed": 1, "saliency_metric": "KL Divergence", "f1_score": 0.440933806, "elapsed_time": 7.871761, "clip": true, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "AUC-Judd", "f1_score": 0.362066198, "elapsed_time": 9.836717, "clip": true, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "AUC-Judd", "f1_score": 0.370925942, "elapsed_time": 9.221867, "clip": true, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "AUC-Judd", "f1_score": 0.362468961, "elapsed_time": 9.630838, "clip": true, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "AUC-Judd", "f1_score": 0.370956849, "elapsed_time": 9.072961, "clip": true, "normalize": false, "sobel": false}
+{"seed": 0, "saliency_metric": "AUC-Judd", "f1_score": 0.325845462, "elapsed_time": 10.975658, "clip": false, "normalize": true, "sobel": true}
+{"seed": 0, "saliency_metric": "AUC-Judd", "f1_score": 0.380883057, "elapsed_time": 9.640138, "clip": false, "normalize": true, "sobel": false}
+{"seed": 0, "saliency_metric": "AUC-Judd", "f1_score": 0.328596095, "elapsed_time": 10.904963, "clip": false, "normalize": false, "sobel": true}
+{"seed": 0, "saliency_metric": "AUC-Judd", "f1_score": 0.373205109, "elapsed_time": 9.677092, "clip": false, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "AUC-Judd", "f1_score": 0.384273359, "elapsed_time": 9.662429, "clip": true, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "AUC-Judd", "f1_score": 0.375201016, "elapsed_time": 9.314423, "clip": true, "normalize": true, "sobel": false}
+{"seed": 1, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.536587432, "elapsed_time": 2.822635, "clip": true, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "SSIM", "f1_score": 0.457087996, "elapsed_time": 59.526093, "clip": true, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "MAE", "f1_score": 0.473860862, "elapsed_time": 2.438316, "clip": true, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "Czekanowski Distance", "f1_score": 0.429646552, "elapsed_time": 3.134171, "clip": true, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "Jaccard Distance", "f1_score": 0.429931226, "elapsed_time": 3.524103, "clip": true, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.45570138, "elapsed_time": 2.464545, "clip": true, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "Correlation Distance", "f1_score": 0.453857045, "elapsed_time": 17.465864, "clip": true, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.398745135, "elapsed_time": 1.564907, "clip": true, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "MSE", "f1_score": 0.398745135, "elapsed_time": 2.469678, "clip": true, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "PSNR", "f1_score": 0.398745135, "elapsed_time": 10.773673, "clip": true, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.281892867, "elapsed_time": 75.562649, "clip": true, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "KL Divergence", "f1_score": 0.403715934, "elapsed_time": 7.830645, "clip": true, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "AUC-Judd", "f1_score": 0.384293933, "elapsed_time": 9.640455, "clip": true, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.582673316, "elapsed_time": 2.825494, "clip": true, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "SSIM", "f1_score": 0.534001719, "elapsed_time": 59.095709, "clip": true, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "MAE", "f1_score": 0.536383446, "elapsed_time": 2.440399, "clip": true, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "Czekanowski Distance", "f1_score": 0.081606793, "elapsed_time": 3.173176, "clip": true, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "Jaccard Distance", "f1_score": 0.105131005, "elapsed_time": 3.395195, "clip": true, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.528422706, "elapsed_time": 2.452603, "clip": true, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "Correlation Distance", "f1_score": 0.528468945, "elapsed_time": 17.437525, "clip": true, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.492940597, "elapsed_time": 1.548064, "clip": true, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "MSE", "f1_score": 0.492940597, "elapsed_time": 2.478235, "clip": true, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "PSNR", "f1_score": 0.492940597, "elapsed_time": 11.124023, "clip": true, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.335934747, "elapsed_time": 74.804311, "clip": true, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "KL Divergence", "f1_score": 0.440966166, "elapsed_time": 7.842488, "clip": true, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "AUC-Judd", "f1_score": 0.375135049, "elapsed_time": 9.113117, "clip": true, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.094810359, "elapsed_time": 2.804606, "clip": false, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "SSIM", "f1_score": 0.430597603, "elapsed_time": 59.148198, "clip": false, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "MAE", "f1_score": 0.392829318, "elapsed_time": 2.410629, "clip": false, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "Czekanowski Distance", "f1_score": 0.393815434, "elapsed_time": 3.149554, "clip": false, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "Jaccard Distance", "f1_score": 0.393815434, "elapsed_time": 3.532185, "clip": false, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.405074296, "elapsed_time": 2.475237, "clip": false, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "Correlation Distance", "f1_score": 0.404297162, "elapsed_time": 17.462038, "clip": false, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.383135552, "elapsed_time": 1.551271, "clip": false, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "MSE", "f1_score": 0.383135552, "elapsed_time": 2.455327, "clip": false, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "PSNR", "f1_score": 0.383135552, "elapsed_time": 10.72153, "clip": false, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.259706339, "elapsed_time": 74.120062, "clip": false, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "KL Divergence", "f1_score": 0.38793428, "elapsed_time": 7.821513, "clip": false, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "AUC-Judd", "f1_score": 0.337250262, "elapsed_time": 10.926993, "clip": false, "normalize": true, "sobel": true}
+{"seed": 1, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.101739939, "elapsed_time": 2.904016, "clip": false, "normalize": true, "sobel": false}
+{"seed": 1, "saliency_metric": "SSIM", "f1_score": 0.504875262, "elapsed_time": 59.344782, "clip": false, "normalize": true, "sobel": false}
+{"seed": 1, "saliency_metric": "MAE", "f1_score": 0.506171311, "elapsed_time": 2.463359, "clip": false, "normalize": true, "sobel": false}
+{"seed": 1, "saliency_metric": "Czekanowski Distance", "f1_score": 0.505787009, "elapsed_time": 3.162448, "clip": false, "normalize": true, "sobel": false}
+{"seed": 1, "saliency_metric": "Jaccard Distance", "f1_score": 0.505787009, "elapsed_time": 3.376364, "clip": false, "normalize": true, "sobel": false}
+{"seed": 1, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.486010963, "elapsed_time": 2.483753, "clip": false, "normalize": true, "sobel": false}
+{"seed": 1, "saliency_metric": "Correlation Distance", "f1_score": 0.492877701, "elapsed_time": 17.941748, "clip": false, "normalize": true, "sobel": false}
+{"seed": 1, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.485952591, "elapsed_time": 1.598362, "clip": false, "normalize": true, "sobel": false}
+{"seed": 1, "saliency_metric": "MSE", "f1_score": 0.485952591, "elapsed_time": 2.520955, "clip": false, "normalize": true, "sobel": false}
+{"seed": 1, "saliency_metric": "PSNR", "f1_score": 0.485952591, "elapsed_time": 10.876901, "clip": false, "normalize": true, "sobel": false}
+{"seed": 1, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.34800445, "elapsed_time": 73.952854, "clip": false, "normalize": true, "sobel": false}
+{"seed": 1, "saliency_metric": "KL Divergence", "f1_score": 0.398326504, "elapsed_time": 7.820329, "clip": false, "normalize": true, "sobel": false}
+{"seed": 1, "saliency_metric": "AUC-Judd", "f1_score": 0.397952029, "elapsed_time": 9.642046, "clip": false, "normalize": true, "sobel": false}
+{"seed": 1, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.536587432, "elapsed_time": 2.81016, "clip": false, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "SSIM", "f1_score": 0.485295826, "elapsed_time": 59.305634, "clip": false, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "MAE", "f1_score": 0.473881249, "elapsed_time": 2.478311, "clip": false, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "Czekanowski Distance", "f1_score": 0.080975875, "elapsed_time": 3.126369, "clip": false, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "Jaccard Distance", "f1_score": 0.111232203, "elapsed_time": 3.34572, "clip": false, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.404297162, "elapsed_time": 2.482302, "clip": false, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "Correlation Distance", "f1_score": 0.404297162, "elapsed_time": 17.49632, "clip": false, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.397700868, "elapsed_time": 1.57526, "clip": false, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "MSE", "f1_score": 0.397700868, "elapsed_time": 2.490914, "clip": false, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "PSNR", "f1_score": 0.375561615, "elapsed_time": 10.772789, "clip": false, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.259706339, "elapsed_time": 73.912829, "clip": false, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "KL Divergence", "f1_score": 0.381615434, "elapsed_time": 7.8018, "clip": false, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "AUC-Judd", "f1_score": 0.374632917, "elapsed_time": 11.05263, "clip": false, "normalize": false, "sobel": true}
+{"seed": 1, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.582673316, "elapsed_time": 2.825964, "clip": false, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "SSIM", "f1_score": 0.543459571, "elapsed_time": 59.831033, "clip": false, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "MAE", "f1_score": 0.512070891, "elapsed_time": 2.46868, "clip": false, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "Czekanowski Distance", "f1_score": 0.077963268, "elapsed_time": 3.131499, "clip": false, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "Jaccard Distance", "f1_score": 0.076008957, "elapsed_time": 3.400917, "clip": false, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.492877701, "elapsed_time": 2.466385, "clip": false, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "Correlation Distance", "f1_score": 0.492877701, "elapsed_time": 17.439791, "clip": false, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.479441725, "elapsed_time": 1.575745, "clip": false, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "MSE", "f1_score": 0.479441725, "elapsed_time": 2.485954, "clip": false, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "PSNR", "f1_score": 0.481670468, "elapsed_time": 10.800147, "clip": false, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.348421242, "elapsed_time": 74.043241, "clip": false, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "KL Divergence", "f1_score": 0.395787541, "elapsed_time": 7.79503, "clip": false, "normalize": false, "sobel": false}
+{"seed": 1, "saliency_metric": "AUC-Judd", "f1_score": 0.347605808, "elapsed_time": 9.666849, "clip": false, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.50200182, "elapsed_time": 2.820093, "clip": true, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "SSIM", "f1_score": 0.464381958, "elapsed_time": 59.135782, "clip": true, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "MAE", "f1_score": 0.498400322, "elapsed_time": 2.438421, "clip": true, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "Czekanowski Distance", "f1_score": 0.498564414, "elapsed_time": 3.163482, "clip": true, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "Jaccard Distance", "f1_score": 0.498564414, "elapsed_time": 3.539038, "clip": true, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.432300969, "elapsed_time": 2.446569, "clip": true, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "Correlation Distance", "f1_score": 0.475686652, "elapsed_time": 17.553474, "clip": true, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.414585826, "elapsed_time": 1.587285, "clip": true, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "MSE", "f1_score": 0.414585826, "elapsed_time": 2.510755, "clip": true, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "PSNR", "f1_score": 0.414585826, "elapsed_time": 10.824397, "clip": true, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.297807046, "elapsed_time": 75.962861, "clip": true, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "KL Divergence", "f1_score": 0.416953891, "elapsed_time": 7.958369, "clip": true, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "AUC-Judd", "f1_score": 0.399361701, "elapsed_time": 9.661698, "clip": true, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.44233266, "elapsed_time": 2.858599, "clip": true, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "SSIM", "f1_score": 0.539232797, "elapsed_time": 59.312094, "clip": true, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "MAE", "f1_score": 0.560321315, "elapsed_time": 2.448866, "clip": true, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "Czekanowski Distance", "f1_score": 0.558591417, "elapsed_time": 3.127811, "clip": true, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "Jaccard Distance", "f1_score": 0.558591417, "elapsed_time": 3.326019, "clip": true, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.521929486, "elapsed_time": 2.466087, "clip": true, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "Correlation Distance", "f1_score": 0.549901907, "elapsed_time": 17.56059, "clip": true, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.515620869, "elapsed_time": 1.63024, "clip": true, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "MSE", "f1_score": 0.515620869, "elapsed_time": 2.52218, "clip": true, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "PSNR", "f1_score": 0.515620869, "elapsed_time": 10.740516, "clip": true, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.34179373, "elapsed_time": 74.020004, "clip": true, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "KL Divergence", "f1_score": 0.446949235, "elapsed_time": 7.872413, "clip": true, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "AUC-Judd", "f1_score": 0.342152023, "elapsed_time": 9.117265, "clip": true, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.541204233, "elapsed_time": 2.823041, "clip": true, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "SSIM", "f1_score": 0.475418554, "elapsed_time": 59.493296, "clip": true, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "MAE", "f1_score": 0.498400322, "elapsed_time": 2.465777, "clip": true, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "Czekanowski Distance", "f1_score": 0.406206094, "elapsed_time": 3.145622, "clip": true, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "Jaccard Distance", "f1_score": 0.403587266, "elapsed_time": 3.340384, "clip": true, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.47723883, "elapsed_time": 2.448181, "clip": true, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "Correlation Distance", "f1_score": 0.475686652, "elapsed_time": 17.569079, "clip": true, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.414585826, "elapsed_time": 1.589309, "clip": true, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "MSE", "f1_score": 0.414585826, "elapsed_time": 2.486314, "clip": true, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "PSNR", "f1_score": 0.414585826, "elapsed_time": 10.926964, "clip": true, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.297409228, "elapsed_time": 76.018178, "clip": true, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "KL Divergence", "f1_score": 0.417093246, "elapsed_time": 7.800825, "clip": true, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "AUC-Judd", "f1_score": 0.399773284, "elapsed_time": 9.644076, "clip": true, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.588206429, "elapsed_time": 2.786164, "clip": true, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "SSIM", "f1_score": 0.565136052, "elapsed_time": 59.244018, "clip": true, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "MAE", "f1_score": 0.560321315, "elapsed_time": 2.414608, "clip": true, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "Czekanowski Distance", "f1_score": 0.093405526, "elapsed_time": 3.089433, "clip": true, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "Jaccard Distance", "f1_score": 0.133326034, "elapsed_time": 3.445344, "clip": true, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.550524456, "elapsed_time": 2.479124, "clip": true, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "Correlation Distance", "f1_score": 0.549901907, "elapsed_time": 17.523273, "clip": true, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.515620869, "elapsed_time": 1.551446, "clip": true, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "MSE", "f1_score": 0.515620869, "elapsed_time": 2.459423, "clip": true, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "PSNR", "f1_score": 0.515620869, "elapsed_time": 10.762576, "clip": true, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.341685664, "elapsed_time": 74.045131, "clip": true, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "KL Divergence", "f1_score": 0.44710755, "elapsed_time": 7.781643, "clip": true, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "AUC-Judd", "f1_score": 0.341596992, "elapsed_time": 9.218803, "clip": true, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.093624882, "elapsed_time": 2.806222, "clip": false, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "SSIM", "f1_score": 0.475944375, "elapsed_time": 59.695931, "clip": false, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "MAE", "f1_score": 0.416823317, "elapsed_time": 2.446125, "clip": false, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "Czekanowski Distance", "f1_score": 0.419790962, "elapsed_time": 3.150009, "clip": false, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "Jaccard Distance", "f1_score": 0.419790962, "elapsed_time": 3.516178, "clip": false, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.400115119, "elapsed_time": 2.497286, "clip": false, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "Correlation Distance", "f1_score": 0.444632463, "elapsed_time": 17.666292, "clip": false, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.404807826, "elapsed_time": 1.5566, "clip": false, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "MSE", "f1_score": 0.404807826, "elapsed_time": 2.458277, "clip": false, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "PSNR", "f1_score": 0.404807826, "elapsed_time": 10.789278, "clip": false, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.283578803, "elapsed_time": 74.174826, "clip": false, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "KL Divergence", "f1_score": 0.397284927, "elapsed_time": 7.7969, "clip": false, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "AUC-Judd", "f1_score": 0.333346779, "elapsed_time": 10.78142, "clip": false, "normalize": true, "sobel": true}
+{"seed": 2, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.103538753, "elapsed_time": 2.810712, "clip": false, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "SSIM", "f1_score": 0.537231214, "elapsed_time": 59.448182, "clip": false, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "MAE", "f1_score": 0.545000045, "elapsed_time": 2.45937, "clip": false, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "Czekanowski Distance", "f1_score": 0.543784328, "elapsed_time": 3.069929, "clip": false, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "Jaccard Distance", "f1_score": 0.543784328, "elapsed_time": 3.492651, "clip": false, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.492233661, "elapsed_time": 2.46621, "clip": false, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "Correlation Distance", "f1_score": 0.523817956, "elapsed_time": 17.488135, "clip": false, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.490943919, "elapsed_time": 1.574269, "clip": false, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "MSE", "f1_score": 0.490943919, "elapsed_time": 2.491728, "clip": false, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "PSNR", "f1_score": 0.490943919, "elapsed_time": 10.743527, "clip": false, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.364816572, "elapsed_time": 73.79092, "clip": false, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "KL Divergence", "f1_score": 0.40616519, "elapsed_time": 7.926532, "clip": false, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "AUC-Judd", "f1_score": 0.368741861, "elapsed_time": 9.721487, "clip": false, "normalize": true, "sobel": false}
+{"seed": 2, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.541204233, "elapsed_time": 2.827993, "clip": false, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "SSIM", "f1_score": 0.531103484, "elapsed_time": 59.644837, "clip": false, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "MAE", "f1_score": 0.478234318, "elapsed_time": 2.461573, "clip": false, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "Czekanowski Distance", "f1_score": 0.084694466, "elapsed_time": 3.110419, "clip": false, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "Jaccard Distance", "f1_score": 0.113449242, "elapsed_time": 3.462749, "clip": false, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.444632463, "elapsed_time": 2.462667, "clip": false, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "Correlation Distance", "f1_score": 0.444632463, "elapsed_time": 17.494903, "clip": false, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.395160462, "elapsed_time": 1.577147, "clip": false, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "MSE", "f1_score": 0.395160462, "elapsed_time": 2.483339, "clip": false, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "PSNR", "f1_score": 0.418694506, "elapsed_time": 11.073184, "clip": false, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.283590921, "elapsed_time": 73.771783, "clip": false, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "KL Divergence", "f1_score": 0.392522289, "elapsed_time": 7.830867, "clip": false, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "AUC-Judd", "f1_score": 0.342385179, "elapsed_time": 10.918743, "clip": false, "normalize": false, "sobel": true}
+{"seed": 2, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.588206429, "elapsed_time": 2.831707, "clip": false, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "SSIM", "f1_score": 0.57296473, "elapsed_time": 59.388839, "clip": false, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "MAE", "f1_score": 0.535623727, "elapsed_time": 2.43262, "clip": false, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "Czekanowski Distance", "f1_score": 0.076122642, "elapsed_time": 3.031948, "clip": false, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "Jaccard Distance", "f1_score": 0.018181818, "elapsed_time": 3.449326, "clip": false, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.523817956, "elapsed_time": 2.483201, "clip": false, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "Correlation Distance", "f1_score": 0.523817956, "elapsed_time": 17.431854, "clip": false, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.487934531, "elapsed_time": 1.585443, "clip": false, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "MSE", "f1_score": 0.487934531, "elapsed_time": 2.453974, "clip": false, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "PSNR", "f1_score": 0.488441769, "elapsed_time": 10.892548, "clip": false, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.365531521, "elapsed_time": 74.696909, "clip": false, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "KL Divergence", "f1_score": 0.404949145, "elapsed_time": 7.845978, "clip": false, "normalize": false, "sobel": false}
+{"seed": 2, "saliency_metric": "AUC-Judd", "f1_score": 0.367603906, "elapsed_time": 9.681565, "clip": false, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.452103039, "elapsed_time": 2.804683, "clip": true, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "SSIM", "f1_score": 0.446513207, "elapsed_time": 59.570603, "clip": true, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "MAE", "f1_score": 0.471384881, "elapsed_time": 2.446257, "clip": true, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "Czekanowski Distance", "f1_score": 0.463514468, "elapsed_time": 3.053097, "clip": true, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "Jaccard Distance", "f1_score": 0.463514468, "elapsed_time": 3.338536, "clip": true, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.375671521, "elapsed_time": 2.468089, "clip": true, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "Correlation Distance", "f1_score": 0.424542796, "elapsed_time": 17.603948, "clip": true, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.357701876, "elapsed_time": 1.563121, "clip": true, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "MSE", "f1_score": 0.357701876, "elapsed_time": 2.452361, "clip": true, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "PSNR", "f1_score": 0.357701876, "elapsed_time": 10.742172, "clip": true, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.246078358, "elapsed_time": 73.368008, "clip": true, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "KL Divergence", "f1_score": 0.347344527, "elapsed_time": 7.460599, "clip": true, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "AUC-Judd", "f1_score": 0.353383277, "elapsed_time": 9.339409, "clip": true, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.394368796, "elapsed_time": 2.673571, "clip": true, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "SSIM", "f1_score": 0.524644287, "elapsed_time": 56.978704, "clip": true, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "MAE", "f1_score": 0.518015083, "elapsed_time": 2.326234, "clip": true, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "Czekanowski Distance", "f1_score": 0.519884389, "elapsed_time": 2.919951, "clip": true, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "Jaccard Distance", "f1_score": 0.519884389, "elapsed_time": 3.219758, "clip": true, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.475479954, "elapsed_time": 2.362566, "clip": true, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "Correlation Distance", "f1_score": 0.501822491, "elapsed_time": 17.236498, "clip": true, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.466291346, "elapsed_time": 1.566767, "clip": true, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "MSE", "f1_score": 0.466291346, "elapsed_time": 2.434526, "clip": true, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "PSNR", "f1_score": 0.466291346, "elapsed_time": 10.822729, "clip": true, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.288522113, "elapsed_time": 71.744924, "clip": true, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "KL Divergence", "f1_score": 0.407974211, "elapsed_time": 7.435828, "clip": true, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "AUC-Judd", "f1_score": 0.319363637, "elapsed_time": 8.812577, "clip": true, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.531580463, "elapsed_time": 2.681708, "clip": true, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "SSIM", "f1_score": 0.450874249, "elapsed_time": 56.828295, "clip": true, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "MAE", "f1_score": 0.471384881, "elapsed_time": 2.340167, "clip": true, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "Czekanowski Distance", "f1_score": 0.409161312, "elapsed_time": 2.997475, "clip": true, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "Jaccard Distance", "f1_score": 0.41276456, "elapsed_time": 3.172092, "clip": true, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.421837594, "elapsed_time": 2.342784, "clip": true, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "Correlation Distance", "f1_score": 0.424542796, "elapsed_time": 16.700591, "clip": true, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.357701876, "elapsed_time": 1.491157, "clip": true, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "MSE", "f1_score": 0.357701876, "elapsed_time": 2.37896, "clip": true, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "PSNR", "f1_score": 0.357701876, "elapsed_time": 10.633349, "clip": true, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.246076725, "elapsed_time": 72.646054, "clip": true, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "KL Divergence", "f1_score": 0.347194797, "elapsed_time": 7.517929, "clip": true, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "AUC-Judd", "f1_score": 0.353383277, "elapsed_time": 9.300109, "clip": true, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.587126715, "elapsed_time": 2.697043, "clip": true, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "SSIM", "f1_score": 0.556020413, "elapsed_time": 58.138709, "clip": true, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "MAE", "f1_score": 0.518015083, "elapsed_time": 2.480966, "clip": true, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "Czekanowski Distance", "f1_score": 0.071772127, "elapsed_time": 3.165858, "clip": true, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "Jaccard Distance", "f1_score": 0.054133775, "elapsed_time": 3.332992, "clip": true, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.501949152, "elapsed_time": 2.489515, "clip": true, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "Correlation Distance", "f1_score": 0.501822491, "elapsed_time": 16.871923, "clip": true, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.466291346, "elapsed_time": 1.506972, "clip": true, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "MSE", "f1_score": 0.466291346, "elapsed_time": 2.389833, "clip": true, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "PSNR", "f1_score": 0.466291346, "elapsed_time": 10.637173, "clip": true, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.288693253, "elapsed_time": 70.870806, "clip": true, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "KL Divergence", "f1_score": 0.407803433, "elapsed_time": 7.428065, "clip": true, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "AUC-Judd", "f1_score": 0.319259371, "elapsed_time": 8.725215, "clip": true, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.101568651, "elapsed_time": 2.686285, "clip": false, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "SSIM", "f1_score": 0.436649409, "elapsed_time": 56.979235, "clip": false, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "MAE", "f1_score": 0.383766967, "elapsed_time": 2.338432, "clip": false, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "Czekanowski Distance", "f1_score": 0.386631574, "elapsed_time": 3.029306, "clip": false, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "Jaccard Distance", "f1_score": 0.386631574, "elapsed_time": 3.178979, "clip": false, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.384342881, "elapsed_time": 2.392382, "clip": false, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "Correlation Distance", "f1_score": 0.393953313, "elapsed_time": 16.98867, "clip": false, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.381792906, "elapsed_time": 1.509443, "clip": false, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "MSE", "f1_score": 0.381792906, "elapsed_time": 2.373045, "clip": false, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "PSNR", "f1_score": 0.381792906, "elapsed_time": 10.527509, "clip": false, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.237670644, "elapsed_time": 70.835398, "clip": false, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "KL Divergence", "f1_score": 0.382756641, "elapsed_time": 7.457462, "clip": false, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "AUC-Judd", "f1_score": 0.310466899, "elapsed_time": 10.77287, "clip": false, "normalize": true, "sobel": true}
+{"seed": 3, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.117783958, "elapsed_time": 2.840999, "clip": false, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "SSIM", "f1_score": 0.505018561, "elapsed_time": 58.380754, "clip": false, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "MAE", "f1_score": 0.520414694, "elapsed_time": 2.34916, "clip": false, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "Czekanowski Distance", "f1_score": 0.520558394, "elapsed_time": 3.061545, "clip": false, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "Jaccard Distance", "f1_score": 0.520558394, "elapsed_time": 3.248915, "clip": false, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.475921297, "elapsed_time": 2.391507, "clip": false, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "Correlation Distance", "f1_score": 0.474223281, "elapsed_time": 16.641395, "clip": false, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.476778905, "elapsed_time": 1.498161, "clip": false, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "MSE", "f1_score": 0.476778905, "elapsed_time": 2.388461, "clip": false, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "PSNR", "f1_score": 0.476778905, "elapsed_time": 10.528661, "clip": false, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.319398058, "elapsed_time": 70.851745, "clip": false, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "KL Divergence", "f1_score": 0.391902244, "elapsed_time": 7.393598, "clip": false, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "AUC-Judd", "f1_score": 0.301515923, "elapsed_time": 9.30571, "clip": false, "normalize": true, "sobel": false}
+{"seed": 3, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.531580463, "elapsed_time": 2.699362, "clip": false, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "SSIM", "f1_score": 0.48650315, "elapsed_time": 56.980199, "clip": false, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "MAE", "f1_score": 0.464414222, "elapsed_time": 2.354667, "clip": false, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "Czekanowski Distance", "f1_score": 0.089816327, "elapsed_time": 3.004188, "clip": false, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "Jaccard Distance", "f1_score": 0.119152494, "elapsed_time": 3.196345, "clip": false, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.393953313, "elapsed_time": 2.330633, "clip": false, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "Correlation Distance", "f1_score": 0.393953313, "elapsed_time": 16.674212, "clip": false, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.396247242, "elapsed_time": 1.489913, "clip": false, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "MSE", "f1_score": 0.396247242, "elapsed_time": 2.381939, "clip": false, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "PSNR", "f1_score": 0.39543636, "elapsed_time": 10.585352, "clip": false, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.237670644, "elapsed_time": 72.297396, "clip": false, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "KL Divergence", "f1_score": 0.379867642, "elapsed_time": 7.877373, "clip": false, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "AUC-Judd", "f1_score": 0.310063614, "elapsed_time": 10.686716, "clip": false, "normalize": false, "sobel": true}
+{"seed": 3, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.587126715, "elapsed_time": 2.683239, "clip": false, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "SSIM", "f1_score": 0.548742098, "elapsed_time": 56.872411, "clip": false, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "MAE", "f1_score": 0.509934876, "elapsed_time": 2.349015, "clip": false, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "Czekanowski Distance", "f1_score": 0.084510553, "elapsed_time": 2.983175, "clip": false, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "Jaccard Distance", "f1_score": 0.077838397, "elapsed_time": 3.195797, "clip": false, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.474223281, "elapsed_time": 2.361185, "clip": false, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "Correlation Distance", "f1_score": 0.474223281, "elapsed_time": 16.693627, "clip": false, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.471140935, "elapsed_time": 1.493299, "clip": false, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "MSE", "f1_score": 0.471140935, "elapsed_time": 2.403557, "clip": false, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "PSNR", "f1_score": 0.468973252, "elapsed_time": 10.599689, "clip": false, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.319607817, "elapsed_time": 71.07385, "clip": false, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "KL Divergence", "f1_score": 0.386409657, "elapsed_time": 7.502295, "clip": false, "normalize": false, "sobel": false}
+{"seed": 3, "saliency_metric": "AUC-Judd", "f1_score": 0.321409753, "elapsed_time": 9.236714, "clip": false, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.506365844, "elapsed_time": 2.677705, "clip": true, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "SSIM", "f1_score": 0.443355771, "elapsed_time": 57.11525, "clip": true, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "MAE", "f1_score": 0.500521885, "elapsed_time": 2.351327, "clip": true, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "Czekanowski Distance", "f1_score": 0.495219054, "elapsed_time": 3.040354, "clip": true, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "Jaccard Distance", "f1_score": 0.495219054, "elapsed_time": 3.171184, "clip": true, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.416676892, "elapsed_time": 2.36375, "clip": true, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "Correlation Distance", "f1_score": 0.446031448, "elapsed_time": 16.746842, "clip": true, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.402652016, "elapsed_time": 1.502663, "clip": true, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "MSE", "f1_score": 0.402652016, "elapsed_time": 2.401757, "clip": true, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "PSNR", "f1_score": 0.402652016, "elapsed_time": 10.63131, "clip": true, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.274978921, "elapsed_time": 74.78674, "clip": true, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "KL Divergence", "f1_score": 0.411091232, "elapsed_time": 7.479021, "clip": true, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "AUC-Judd", "f1_score": 0.365424707, "elapsed_time": 9.306032, "clip": true, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.473506124, "elapsed_time": 2.697062, "clip": true, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "SSIM", "f1_score": 0.534364328, "elapsed_time": 57.356603, "clip": true, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "MAE", "f1_score": 0.563346525, "elapsed_time": 2.334026, "clip": true, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "Czekanowski Distance", "f1_score": 0.562965089, "elapsed_time": 2.973788, "clip": true, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "Jaccard Distance", "f1_score": 0.562965089, "elapsed_time": 3.357754, "clip": true, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.525022904, "elapsed_time": 2.343682, "clip": true, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "Correlation Distance", "f1_score": 0.531548205, "elapsed_time": 16.716514, "clip": true, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.516432234, "elapsed_time": 1.490245, "clip": true, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "MSE", "f1_score": 0.516432234, "elapsed_time": 2.380998, "clip": true, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "PSNR", "f1_score": 0.516432234, "elapsed_time": 10.382164, "clip": true, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.31068228, "elapsed_time": 71.016833, "clip": true, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "KL Divergence", "f1_score": 0.479225707, "elapsed_time": 7.415371, "clip": true, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "AUC-Judd", "f1_score": 0.401860202, "elapsed_time": 8.753932, "clip": true, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.567373761, "elapsed_time": 2.683792, "clip": true, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "SSIM", "f1_score": 0.456968597, "elapsed_time": 57.260908, "clip": true, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "MAE", "f1_score": 0.500521885, "elapsed_time": 2.360487, "clip": true, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "Czekanowski Distance", "f1_score": 0.423789803, "elapsed_time": 3.149179, "clip": true, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "Jaccard Distance", "f1_score": 0.423574792, "elapsed_time": 3.376804, "clip": true, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.444637155, "elapsed_time": 2.484618, "clip": true, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "Correlation Distance", "f1_score": 0.446031448, "elapsed_time": 17.577651, "clip": true, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.402652016, "elapsed_time": 1.555109, "clip": true, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "MSE", "f1_score": 0.402652016, "elapsed_time": 2.462453, "clip": true, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "PSNR", "f1_score": 0.402652016, "elapsed_time": 10.807338, "clip": true, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.274965328, "elapsed_time": 72.522861, "clip": true, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "KL Divergence", "f1_score": 0.411101007, "elapsed_time": 7.447262, "clip": true, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "AUC-Judd", "f1_score": 0.365241847, "elapsed_time": 9.349968, "clip": true, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.614608383, "elapsed_time": 2.771682, "clip": true, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "SSIM", "f1_score": 0.567594571, "elapsed_time": 57.014873, "clip": true, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "MAE", "f1_score": 0.563346525, "elapsed_time": 2.344565, "clip": true, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "Czekanowski Distance", "f1_score": 0.083094842, "elapsed_time": 3.004043, "clip": true, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "Jaccard Distance", "f1_score": 0.170337019, "elapsed_time": 3.18952, "clip": true, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.531591392, "elapsed_time": 2.380897, "clip": true, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "Correlation Distance", "f1_score": 0.531548205, "elapsed_time": 16.741066, "clip": true, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.516432234, "elapsed_time": 1.554326, "clip": true, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "MSE", "f1_score": 0.516432234, "elapsed_time": 2.41701, "clip": true, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "PSNR", "f1_score": 0.516432234, "elapsed_time": 10.606807, "clip": true, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.310691362, "elapsed_time": 71.140054, "clip": true, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "KL Divergence", "f1_score": 0.479196857, "elapsed_time": 7.504755, "clip": true, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "AUC-Judd", "f1_score": 0.402314724, "elapsed_time": 8.758895, "clip": true, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.089822844, "elapsed_time": 2.696916, "clip": false, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "SSIM", "f1_score": 0.457879969, "elapsed_time": 58.933406, "clip": false, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "MAE", "f1_score": 0.416221542, "elapsed_time": 2.377311, "clip": false, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "Czekanowski Distance", "f1_score": 0.419172154, "elapsed_time": 2.992609, "clip": false, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "Jaccard Distance", "f1_score": 0.419172154, "elapsed_time": 3.184164, "clip": false, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.418769281, "elapsed_time": 2.34854, "clip": false, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "Correlation Distance", "f1_score": 0.421002597, "elapsed_time": 16.662639, "clip": false, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.397306125, "elapsed_time": 1.49599, "clip": false, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "MSE", "f1_score": 0.397306125, "elapsed_time": 2.385132, "clip": false, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "PSNR", "f1_score": 0.397306125, "elapsed_time": 10.626716, "clip": false, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.246402436, "elapsed_time": 70.93719, "clip": false, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "KL Divergence", "f1_score": 0.385535361, "elapsed_time": 7.491594, "clip": false, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "AUC-Judd", "f1_score": 0.374278608, "elapsed_time": 10.545327, "clip": false, "normalize": true, "sobel": true}
+{"seed": 4, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.122100027, "elapsed_time": 2.694655, "clip": false, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "SSIM", "f1_score": 0.534852937, "elapsed_time": 57.051775, "clip": false, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "MAE", "f1_score": 0.549750506, "elapsed_time": 2.351126, "clip": false, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "Czekanowski Distance", "f1_score": 0.549821342, "elapsed_time": 2.990416, "clip": false, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "Jaccard Distance", "f1_score": 0.549821342, "elapsed_time": 3.43505, "clip": false, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.500896458, "elapsed_time": 2.373286, "clip": false, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "Correlation Distance", "f1_score": 0.504448888, "elapsed_time": 16.858065, "clip": false, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.4994684, "elapsed_time": 1.512567, "clip": false, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "MSE", "f1_score": 0.4994684, "elapsed_time": 2.377791, "clip": false, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "PSNR", "f1_score": 0.4994684, "elapsed_time": 10.39318, "clip": false, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.317537792, "elapsed_time": 71.549145, "clip": false, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "KL Divergence", "f1_score": 0.417942523, "elapsed_time": 7.92328, "clip": false, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "AUC-Judd", "f1_score": 0.384334661, "elapsed_time": 9.78539, "clip": false, "normalize": true, "sobel": false}
+{"seed": 4, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.567373761, "elapsed_time": 2.82467, "clip": false, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "SSIM", "f1_score": 0.521988486, "elapsed_time": 57.919022, "clip": false, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "MAE", "f1_score": 0.492353017, "elapsed_time": 2.340403, "clip": false, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "Czekanowski Distance", "f1_score": 0.08699581, "elapsed_time": 2.911469, "clip": false, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "Jaccard Distance", "f1_score": 0.117986901, "elapsed_time": 3.186474, "clip": false, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.421002597, "elapsed_time": 2.384727, "clip": false, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "Correlation Distance", "f1_score": 0.421002597, "elapsed_time": 16.703489, "clip": false, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.397260829, "elapsed_time": 1.479164, "clip": false, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "MSE", "f1_score": 0.397260829, "elapsed_time": 2.330237, "clip": false, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "PSNR", "f1_score": 0.390124804, "elapsed_time": 10.401512, "clip": false, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.246657405, "elapsed_time": 70.653697, "clip": false, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "KL Divergence", "f1_score": 0.378925601, "elapsed_time": 7.468301, "clip": false, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "AUC-Judd", "f1_score": 0.330989994, "elapsed_time": 10.479962, "clip": false, "normalize": false, "sobel": true}
+{"seed": 4, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.614608383, "elapsed_time": 2.697856, "clip": false, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "SSIM", "f1_score": 0.580876767, "elapsed_time": 57.092838, "clip": false, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "MAE", "f1_score": 0.549447476, "elapsed_time": 2.360273, "clip": false, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "Czekanowski Distance", "f1_score": 0.079995223, "elapsed_time": 2.974118, "clip": false, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "Jaccard Distance", "f1_score": 0.018531345, "elapsed_time": 3.183129, "clip": false, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.504448888, "elapsed_time": 2.339533, "clip": false, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "Correlation Distance", "f1_score": 0.504448888, "elapsed_time": 16.780555, "clip": false, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.497495995, "elapsed_time": 1.528895, "clip": false, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "MSE", "f1_score": 0.497495995, "elapsed_time": 2.377309, "clip": false, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "PSNR", "f1_score": 0.498304916, "elapsed_time": 10.315318, "clip": false, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.317137965, "elapsed_time": 72.733926, "clip": false, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "KL Divergence", "f1_score": 0.415773332, "elapsed_time": 7.504266, "clip": false, "normalize": false, "sobel": false}
+{"seed": 4, "saliency_metric": "AUC-Judd", "f1_score": 0.392591841, "elapsed_time": 9.322736, "clip": false, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.507590273, "elapsed_time": 2.682019, "clip": true, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "SSIM", "f1_score": 0.458234947, "elapsed_time": 57.294207, "clip": true, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "MAE", "f1_score": 0.499024227, "elapsed_time": 2.353296, "clip": true, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "Czekanowski Distance", "f1_score": 0.498461101, "elapsed_time": 2.949449, "clip": true, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "Jaccard Distance", "f1_score": 0.498461101, "elapsed_time": 3.337858, "clip": true, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.406148747, "elapsed_time": 2.34321, "clip": true, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "Correlation Distance", "f1_score": 0.445356979, "elapsed_time": 16.741175, "clip": true, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.385366751, "elapsed_time": 1.505579, "clip": true, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "MSE", "f1_score": 0.385366751, "elapsed_time": 2.37383, "clip": true, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "PSNR", "f1_score": 0.385366751, "elapsed_time": 10.339147, "clip": true, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.258795275, "elapsed_time": 72.373274, "clip": true, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "KL Divergence", "f1_score": 0.395880131, "elapsed_time": 7.413769, "clip": true, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "AUC-Judd", "f1_score": 0.365726042, "elapsed_time": 9.239571, "clip": true, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.444926079, "elapsed_time": 2.689994, "clip": true, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "SSIM", "f1_score": 0.537755236, "elapsed_time": 56.862495, "clip": true, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "MAE", "f1_score": 0.560167118, "elapsed_time": 2.326188, "clip": true, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "Czekanowski Distance", "f1_score": 0.559930154, "elapsed_time": 2.945263, "clip": true, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "Jaccard Distance", "f1_score": 0.559930154, "elapsed_time": 3.362309, "clip": true, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.508572152, "elapsed_time": 2.372363, "clip": true, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "Correlation Distance", "f1_score": 0.522591136, "elapsed_time": 16.833409, "clip": true, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.504333137, "elapsed_time": 1.569772, "clip": true, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "MSE", "f1_score": 0.504333137, "elapsed_time": 2.47061, "clip": true, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "PSNR", "f1_score": 0.504333137, "elapsed_time": 10.822001, "clip": true, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.326449324, "elapsed_time": 72.114142, "clip": true, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "KL Divergence", "f1_score": 0.444093717, "elapsed_time": 7.404167, "clip": true, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "AUC-Judd", "f1_score": 0.400069812, "elapsed_time": 8.766716, "clip": true, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.566327393, "elapsed_time": 2.674967, "clip": true, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "SSIM", "f1_score": 0.462421877, "elapsed_time": 56.816949, "clip": true, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "MAE", "f1_score": 0.499024227, "elapsed_time": 2.363421, "clip": true, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "Czekanowski Distance", "f1_score": 0.413097705, "elapsed_time": 2.894464, "clip": true, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "Jaccard Distance", "f1_score": 0.413097705, "elapsed_time": 3.33776, "clip": true, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.446999029, "elapsed_time": 2.406508, "clip": true, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "Correlation Distance", "f1_score": 0.445356979, "elapsed_time": 16.685254, "clip": true, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.385366751, "elapsed_time": 1.504923, "clip": true, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "MSE", "f1_score": 0.385366751, "elapsed_time": 2.388078, "clip": true, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "PSNR", "f1_score": 0.385366751, "elapsed_time": 10.600891, "clip": true, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.258989828, "elapsed_time": 72.415633, "clip": true, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "KL Divergence", "f1_score": 0.395873673, "elapsed_time": 7.497436, "clip": true, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "AUC-Judd", "f1_score": 0.365511287, "elapsed_time": 9.484538, "clip": true, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.62732711, "elapsed_time": 2.679611, "clip": true, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "SSIM", "f1_score": 0.553935798, "elapsed_time": 57.960531, "clip": true, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "MAE", "f1_score": 0.560167118, "elapsed_time": 2.463567, "clip": true, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "Czekanowski Distance", "f1_score": 0.084984908, "elapsed_time": 3.065687, "clip": true, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "Jaccard Distance", "f1_score": 0.090045694, "elapsed_time": 3.529431, "clip": true, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.522083048, "elapsed_time": 2.495684, "clip": true, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "Correlation Distance", "f1_score": 0.522591136, "elapsed_time": 17.506761, "clip": true, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.504333137, "elapsed_time": 1.500856, "clip": true, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "MSE", "f1_score": 0.504333137, "elapsed_time": 2.378633, "clip": true, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "PSNR", "f1_score": 0.504333137, "elapsed_time": 10.467887, "clip": true, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.326150183, "elapsed_time": 71.305477, "clip": true, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "KL Divergence", "f1_score": 0.443511152, "elapsed_time": 7.488001, "clip": true, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "AUC-Judd", "f1_score": 0.399839611, "elapsed_time": 8.738559, "clip": true, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.10378286, "elapsed_time": 2.705312, "clip": false, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "SSIM", "f1_score": 0.446613126, "elapsed_time": 57.267746, "clip": false, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "MAE", "f1_score": 0.440304079, "elapsed_time": 2.431694, "clip": false, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "Czekanowski Distance", "f1_score": 0.445929779, "elapsed_time": 2.917545, "clip": false, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "Jaccard Distance", "f1_score": 0.445929779, "elapsed_time": 3.370389, "clip": false, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.42087594, "elapsed_time": 2.340754, "clip": false, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "Correlation Distance", "f1_score": 0.415050434, "elapsed_time": 16.784677, "clip": false, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.424886115, "elapsed_time": 1.498011, "clip": false, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "MSE", "f1_score": 0.424886115, "elapsed_time": 2.388218, "clip": false, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "PSNR", "f1_score": 0.424886115, "elapsed_time": 10.487487, "clip": false, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.289166112, "elapsed_time": 71.015381, "clip": false, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "KL Divergence", "f1_score": 0.41044073, "elapsed_time": 7.46983, "clip": false, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "AUC-Judd", "f1_score": 0.354600171, "elapsed_time": 10.525756, "clip": false, "normalize": true, "sobel": true}
+{"seed": 5, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.118754379, "elapsed_time": 2.68998, "clip": false, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "SSIM", "f1_score": 0.527974064, "elapsed_time": 59.012669, "clip": false, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "MAE", "f1_score": 0.542767706, "elapsed_time": 2.345965, "clip": false, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "Czekanowski Distance", "f1_score": 0.542999448, "elapsed_time": 3.009801, "clip": false, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "Jaccard Distance", "f1_score": 0.542999448, "elapsed_time": 3.364703, "clip": false, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.492267437, "elapsed_time": 2.36205, "clip": false, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "Correlation Distance", "f1_score": 0.495432799, "elapsed_time": 16.832677, "clip": false, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.492989915, "elapsed_time": 1.541513, "clip": false, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "MSE", "f1_score": 0.492989915, "elapsed_time": 2.369704, "clip": false, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "PSNR", "f1_score": 0.492989915, "elapsed_time": 10.45421, "clip": false, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.324640902, "elapsed_time": 71.420671, "clip": false, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "KL Divergence", "f1_score": 0.399783564, "elapsed_time": 7.77762, "clip": false, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "AUC-Judd", "f1_score": 0.36591912, "elapsed_time": 9.379268, "clip": false, "normalize": true, "sobel": false}
+{"seed": 5, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.566327393, "elapsed_time": 2.732924, "clip": false, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "SSIM", "f1_score": 0.500681808, "elapsed_time": 57.425203, "clip": false, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "MAE", "f1_score": 0.483848342, "elapsed_time": 2.362114, "clip": false, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "Czekanowski Distance", "f1_score": 0.078288377, "elapsed_time": 2.900812, "clip": false, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "Jaccard Distance", "f1_score": 0.114582485, "elapsed_time": 3.393898, "clip": false, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.415050434, "elapsed_time": 2.365512, "clip": false, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "Correlation Distance", "f1_score": 0.415050434, "elapsed_time": 16.862277, "clip": false, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.403252716, "elapsed_time": 1.509944, "clip": false, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "MSE", "f1_score": 0.403252716, "elapsed_time": 2.381996, "clip": false, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "PSNR", "f1_score": 0.399495783, "elapsed_time": 10.454509, "clip": false, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.289171011, "elapsed_time": 72.16525, "clip": false, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "KL Divergence", "f1_score": 0.407107815, "elapsed_time": 7.882462, "clip": false, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "AUC-Judd", "f1_score": 0.341996391, "elapsed_time": 10.740281, "clip": false, "normalize": false, "sobel": true}
+{"seed": 5, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.62732711, "elapsed_time": 2.711755, "clip": false, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "SSIM", "f1_score": 0.568668174, "elapsed_time": 57.765722, "clip": false, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "MAE", "f1_score": 0.533575657, "elapsed_time": 2.348513, "clip": false, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "Czekanowski Distance", "f1_score": 0.077798059, "elapsed_time": 2.918181, "clip": false, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "Jaccard Distance", "f1_score": 0.073485371, "elapsed_time": 3.381463, "clip": false, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.495432799, "elapsed_time": 2.446978, "clip": false, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "Correlation Distance", "f1_score": 0.495432799, "elapsed_time": 16.950204, "clip": false, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.485560415, "elapsed_time": 1.518553, "clip": false, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "MSE", "f1_score": 0.485560415, "elapsed_time": 2.365302, "clip": false, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "PSNR", "f1_score": 0.48672173, "elapsed_time": 10.566488, "clip": false, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.324663453, "elapsed_time": 71.539941, "clip": false, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "KL Divergence", "f1_score": 0.397388523, "elapsed_time": 7.506165, "clip": false, "normalize": false, "sobel": false}
+{"seed": 5, "saliency_metric": "AUC-Judd", "f1_score": 0.337368851, "elapsed_time": 9.311711, "clip": false, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.503920249, "elapsed_time": 2.728308, "clip": true, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "SSIM", "f1_score": 0.462215833, "elapsed_time": 57.674145, "clip": true, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "MAE", "f1_score": 0.498569691, "elapsed_time": 2.354073, "clip": true, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "Czekanowski Distance", "f1_score": 0.495076209, "elapsed_time": 2.922236, "clip": true, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "Jaccard Distance", "f1_score": 0.495076209, "elapsed_time": 3.352134, "clip": true, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.421354856, "elapsed_time": 2.349885, "clip": true, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "Correlation Distance", "f1_score": 0.466176085, "elapsed_time": 16.793979, "clip": true, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.406355775, "elapsed_time": 1.538498, "clip": true, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "MSE", "f1_score": 0.406355775, "elapsed_time": 2.379156, "clip": true, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "PSNR", "f1_score": 0.406355775, "elapsed_time": 10.603573, "clip": true, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.278493542, "elapsed_time": 74.752633, "clip": true, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "KL Divergence", "f1_score": 0.407654258, "elapsed_time": 7.455227, "clip": true, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "AUC-Judd", "f1_score": 0.402632133, "elapsed_time": 9.311079, "clip": true, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.466208428, "elapsed_time": 2.697747, "clip": true, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "SSIM", "f1_score": 0.539598507, "elapsed_time": 57.208964, "clip": true, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "MAE", "f1_score": 0.555019293, "elapsed_time": 2.361155, "clip": true, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "Czekanowski Distance", "f1_score": 0.554992993, "elapsed_time": 2.880032, "clip": true, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "Jaccard Distance", "f1_score": 0.554992993, "elapsed_time": 3.37492, "clip": true, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.519764688, "elapsed_time": 2.358918, "clip": true, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "Correlation Distance", "f1_score": 0.543897558, "elapsed_time": 16.774076, "clip": true, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.511689875, "elapsed_time": 1.546111, "clip": true, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "MSE", "f1_score": 0.511689875, "elapsed_time": 2.330253, "clip": true, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "PSNR", "f1_score": 0.511689875, "elapsed_time": 10.305856, "clip": true, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.295332505, "elapsed_time": 71.193229, "clip": true, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "KL Divergence", "f1_score": 0.463311075, "elapsed_time": 7.517476, "clip": true, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "AUC-Judd", "f1_score": 0.409977518, "elapsed_time": 8.778779, "clip": true, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.568864933, "elapsed_time": 2.678344, "clip": true, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "SSIM", "f1_score": 0.469473098, "elapsed_time": 56.797226, "clip": true, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "MAE", "f1_score": 0.498569691, "elapsed_time": 2.349894, "clip": true, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "Czekanowski Distance", "f1_score": 0.41996427, "elapsed_time": 3.031998, "clip": true, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "Jaccard Distance", "f1_score": 0.422558137, "elapsed_time": 3.304479, "clip": true, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.466548107, "elapsed_time": 2.489044, "clip": true, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "Correlation Distance", "f1_score": 0.466176085, "elapsed_time": 17.551656, "clip": true, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.406355775, "elapsed_time": 1.578166, "clip": true, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "MSE", "f1_score": 0.406355775, "elapsed_time": 2.504963, "clip": true, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "PSNR", "f1_score": 0.406355775, "elapsed_time": 10.965126, "clip": true, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.278497844, "elapsed_time": 72.624765, "clip": true, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "KL Divergence", "f1_score": 0.407654258, "elapsed_time": 7.45516, "clip": true, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "AUC-Judd", "f1_score": 0.402627234, "elapsed_time": 9.312916, "clip": true, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.607320057, "elapsed_time": 2.693227, "clip": true, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "SSIM", "f1_score": 0.555648309, "elapsed_time": 57.109633, "clip": true, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "MAE", "f1_score": 0.555019293, "elapsed_time": 2.435987, "clip": true, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "Czekanowski Distance", "f1_score": 0.074221315, "elapsed_time": 2.997303, "clip": true, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "Jaccard Distance", "f1_score": 0.117030324, "elapsed_time": 3.258579, "clip": true, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.543465445, "elapsed_time": 2.403025, "clip": true, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "Correlation Distance", "f1_score": 0.543897558, "elapsed_time": 16.677136, "clip": true, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.511689875, "elapsed_time": 1.51146, "clip": true, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "MSE", "f1_score": 0.511689875, "elapsed_time": 2.381373, "clip": true, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "PSNR", "f1_score": 0.511689875, "elapsed_time": 10.730764, "clip": true, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.29559397, "elapsed_time": 71.103124, "clip": true, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "KL Divergence", "f1_score": 0.463315937, "elapsed_time": 7.72192, "clip": true, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "AUC-Judd", "f1_score": 0.409954083, "elapsed_time": 8.805892, "clip": true, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.108019668, "elapsed_time": 2.694925, "clip": false, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "SSIM", "f1_score": 0.468399881, "elapsed_time": 59.027985, "clip": false, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "MAE", "f1_score": 0.435135672, "elapsed_time": 2.436282, "clip": false, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "Czekanowski Distance", "f1_score": 0.437849198, "elapsed_time": 2.986321, "clip": false, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "Jaccard Distance", "f1_score": 0.437849198, "elapsed_time": 3.217101, "clip": false, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.435414785, "elapsed_time": 2.378968, "clip": false, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "Correlation Distance", "f1_score": 0.457654576, "elapsed_time": 16.789495, "clip": false, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.437703025, "elapsed_time": 1.485525, "clip": false, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "MSE", "f1_score": 0.437703025, "elapsed_time": 2.344554, "clip": false, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "PSNR", "f1_score": 0.437703025, "elapsed_time": 10.342032, "clip": false, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.277490037, "elapsed_time": 71.255462, "clip": false, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "KL Divergence", "f1_score": 0.440766178, "elapsed_time": 7.489747, "clip": false, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "AUC-Judd", "f1_score": 0.359571711, "elapsed_time": 10.571872, "clip": false, "normalize": true, "sobel": true}
+{"seed": 6, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.122311055, "elapsed_time": 2.689529, "clip": false, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "SSIM", "f1_score": 0.532657663, "elapsed_time": 57.116406, "clip": false, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "MAE", "f1_score": 0.557260291, "elapsed_time": 2.336362, "clip": false, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "Czekanowski Distance", "f1_score": 0.555783382, "elapsed_time": 3.013914, "clip": false, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "Jaccard Distance", "f1_score": 0.555783382, "elapsed_time": 3.24043, "clip": false, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.521923657, "elapsed_time": 2.335836, "clip": false, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "Correlation Distance", "f1_score": 0.52879653, "elapsed_time": 16.73954, "clip": false, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.524888495, "elapsed_time": 1.517899, "clip": false, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "MSE", "f1_score": 0.524888495, "elapsed_time": 2.377185, "clip": false, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "PSNR", "f1_score": 0.524888495, "elapsed_time": 10.376141, "clip": false, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.333782236, "elapsed_time": 70.916347, "clip": false, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "KL Divergence", "f1_score": 0.441771561, "elapsed_time": 7.886446, "clip": false, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "AUC-Judd", "f1_score": 0.369813044, "elapsed_time": 9.642325, "clip": false, "normalize": true, "sobel": false}
+{"seed": 6, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.568864933, "elapsed_time": 2.803089, "clip": false, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "SSIM", "f1_score": 0.507897002, "elapsed_time": 57.740213, "clip": false, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "MAE", "f1_score": 0.492598629, "elapsed_time": 2.349329, "clip": false, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "Czekanowski Distance", "f1_score": 0.079825909, "elapsed_time": 2.930792, "clip": false, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "Jaccard Distance", "f1_score": 0.116330022, "elapsed_time": 3.381467, "clip": false, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.457654576, "elapsed_time": 2.356853, "clip": false, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "Correlation Distance", "f1_score": 0.457654576, "elapsed_time": 16.764578, "clip": false, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.433227958, "elapsed_time": 1.500948, "clip": false, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "MSE", "f1_score": 0.433227958, "elapsed_time": 2.38429, "clip": false, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "PSNR", "f1_score": 0.446162352, "elapsed_time": 10.443536, "clip": false, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.277536265, "elapsed_time": 70.63183, "clip": false, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "KL Divergence", "f1_score": 0.437676667, "elapsed_time": 7.424741, "clip": false, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "AUC-Judd", "f1_score": 0.310789918, "elapsed_time": 10.396919, "clip": false, "normalize": false, "sobel": true}
+{"seed": 6, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.607320057, "elapsed_time": 2.689584, "clip": false, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "SSIM", "f1_score": 0.564542625, "elapsed_time": 56.890451, "clip": false, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "MAE", "f1_score": 0.524983413, "elapsed_time": 2.355778, "clip": false, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "Czekanowski Distance", "f1_score": 0.081516005, "elapsed_time": 2.892139, "clip": false, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "Jaccard Distance", "f1_score": 0.073157121, "elapsed_time": 3.394224, "clip": false, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.52879653, "elapsed_time": 2.35147, "clip": false, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "Correlation Distance", "f1_score": 0.52879653, "elapsed_time": 16.725729, "clip": false, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.507802418, "elapsed_time": 1.497948, "clip": false, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "MSE", "f1_score": 0.507802418, "elapsed_time": 2.379021, "clip": false, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "PSNR", "f1_score": 0.512532811, "elapsed_time": 10.478436, "clip": false, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.334011636, "elapsed_time": 72.841012, "clip": false, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "KL Divergence", "f1_score": 0.438648664, "elapsed_time": 7.465909, "clip": false, "normalize": false, "sobel": false}
+{"seed": 6, "saliency_metric": "AUC-Judd", "f1_score": 0.385498716, "elapsed_time": 9.260618, "clip": false, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.483853464, "elapsed_time": 2.669643, "clip": true, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "SSIM", "f1_score": 0.443578008, "elapsed_time": 56.945274, "clip": true, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "MAE", "f1_score": 0.49017691, "elapsed_time": 2.330828, "clip": true, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "Czekanowski Distance", "f1_score": 0.488830788, "elapsed_time": 2.998029, "clip": true, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "Jaccard Distance", "f1_score": 0.488830788, "elapsed_time": 3.197434, "clip": true, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.410142769, "elapsed_time": 2.35337, "clip": true, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "Correlation Distance", "f1_score": 0.438965839, "elapsed_time": 16.770024, "clip": true, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.395289307, "elapsed_time": 1.487677, "clip": true, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "MSE", "f1_score": 0.395289307, "elapsed_time": 2.382933, "clip": true, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "PSNR", "f1_score": 0.395289307, "elapsed_time": 10.619324, "clip": true, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.270312979, "elapsed_time": 73.000417, "clip": true, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "KL Divergence", "f1_score": 0.385997297, "elapsed_time": 7.481662, "clip": true, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "AUC-Judd", "f1_score": 0.362090828, "elapsed_time": 9.345387, "clip": true, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.441399245, "elapsed_time": 2.662646, "clip": true, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "SSIM", "f1_score": 0.520641816, "elapsed_time": 56.66849, "clip": true, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "MAE", "f1_score": 0.535609228, "elapsed_time": 2.336392, "clip": true, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "Czekanowski Distance", "f1_score": 0.533449565, "elapsed_time": 3.000155, "clip": true, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "Jaccard Distance", "f1_score": 0.533449565, "elapsed_time": 3.333941, "clip": true, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.491528775, "elapsed_time": 2.368129, "clip": true, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "Correlation Distance", "f1_score": 0.511361074, "elapsed_time": 16.753174, "clip": true, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.48809314, "elapsed_time": 1.512102, "clip": true, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "MSE", "f1_score": 0.48809314, "elapsed_time": 2.385026, "clip": true, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "PSNR", "f1_score": 0.48809314, "elapsed_time": 11.048669, "clip": true, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.334814495, "elapsed_time": 72.771982, "clip": true, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "KL Divergence", "f1_score": 0.438164077, "elapsed_time": 7.488502, "clip": true, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "AUC-Judd", "f1_score": 0.372462165, "elapsed_time": 8.84135, "clip": true, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.544680213, "elapsed_time": 2.687708, "clip": true, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "SSIM", "f1_score": 0.465528266, "elapsed_time": 57.197503, "clip": true, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "MAE", "f1_score": 0.49017691, "elapsed_time": 2.353723, "clip": true, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "Czekanowski Distance", "f1_score": 0.396469498, "elapsed_time": 3.041589, "clip": true, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "Jaccard Distance", "f1_score": 0.396830689, "elapsed_time": 3.377708, "clip": true, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.439961737, "elapsed_time": 2.395536, "clip": true, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "Correlation Distance", "f1_score": 0.438965839, "elapsed_time": 16.891009, "clip": true, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.395289307, "elapsed_time": 1.492409, "clip": true, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "MSE", "f1_score": 0.395289307, "elapsed_time": 2.390664, "clip": true, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "PSNR", "f1_score": 0.395289307, "elapsed_time": 10.669555, "clip": true, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.270158017, "elapsed_time": 72.822525, "clip": true, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "KL Divergence", "f1_score": 0.385480853, "elapsed_time": 7.477042, "clip": true, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "AUC-Judd", "f1_score": 0.362090828, "elapsed_time": 9.431193, "clip": true, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.599661053, "elapsed_time": 2.685069, "clip": true, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "SSIM", "f1_score": 0.531070144, "elapsed_time": 57.762488, "clip": true, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "MAE", "f1_score": 0.535609228, "elapsed_time": 2.477421, "clip": true, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "Czekanowski Distance", "f1_score": 0.083540285, "elapsed_time": 3.108048, "clip": true, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "Jaccard Distance", "f1_score": 0.138250323, "elapsed_time": 3.418208, "clip": true, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.511412892, "elapsed_time": 2.47725, "clip": true, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "Correlation Distance", "f1_score": 0.511361074, "elapsed_time": 17.672465, "clip": true, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.48809314, "elapsed_time": 1.516436, "clip": true, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "MSE", "f1_score": 0.48809314, "elapsed_time": 2.351797, "clip": true, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "PSNR", "f1_score": 0.48809314, "elapsed_time": 10.377305, "clip": true, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.334881075, "elapsed_time": 71.260718, "clip": true, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "KL Divergence", "f1_score": 0.43823989, "elapsed_time": 7.432897, "clip": true, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "AUC-Judd", "f1_score": 0.372230401, "elapsed_time": 8.864018, "clip": true, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.11014634, "elapsed_time": 2.690694, "clip": false, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "SSIM", "f1_score": 0.444097355, "elapsed_time": 56.761451, "clip": false, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "MAE", "f1_score": 0.395554156, "elapsed_time": 2.338207, "clip": false, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "Czekanowski Distance", "f1_score": 0.398412984, "elapsed_time": 3.011317, "clip": false, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "Jaccard Distance", "f1_score": 0.398412984, "elapsed_time": 3.331667, "clip": false, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.382515851, "elapsed_time": 2.409713, "clip": false, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "Correlation Distance", "f1_score": 0.405908554, "elapsed_time": 16.786994, "clip": false, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.388138945, "elapsed_time": 1.487402, "clip": false, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "MSE", "f1_score": 0.388138945, "elapsed_time": 2.37896, "clip": false, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "PSNR", "f1_score": 0.388138945, "elapsed_time": 10.626981, "clip": false, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.255523207, "elapsed_time": 70.854041, "clip": false, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "KL Divergence", "f1_score": 0.395364495, "elapsed_time": 7.465647, "clip": false, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "AUC-Judd", "f1_score": 0.354842397, "elapsed_time": 10.487277, "clip": false, "normalize": true, "sobel": true}
+{"seed": 7, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.11538385, "elapsed_time": 2.695538, "clip": false, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "SSIM", "f1_score": 0.50928108, "elapsed_time": 58.764251, "clip": false, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "MAE", "f1_score": 0.502889891, "elapsed_time": 2.331557, "clip": false, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "Czekanowski Distance", "f1_score": 0.503388389, "elapsed_time": 3.077625, "clip": false, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "Jaccard Distance", "f1_score": 0.503388389, "elapsed_time": 3.408085, "clip": false, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.461423919, "elapsed_time": 2.382312, "clip": false, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "Correlation Distance", "f1_score": 0.479510327, "elapsed_time": 16.681533, "clip": false, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.458340733, "elapsed_time": 1.491499, "clip": false, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "MSE", "f1_score": 0.458340733, "elapsed_time": 2.382932, "clip": false, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "PSNR", "f1_score": 0.458340733, "elapsed_time": 10.708831, "clip": false, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.362121561, "elapsed_time": 70.825661, "clip": false, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "KL Divergence", "f1_score": 0.383776365, "elapsed_time": 7.472321, "clip": false, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "AUC-Judd", "f1_score": 0.384815649, "elapsed_time": 9.280892, "clip": false, "normalize": true, "sobel": false}
+{"seed": 7, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.544680213, "elapsed_time": 2.702048, "clip": false, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "SSIM", "f1_score": 0.496772898, "elapsed_time": 56.942723, "clip": false, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "MAE", "f1_score": 0.44834494, "elapsed_time": 2.41949, "clip": false, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "Czekanowski Distance", "f1_score": 0.091076829, "elapsed_time": 2.989618, "clip": false, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "Jaccard Distance", "f1_score": 0.115267629, "elapsed_time": 3.243039, "clip": false, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.405908554, "elapsed_time": 2.404535, "clip": false, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "Correlation Distance", "f1_score": 0.405908554, "elapsed_time": 16.761566, "clip": false, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.377610885, "elapsed_time": 1.505937, "clip": false, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "MSE", "f1_score": 0.377610885, "elapsed_time": 2.382627, "clip": false, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "PSNR", "f1_score": 0.387075352, "elapsed_time": 10.618195, "clip": false, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.255720475, "elapsed_time": 71.682246, "clip": false, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "KL Divergence", "f1_score": 0.394525706, "elapsed_time": 7.96088, "clip": false, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "AUC-Judd", "f1_score": 0.297099451, "elapsed_time": 10.929668, "clip": false, "normalize": false, "sobel": true}
+{"seed": 7, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.599661053, "elapsed_time": 2.816093, "clip": false, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "SSIM", "f1_score": 0.54746585, "elapsed_time": 57.214146, "clip": false, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "MAE", "f1_score": 0.503536429, "elapsed_time": 2.319269, "clip": false, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "Czekanowski Distance", "f1_score": 0.083984745, "elapsed_time": 3.025183, "clip": false, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "Jaccard Distance", "f1_score": 0.075996819, "elapsed_time": 3.28725, "clip": false, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.479510327, "elapsed_time": 2.414024, "clip": false, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "Correlation Distance", "f1_score": 0.479510327, "elapsed_time": 16.86211, "clip": false, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.452905065, "elapsed_time": 1.486507, "clip": false, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "MSE", "f1_score": 0.452905065, "elapsed_time": 2.376539, "clip": false, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "PSNR", "f1_score": 0.454547516, "elapsed_time": 10.722077, "clip": false, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.361917688, "elapsed_time": 71.074743, "clip": false, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "KL Divergence", "f1_score": 0.377793427, "elapsed_time": 7.429869, "clip": false, "normalize": false, "sobel": false}
+{"seed": 7, "saliency_metric": "AUC-Judd", "f1_score": 0.359263746, "elapsed_time": 9.259865, "clip": false, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.467597016, "elapsed_time": 2.72083, "clip": true, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "SSIM", "f1_score": 0.435809002, "elapsed_time": 57.252755, "clip": true, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "MAE", "f1_score": 0.474008936, "elapsed_time": 2.344278, "clip": true, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "Czekanowski Distance", "f1_score": 0.469606293, "elapsed_time": 3.004949, "clip": true, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "Jaccard Distance", "f1_score": 0.469606293, "elapsed_time": 3.262887, "clip": true, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.398168685, "elapsed_time": 2.376946, "clip": true, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "Correlation Distance", "f1_score": 0.40914075, "elapsed_time": 16.753143, "clip": true, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.386301385, "elapsed_time": 1.510361, "clip": true, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "MSE", "f1_score": 0.386301385, "elapsed_time": 2.37195, "clip": true, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "PSNR", "f1_score": 0.386301385, "elapsed_time": 10.608691, "clip": true, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.267939231, "elapsed_time": 74.554836, "clip": true, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "KL Divergence", "f1_score": 0.381873379, "elapsed_time": 7.456102, "clip": true, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "AUC-Judd", "f1_score": 0.322814788, "elapsed_time": 9.219997, "clip": true, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.445060933, "elapsed_time": 2.66886, "clip": true, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "SSIM", "f1_score": 0.503634156, "elapsed_time": 57.015339, "clip": true, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "MAE", "f1_score": 0.523963529, "elapsed_time": 2.350784, "clip": true, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "Czekanowski Distance", "f1_score": 0.523628417, "elapsed_time": 2.985551, "clip": true, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "Jaccard Distance", "f1_score": 0.523628417, "elapsed_time": 3.22638, "clip": true, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.481655163, "elapsed_time": 2.378518, "clip": true, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "Correlation Distance", "f1_score": 0.471301268, "elapsed_time": 16.815646, "clip": true, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.477898934, "elapsed_time": 1.4969, "clip": true, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "MSE", "f1_score": 0.477898934, "elapsed_time": 2.365179, "clip": true, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "PSNR", "f1_score": 0.477898934, "elapsed_time": 10.602295, "clip": true, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.332225181, "elapsed_time": 71.008238, "clip": true, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "KL Divergence", "f1_score": 0.428162985, "elapsed_time": 7.525362, "clip": true, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "AUC-Judd", "f1_score": 0.369324154, "elapsed_time": 8.717071, "clip": true, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.514419731, "elapsed_time": 2.742704, "clip": true, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "SSIM", "f1_score": 0.451362386, "elapsed_time": 57.476543, "clip": true, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "MAE", "f1_score": 0.474008936, "elapsed_time": 2.385438, "clip": true, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "Czekanowski Distance", "f1_score": 0.369451809, "elapsed_time": 2.994205, "clip": true, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "Jaccard Distance", "f1_score": 0.369426217, "elapsed_time": 3.264987, "clip": true, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.406639032, "elapsed_time": 2.355717, "clip": true, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "Correlation Distance", "f1_score": 0.40914075, "elapsed_time": 17.526515, "clip": true, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.386301385, "elapsed_time": 1.594336, "clip": true, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "MSE", "f1_score": 0.386301385, "elapsed_time": 2.577419, "clip": true, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "PSNR", "f1_score": 0.386301385, "elapsed_time": 10.804655, "clip": true, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.267939231, "elapsed_time": 72.762221, "clip": true, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "KL Divergence", "f1_score": 0.382093436, "elapsed_time": 7.526065, "clip": true, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "AUC-Judd", "f1_score": 0.322819063, "elapsed_time": 9.23764, "clip": true, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.562691639, "elapsed_time": 2.702448, "clip": true, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "SSIM", "f1_score": 0.527858405, "elapsed_time": 56.711854, "clip": true, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "MAE", "f1_score": 0.523963529, "elapsed_time": 2.338242, "clip": true, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "Czekanowski Distance", "f1_score": 0.088743937, "elapsed_time": 2.996331, "clip": true, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "Jaccard Distance", "f1_score": 0.156612905, "elapsed_time": 3.233936, "clip": true, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.471299279, "elapsed_time": 2.363907, "clip": true, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "Correlation Distance", "f1_score": 0.471301268, "elapsed_time": 16.640345, "clip": true, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.477898934, "elapsed_time": 1.49129, "clip": true, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "MSE", "f1_score": 0.477898934, "elapsed_time": 2.372259, "clip": true, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "PSNR", "f1_score": 0.477898934, "elapsed_time": 10.744235, "clip": true, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.332442171, "elapsed_time": 71.033768, "clip": true, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "KL Divergence", "f1_score": 0.427804981, "elapsed_time": 7.492405, "clip": true, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "AUC-Judd", "f1_score": 0.36940169, "elapsed_time": 8.723101, "clip": true, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.096228077, "elapsed_time": 2.662354, "clip": false, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "SSIM", "f1_score": 0.426894511, "elapsed_time": 58.125705, "clip": false, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "MAE", "f1_score": 0.364598644, "elapsed_time": 2.45307, "clip": false, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "Czekanowski Distance", "f1_score": 0.366495939, "elapsed_time": 3.140139, "clip": false, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "Jaccard Distance", "f1_score": 0.366495939, "elapsed_time": 3.415962, "clip": false, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.361922027, "elapsed_time": 2.478916, "clip": false, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "Correlation Distance", "f1_score": 0.376577963, "elapsed_time": 16.788494, "clip": false, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.360284427, "elapsed_time": 1.487447, "clip": false, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "MSE", "f1_score": 0.360284427, "elapsed_time": 2.383073, "clip": false, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "PSNR", "f1_score": 0.360284427, "elapsed_time": 10.591878, "clip": false, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.286021528, "elapsed_time": 70.975239, "clip": false, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "KL Divergence", "f1_score": 0.336236213, "elapsed_time": 7.507511, "clip": false, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "AUC-Judd", "f1_score": 0.306541716, "elapsed_time": 10.499978, "clip": false, "normalize": true, "sobel": true}
+{"seed": 8, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.111230782, "elapsed_time": 2.686727, "clip": false, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "SSIM", "f1_score": 0.502822734, "elapsed_time": 57.43087, "clip": false, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "MAE", "f1_score": 0.487591593, "elapsed_time": 2.333771, "clip": false, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "Czekanowski Distance", "f1_score": 0.486048822, "elapsed_time": 3.026785, "clip": false, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "Jaccard Distance", "f1_score": 0.486048822, "elapsed_time": 3.259499, "clip": false, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.448820057, "elapsed_time": 2.430956, "clip": false, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "Correlation Distance", "f1_score": 0.456079918, "elapsed_time": 16.733369, "clip": false, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.449885524, "elapsed_time": 1.490766, "clip": false, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "MSE", "f1_score": 0.449885524, "elapsed_time": 2.424677, "clip": false, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "PSNR", "f1_score": 0.449885524, "elapsed_time": 10.693094, "clip": false, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.371323086, "elapsed_time": 71.108734, "clip": false, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "KL Divergence", "f1_score": 0.373303524, "elapsed_time": 7.58825, "clip": false, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "AUC-Judd", "f1_score": 0.326097438, "elapsed_time": 9.88334, "clip": false, "normalize": true, "sobel": false}
+{"seed": 8, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.514419731, "elapsed_time": 2.88906, "clip": false, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "SSIM", "f1_score": 0.485758711, "elapsed_time": 58.725266, "clip": false, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "MAE", "f1_score": 0.437589279, "elapsed_time": 2.412107, "clip": false, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "Czekanowski Distance", "f1_score": 0.083889551, "elapsed_time": 2.965939, "clip": false, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "Jaccard Distance", "f1_score": 0.113574536, "elapsed_time": 3.256686, "clip": false, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.376577963, "elapsed_time": 2.385557, "clip": false, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "Correlation Distance", "f1_score": 0.376577963, "elapsed_time": 16.78241, "clip": false, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.349800076, "elapsed_time": 1.505614, "clip": false, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "MSE", "f1_score": 0.349800076, "elapsed_time": 2.365857, "clip": false, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "PSNR", "f1_score": 0.355750812, "elapsed_time": 10.310879, "clip": false, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.285908341, "elapsed_time": 70.99922, "clip": false, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "KL Divergence", "f1_score": 0.332430403, "elapsed_time": 7.569726, "clip": false, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "AUC-Judd", "f1_score": 0.303940206, "elapsed_time": 10.398551, "clip": false, "normalize": false, "sobel": true}
+{"seed": 8, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.562691639, "elapsed_time": 2.768797, "clip": false, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "SSIM", "f1_score": 0.537096927, "elapsed_time": 56.822851, "clip": false, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "MAE", "f1_score": 0.499319683, "elapsed_time": 2.360155, "clip": false, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "Czekanowski Distance", "f1_score": 0.079727825, "elapsed_time": 2.981717, "clip": false, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "Jaccard Distance", "f1_score": 0.077476195, "elapsed_time": 3.254411, "clip": false, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.456079918, "elapsed_time": 2.3656, "clip": false, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "Correlation Distance", "f1_score": 0.456079918, "elapsed_time": 16.743166, "clip": false, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.444350817, "elapsed_time": 1.498078, "clip": false, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "MSE", "f1_score": 0.444350817, "elapsed_time": 2.385341, "clip": false, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "PSNR", "f1_score": 0.444850062, "elapsed_time": 10.674509, "clip": false, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.37136893, "elapsed_time": 72.662491, "clip": false, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "KL Divergence", "f1_score": 0.370107771, "elapsed_time": 7.801114, "clip": false, "normalize": false, "sobel": false}
+{"seed": 8, "saliency_metric": "AUC-Judd", "f1_score": 0.315589695, "elapsed_time": 9.199227, "clip": false, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.512400028, "elapsed_time": 2.685869, "clip": true, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "SSIM", "f1_score": 0.468858997, "elapsed_time": 56.996322, "clip": true, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "MAE", "f1_score": 0.514502404, "elapsed_time": 2.373969, "clip": true, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "Czekanowski Distance", "f1_score": 0.509278272, "elapsed_time": 3.030347, "clip": true, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "Jaccard Distance", "f1_score": 0.509278272, "elapsed_time": 3.223373, "clip": true, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.414483898, "elapsed_time": 2.391761, "clip": true, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "Correlation Distance", "f1_score": 0.461809736, "elapsed_time": 16.684239, "clip": true, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.399681141, "elapsed_time": 1.509774, "clip": true, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "MSE", "f1_score": 0.399681141, "elapsed_time": 2.41469, "clip": true, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "PSNR", "f1_score": 0.399681141, "elapsed_time": 10.601274, "clip": true, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.231343599, "elapsed_time": 72.33145, "clip": true, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "KL Divergence", "f1_score": 0.401692063, "elapsed_time": 7.53325, "clip": true, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "AUC-Judd", "f1_score": 0.349883766, "elapsed_time": 9.232627, "clip": true, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.433981938, "elapsed_time": 2.687563, "clip": true, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "SSIM", "f1_score": 0.558817738, "elapsed_time": 57.087768, "clip": true, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "MAE", "f1_score": 0.564556402, "elapsed_time": 2.314998, "clip": true, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "Czekanowski Distance", "f1_score": 0.565865386, "elapsed_time": 2.985173, "clip": true, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "Jaccard Distance", "f1_score": 0.565865386, "elapsed_time": 3.245431, "clip": true, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.522417838, "elapsed_time": 2.390746, "clip": true, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "Correlation Distance", "f1_score": 0.547925448, "elapsed_time": 16.720111, "clip": true, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.513355961, "elapsed_time": 1.489831, "clip": true, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "MSE", "f1_score": 0.513355961, "elapsed_time": 2.380299, "clip": true, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "PSNR", "f1_score": 0.513355961, "elapsed_time": 10.829475, "clip": true, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.299784559, "elapsed_time": 72.977813, "clip": true, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "KL Divergence", "f1_score": 0.451767214, "elapsed_time": 7.52408, "clip": true, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "AUC-Judd", "f1_score": 0.366284098, "elapsed_time": 8.77984, "clip": true, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.571660536, "elapsed_time": 2.677739, "clip": true, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "SSIM", "f1_score": 0.470928514, "elapsed_time": 57.067847, "clip": true, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "MAE", "f1_score": 0.514502404, "elapsed_time": 2.351505, "clip": true, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "Czekanowski Distance", "f1_score": 0.432204381, "elapsed_time": 2.988242, "clip": true, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "Jaccard Distance", "f1_score": 0.432492549, "elapsed_time": 3.221895, "clip": true, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.459913958, "elapsed_time": 2.358984, "clip": true, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "Correlation Distance", "f1_score": 0.461809736, "elapsed_time": 16.701307, "clip": true, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.399681141, "elapsed_time": 1.485563, "clip": true, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "MSE", "f1_score": 0.399681141, "elapsed_time": 2.366354, "clip": true, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "PSNR", "f1_score": 0.399681141, "elapsed_time": 10.567647, "clip": true, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.231566817, "elapsed_time": 72.368893, "clip": true, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "KL Divergence", "f1_score": 0.401599367, "elapsed_time": 7.527482, "clip": true, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "AUC-Judd", "f1_score": 0.350231393, "elapsed_time": 9.225442, "clip": true, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.642040869, "elapsed_time": 2.761009, "clip": true, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "SSIM", "f1_score": 0.586028253, "elapsed_time": 57.010793, "clip": true, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "MAE", "f1_score": 0.564556402, "elapsed_time": 2.525018, "clip": true, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "Czekanowski Distance", "f1_score": 0.074338702, "elapsed_time": 3.14726, "clip": true, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "Jaccard Distance", "f1_score": 0.128020525, "elapsed_time": 3.386888, "clip": true, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.548374245, "elapsed_time": 2.493206, "clip": true, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "Correlation Distance", "f1_score": 0.547925448, "elapsed_time": 17.5678, "clip": true, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.513355961, "elapsed_time": 1.58725, "clip": true, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "MSE", "f1_score": 0.513355961, "elapsed_time": 2.636878, "clip": true, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "PSNR", "f1_score": 0.513355961, "elapsed_time": 10.777923, "clip": true, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.299768607, "elapsed_time": 70.936825, "clip": true, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "KL Divergence", "f1_score": 0.451855317, "elapsed_time": 7.55495, "clip": true, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "AUC-Judd", "f1_score": 0.365982911, "elapsed_time": 8.739685, "clip": true, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.099005563, "elapsed_time": 2.811868, "clip": false, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "SSIM", "f1_score": 0.463304154, "elapsed_time": 57.026799, "clip": false, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "MAE", "f1_score": 0.395650056, "elapsed_time": 2.305051, "clip": false, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "Czekanowski Distance", "f1_score": 0.402679668, "elapsed_time": 2.965342, "clip": false, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "Jaccard Distance", "f1_score": 0.402679668, "elapsed_time": 3.348063, "clip": false, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.397848008, "elapsed_time": 2.364645, "clip": false, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "Correlation Distance", "f1_score": 0.409658596, "elapsed_time": 16.745556, "clip": false, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.380401473, "elapsed_time": 1.497583, "clip": false, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "MSE", "f1_score": 0.380401473, "elapsed_time": 2.375254, "clip": false, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "PSNR", "f1_score": 0.380401473, "elapsed_time": 10.446367, "clip": false, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.239273544, "elapsed_time": 70.614966, "clip": false, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "KL Divergence", "f1_score": 0.390289879, "elapsed_time": 7.500353, "clip": false, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "AUC-Judd", "f1_score": 0.306705882, "elapsed_time": 10.432015, "clip": false, "normalize": true, "sobel": true}
+{"seed": 9, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.112559304, "elapsed_time": 2.670496, "clip": false, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "SSIM", "f1_score": 0.549518599, "elapsed_time": 58.969512, "clip": false, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "MAE", "f1_score": 0.523717124, "elapsed_time": 2.344166, "clip": false, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "Czekanowski Distance", "f1_score": 0.522418238, "elapsed_time": 2.997507, "clip": false, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "Jaccard Distance", "f1_score": 0.522418238, "elapsed_time": 3.400538, "clip": false, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.489995908, "elapsed_time": 2.343714, "clip": false, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "Correlation Distance", "f1_score": 0.500393264, "elapsed_time": 16.707066, "clip": false, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.485855506, "elapsed_time": 1.522673, "clip": false, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "MSE", "f1_score": 0.485855506, "elapsed_time": 2.429615, "clip": false, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "PSNR", "f1_score": 0.485855506, "elapsed_time": 10.557193, "clip": false, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.323608176, "elapsed_time": 70.913774, "clip": false, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "KL Divergence", "f1_score": 0.397155668, "elapsed_time": 7.52026, "clip": false, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "AUC-Judd", "f1_score": 0.368299744, "elapsed_time": 9.396819, "clip": false, "normalize": true, "sobel": false}
+{"seed": 9, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.571660536, "elapsed_time": 2.772809, "clip": false, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "SSIM", "f1_score": 0.517982845, "elapsed_time": 56.811256, "clip": false, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "MAE", "f1_score": 0.475983953, "elapsed_time": 2.343061, "clip": false, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "Czekanowski Distance", "f1_score": 0.091796224, "elapsed_time": 2.978173, "clip": false, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "Jaccard Distance", "f1_score": 0.126914452, "elapsed_time": 3.222832, "clip": false, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.409658596, "elapsed_time": 2.357519, "clip": false, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "Correlation Distance", "f1_score": 0.409658596, "elapsed_time": 16.749023, "clip": false, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.386725248, "elapsed_time": 1.517725, "clip": false, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "MSE", "f1_score": 0.386725248, "elapsed_time": 2.384211, "clip": false, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "PSNR", "f1_score": 0.393238206, "elapsed_time": 10.601745, "clip": false, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.239114413, "elapsed_time": 71.121119, "clip": false, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "KL Divergence", "f1_score": 0.383788507, "elapsed_time": 7.959496, "clip": false, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "AUC-Judd", "f1_score": 0.334267571, "elapsed_time": 10.83868, "clip": false, "normalize": false, "sobel": true}
+{"seed": 9, "saliency_metric": "Sign Agreement Ratio", "f1_score": 0.642040869, "elapsed_time": 2.855204, "clip": false, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "SSIM", "f1_score": 0.589984323, "elapsed_time": 57.365344, "clip": false, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "MAE", "f1_score": 0.525610624, "elapsed_time": 2.406826, "clip": false, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "Czekanowski Distance", "f1_score": 0.078288102, "elapsed_time": 2.983544, "clip": false, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "Jaccard Distance", "f1_score": 0.01691688, "elapsed_time": 3.237743, "clip": false, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "$ShapGap_{Cosine}$", "f1_score": 0.500393264, "elapsed_time": 2.349426, "clip": false, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "Correlation Distance", "f1_score": 0.500393264, "elapsed_time": 16.69255, "clip": false, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "$ShapGap_{L2}$", "f1_score": 0.483676095, "elapsed_time": 1.487046, "clip": false, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "MSE", "f1_score": 0.483676095, "elapsed_time": 2.374041, "clip": false, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "PSNR", "f1_score": 0.484326423, "elapsed_time": 10.563908, "clip": false, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "Earth Mover's Distance", "f1_score": 0.323849566, "elapsed_time": 70.593902, "clip": false, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "KL Divergence", "f1_score": 0.393117066, "elapsed_time": 7.473575, "clip": false, "normalize": false, "sobel": false}
+{"seed": 9, "saliency_metric": "AUC-Judd", "f1_score": 0.382768774, "elapsed_time": 9.173685, "clip": false, "normalize": false, "sobel": false}

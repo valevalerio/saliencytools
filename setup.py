@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="saliencytools",
-    version="0.1.0",
+    version="0.35",
     author="Valerio Bonsignori",
     author_email="valerio.bonsignori@phd.unipi.it",
     description="A collection of metrics to compare saliency maps, validated using KNN-like classifiers on MNIST.",

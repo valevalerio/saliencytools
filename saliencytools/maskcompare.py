@@ -16,11 +16,8 @@ Metrics implemented:
     - Jaccard Index
     - Jaccard Distance
     - Structural Similarity Index Measure (SSIM)
-    - Kullback-Leibler Divergence (KL)
-    - Information Gain (IG)
-    - Normalized Scanpath Saliency (NSS)
-    - Linear Correlation Coefficient (CC)
-    - Area Under ROC Curve (AUC)
+    - KL Divergence (symmetric / Jeffrey divergence)
+    - AUC-Judd (symmetric pairwise variant)
 
 """
 
@@ -514,7 +511,119 @@ def ssim(a, b):
     return (1 - metrics.structural_similarity(a, b, full=False,
                                               data_range=np.maximum(a.max(), b.max()) - np.minimum(a.min(), b.min()))) / 2
 
-# ============= Pixel-wise Distances ============= 
+# ============= Information-Theoretic Distances =============
+
+def kl_divergence(a, b):
+    """
+    Compute the symmetric KL divergence (Jeffrey divergence) between two images.
+
+    The standard KL(P || Q^D) from Bylinskii et al. (2017) is asymmetric:
+    it measures how well a saliency prediction P approximates a ground-truth
+    fixation map Q^D.  Since both maps here are peers (neither is ground truth),
+    we use the symmetric variant KL(a||b) + KL(b||a), which penalises
+    false positives and false negatives equally.
+
+    Both maps are shifted to be non-negative and normalised to sum to 1
+    (probability distributions) before computation.  A small epsilon
+    (1e-10) is added for numerical stability, following the regularisation
+    strategy of the MIT Saliency Benchmark.
+
+    Reference:
+        Bylinskii et al. (2017). "What do different evaluation metrics
+        tell us about saliency models?" IEEE TPAMI, arXiv:1604.03605.
+
+    Parameters:
+        a (numpy.ndarray): First image.
+        b (numpy.ndarray): Second image.
+
+    Returns:
+        float: Symmetric KL divergence (>= 0; 0 iff a == b after normalisation).
+    """
+    eps = 1e-10
+    a = a.flatten().astype(np.float64)
+    b = b.flatten().astype(np.float64)
+
+    # Shift to non-negative, add epsilon, normalise to probability distributions
+    a = a - a.min() + eps
+    b = b - b.min() + eps
+    a /= a.sum()
+    b /= b.sum()
+
+    kl_ab = np.sum(a * np.log(a / b))
+    kl_ba = np.sum(b * np.log(b / a))
+    return float(kl_ab + kl_ba)
+
+
+def _auc_judd_one_direction(saliency, fixations_binary):
+    """
+    Compute AUC-Judd for one direction (saliency as classifier of fixations).
+
+    Uses the Wilcoxon–Mann–Whitney statistic for O(n log n) efficiency.
+    """
+    sal = saliency.flatten()
+    fix = fixations_binary.flatten().astype(bool)
+    sal_fix = sal[fix]
+    sal_nonfix = sal[~fix]
+    n_fix = len(sal_fix)
+    n_nonfix = len(sal_nonfix)
+    if n_fix == 0 or n_nonfix == 0:
+        return 0.5
+    sorted_nonfix = np.sort(sal_nonfix)
+    # For each fixated pixel, count non-fixated pixels with strictly lower sal
+    ranks = np.searchsorted(sorted_nonfix, sal_fix, side='right')
+    return float(ranks.mean() / n_nonfix)
+
+
+def auc_judd(prediction, reference):
+    """
+    Compute the AUC-Judd distance between a predicted saliency map and a
+    reference map.
+
+    AUC-Judd (Judd et al., 2009) evaluates how well a predicted saliency map
+    recovers the salient regions of a reference map.  The reference is
+    binarised at its mean to produce a fixation mask; the prediction is then
+    treated as a continuous classifier of those fixated pixels, and the Area
+    Under the ROC Curve (AUC) is reported.
+
+    **Convention**: ``auc_judd(prediction, reference)`` — the *second* argument
+    always provides the fixation mask.  This matches the intended use case:
+    ``auc_judd(lime_map, shap_map)`` measures how well the LIME explanation
+    recovers the regions SHAP considers important, not the reverse.
+
+    **Asymmetry**: ``auc_judd(a, b) != auc_judd(b, a)`` in general.
+    The metric therefore does not satisfy the symmetry axiom of a metric space.
+    It is listed alongside SSIM and PSNR as a documented exception in the
+    formal validation suite.
+
+    In the proxy benchmark, ``metric_fn(test_image, prototype)`` places the
+    test image in the prediction role and the prototype in the reference role,
+    which is the natural direction: the prototype is the trusted reference, the
+    test image is the explanation being evaluated.
+
+    Reference:
+        Judd et al. (2009). "Learning to predict where humans look." ICCV.
+        Bylinskii et al. (2017). "What do different evaluation metrics
+        tell us about saliency models?" IEEE TPAMI, arXiv:1604.03605.
+
+    Parameters:
+        prediction (numpy.ndarray): Predicted saliency map (the map being
+            evaluated, e.g. from LIME or Integrated Gradients).
+        reference (numpy.ndarray): Reference saliency map whose above-mean
+            pixels define the fixation mask (e.g. a SHAP explanation or a
+            prototype).
+
+    Returns:
+        float: AUC-Judd distance in [0, 1].  0 means perfect recovery of the
+        reference's salient regions; 0.5 is chance level.
+    """
+    prediction = prediction.flatten().astype(np.float64)
+    reference  = reference.flatten().astype(np.float64)
+
+    fixations = reference >= reference.mean()
+    return float(1.0 - _auc_judd_one_direction(prediction, fixations))
+
+
+# ============= Pixel-wise Distances =============
 # These functions return an distance matrix so that we can visualize the distance between each pixel in the two images
 # abs_error_lambda = lambda a, b: np.abs(a - b)
 # squared_error_lambda = lambda a, b: (a - b) ** 2
@@ -547,3 +656,7 @@ sign_agreement_ratio.__name__ = "Sign Agreement Ratio"
 
 # ------------- Structural metrics
 ssim.__name__ = "SSIM"
+
+# ------------- Information-theoretic metrics
+kl_divergence.__name__ = "KL Divergence"
+auc_judd.__name__ = "AUC-Judd"
