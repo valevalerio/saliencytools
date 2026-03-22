@@ -54,14 +54,17 @@
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.czenakowski_distance"><code class="docutils literal notranslate"><span class="pre">czenakowski_distance()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.emd"><code class="docutils literal notranslate"><span class="pre">emd()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.euclidean_distance"><code class="docutils literal notranslate"><span class="pre">euclidean_distance()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.information_gain"><code class="docutils literal notranslate"><span class="pre">information_gain()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.jaccard_distance"><code class="docutils literal notranslate"><span class="pre">jaccard_distance()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.jaccard_index"><code class="docutils literal notranslate"><span class="pre">jaccard_index()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.kl_divergence"><code class="docutils literal notranslate"><span class="pre">kl_divergence()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.linear_correlation_coefficient"><code class="docutils literal notranslate"><span class="pre">linear_correlation_coefficient()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.make_histogram"><code class="docutils literal notranslate"><span class="pre">make_histogram()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.mean_absolute_error"><code class="docutils literal notranslate"><span class="pre">mean_absolute_error()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.mean_squared_error"><code class="docutils literal notranslate"><span class="pre">mean_squared_error()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.normalize_mask"><code class="docutils literal notranslate"><span class="pre">normalize_mask()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.normalize_mask_0_1"><code class="docutils literal notranslate"><span class="pre">normalize_mask_0_1()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.nss"><code class="docutils literal notranslate"><span class="pre">nss()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.psnr"><code class="docutils literal notranslate"><span class="pre">psnr()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.sign_agreement_ratio"><code class="docutils literal notranslate"><span class="pre">sign_agreement_ratio()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#saliencytools.maskcompare.ssim"><code class="docutils literal notranslate"><span class="pre">ssim()</span></code></a></li>
@@ -98,7 +101,6 @@
 <p>This module contains functions to compare different saliency maps using various metrics.</p>
 <dl class="simple">
 <dt>Metrics implemented:</dt><dd><ul class="simple">
-<li><p>ResNet Feature Similarity (exclude the last layer, compare the extracted features)</p></li>
 <li><p>ShapGap Cosine</p></li>
 <li><p>ShapGap L2</p></li>
 <li><p>Earth Mover’s Distance (EMD)</p></li>
@@ -327,6 +329,31 @@ of differences between the two images.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="saliencytools.maskcompare.information_gain">
+<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">information_gain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baseline</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#information_gain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.information_gain" title="Link to this definition"></a></dt>
+<dd><p>Compute the Information Gain (IG) between a saliency map and ground truth.</p>
+<dl class="simple">
+<dt>Reference:</dt><dd><p>Kümmerer, M., Wallis, T. S., &amp; Bethge, M. (2015). Information-theoretic framework to overcome the ambiguity of saliency metrics. <em>arXiv preprint arXiv:1509.01556</em>.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>numpy.ndarray</em>) – Prediction saliency map.</p></li>
+<li><p><strong>b</strong> (<em>numpy.ndarray</em>) – Ground truth saliency map.</p></li>
+<li><p><strong>baseline</strong> (<em>numpy.ndarray</em><em>, </em><em>optional</em>) – Baseline saliency map. Defaults to uniform.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Information Gain value.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="saliencytools.maskcompare.jaccard_distance">
 <span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">jaccard_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#jaccard_distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.jaccard_distance" title="Link to this definition"></a></dt>
 <dd><p>Compute the Jaccard Distance between two images.</p>
@@ -407,6 +434,26 @@ tell us about saliency models?” IEEE TPAMI, arXiv:1604.03605.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Symmetric KL divergence (&gt;= 0; 0 iff a == b after normalisation).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saliencytools.maskcompare.linear_correlation_coefficient">
+<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">linear_correlation_coefficient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#linear_correlation_coefficient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.linear_correlation_coefficient" title="Link to this definition"></a></dt>
+<dd><p>Compute the Linear Correlation Coefficient (CC).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>numpy.ndarray</em>) – First saliency map.</p></li>
+<li><p><strong>b</strong> (<em>numpy.ndarray</em>) – Second saliency map.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>CC value.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
@@ -540,6 +587,30 @@ where higher values indicate greater importance.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="saliencytools.maskcompare.nss">
+<span class="sig-prename descclassname"><span class="pre">saliencytools.maskcompare.</span></span><span class="sig-name descname"><span class="pre">nss</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/saliencytools/maskcompare.html#nss"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#saliencytools.maskcompare.nss" title="Link to this definition"></a></dt>
+<dd><p>Compute the Normalized Scanpath Saliency (NSS).</p>
+<dl class="simple">
+<dt>Reference:</dt><dd><p>Peters, R. J., Iyer, A., Itti, L., &amp; Koch, C. (2005). Components of bottom-up gaze allocation in natural scenes. <em>Vision Research</em>, 45(18), 2397-2416.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>numpy.ndarray</em>) – Prediction saliency map.</p></li>
+<li><p><strong>b</strong> (<em>numpy.ndarray</em>) – Ground truth saliency map (fixations).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>NSS value.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
 </dd>
 </dl>
 </dd></dl>

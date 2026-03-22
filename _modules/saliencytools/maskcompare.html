@@ -52,14 +52,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.czenakowski_distance"><code class="docutils literal notranslate"><span class="pre">czenakowski_distance()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.emd"><code class="docutils literal notranslate"><span class="pre">emd()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.euclidean_distance"><code class="docutils literal notranslate"><span class="pre">euclidean_distance()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.information_gain"><code class="docutils literal notranslate"><span class="pre">information_gain()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.jaccard_distance"><code class="docutils literal notranslate"><span class="pre">jaccard_distance()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.jaccard_index"><code class="docutils literal notranslate"><span class="pre">jaccard_index()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.kl_divergence"><code class="docutils literal notranslate"><span class="pre">kl_divergence()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.linear_correlation_coefficient"><code class="docutils literal notranslate"><span class="pre">linear_correlation_coefficient()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.make_histogram"><code class="docutils literal notranslate"><span class="pre">make_histogram()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.mean_absolute_error"><code class="docutils literal notranslate"><span class="pre">mean_absolute_error()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.mean_squared_error"><code class="docutils literal notranslate"><span class="pre">mean_squared_error()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.normalize_mask"><code class="docutils literal notranslate"><span class="pre">normalize_mask()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.normalize_mask_0_1"><code class="docutils literal notranslate"><span class="pre">normalize_mask_0_1()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.nss"><code class="docutils literal notranslate"><span class="pre">nss()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.psnr"><code class="docutils literal notranslate"><span class="pre">psnr()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.sign_agreement_ratio"><code class="docutils literal notranslate"><span class="pre">sign_agreement_ratio()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../maskcompare.html#saliencytools.maskcompare.ssim"><code class="docutils literal notranslate"><span class="pre">ssim()</span></code></a></li>
@@ -96,7 +99,6 @@
 <span class="sd">This module contains functions to compare different saliency maps using various metrics.</span>
 
 <span class="sd">Metrics implemented:</span>
-<span class="sd">    - ResNet Feature Similarity (exclude the last layer, compare the extracted features)</span>
 <span class="sd">    - ShapGap Cosine</span>
 <span class="sd">    - ShapGap L2</span>
 <span class="sd">    - Earth Mover&#39;s Distance (EMD)</span>
@@ -117,11 +119,10 @@
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn.functional</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">F</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">skimage</span><span class="w"> </span><span class="kn">import</span> <span class="n">metrics</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">wasserstein_distance</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.ndimage</span><span class="w"> </span><span class="kn">import</span> <span class="n">sobel</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">metrics</span> <span class="k">as</span> <span class="n">sklearn_metrics</span>
 
 <span class="c1"># ============= Normalization Functions =============</span>
 <div class="viewcode-block" id="make_histogram">
@@ -166,7 +167,7 @@
 <span class="sd">        numpy.ndarray: Normalized saliency map with values in the range [-1, 1].</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
-    <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1e-8</span><span class="p">)</span>
     <span class="n">mask</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">mask</span> <span class="o">-</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">mask</span></div>
 
@@ -192,7 +193,7 @@
 <span class="sd">                       The output has the same shape as the input.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
-    <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1e-8</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">mask</span></div>
 
 
@@ -263,7 +264,11 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
     <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-    <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">b</span><span class="p">))</span></div>
+    <span class="n">norm_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">norm_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">norm_a</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">norm_b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">1.0</span> <span class="k">if</span> <span class="p">(</span><span class="n">norm_a</span> <span class="o">!=</span> <span class="n">norm_b</span><span class="p">)</span> <span class="k">else</span> <span class="mf">0.0</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">norm_a</span> <span class="o">*</span> <span class="n">norm_b</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="mean_absolute_error">
@@ -359,6 +364,8 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
     <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">1.0</span>
     <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span></div>
 
 
@@ -386,6 +393,143 @@
     <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="n">metrics</span><span class="o">.</span><span class="n">peak_signal_noise_ratio</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span>
                                            <span class="n">data_range</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">b</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">b</span><span class="o">.</span><span class="n">min</span><span class="p">()))</span></div>
 
+
+<span class="k">def</span><span class="w"> </span><span class="nf">kl_divergence</span><span class="p">(</span><span class="n">prediction</span><span class="p">,</span> <span class="n">reference</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the Kullback-Leibler (KL) divergence between two saliency maps.</span>
+
+<span class="sd">    Reference:</span>
+<span class="sd">        Kullback, S., &amp; Leibler, R. A. (1951). On information and sufficiency. *The Annals of Mathematical Statistics*, 22(1), 79-86.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        prediction (numpy.ndarray): Prediction saliency map.</span>
+<span class="sd">        reference (numpy.ndarray): Ground truth saliency map.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: KL divergence value.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">prediction</span> <span class="o">=</span> <span class="n">prediction</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="n">reference</span> <span class="o">=</span> <span class="n">reference</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+    <span class="n">prediction</span> <span class="o">=</span> <span class="p">(</span><span class="n">prediction</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">prediction</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1e-8</span><span class="p">)</span>
+    <span class="n">reference</span> <span class="o">=</span> <span class="p">(</span><span class="n">reference</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">reference</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">reference</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">reference</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1e-8</span><span class="p">)</span>
+
+    <span class="n">prediction</span> <span class="o">=</span> <span class="n">prediction</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">prediction</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1e-8</span><span class="p">)</span>
+    <span class="n">reference</span> <span class="o">=</span> <span class="n">reference</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">reference</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1e-8</span><span class="p">)</span>
+
+    <span class="n">eps</span> <span class="o">=</span> <span class="mf">1e-12</span>
+    <span class="n">prediction</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">prediction</span><span class="p">,</span> <span class="n">eps</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">reference</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">reference</span><span class="p">,</span> <span class="n">eps</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">reference</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">reference</span> <span class="o">/</span> <span class="n">prediction</span><span class="p">))</span>
+
+<div class="viewcode-block" id="information_gain">
+<a class="viewcode-back" href="../../maskcompare.html#saliencytools.maskcompare.information_gain">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">information_gain</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">baseline</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the Information Gain (IG) between a saliency map and ground truth.</span>
+
+<span class="sd">    Reference:</span>
+<span class="sd">        Kümmerer, M., Wallis, T. S., &amp; Bethge, M. (2015). Information-theoretic framework to overcome the ambiguity of saliency metrics. *arXiv preprint arXiv:1509.01556*.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        a (numpy.ndarray): Prediction saliency map.</span>
+<span class="sd">        b (numpy.ndarray): Ground truth saliency map.</span>
+<span class="sd">        baseline (numpy.ndarray, optional): Baseline saliency map. Defaults to uniform.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: Information Gain value.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    
+    <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1e-8</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1e-8</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">baseline</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">baseline</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">baseline</span> <span class="o">=</span> <span class="n">baseline</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+        <span class="n">baseline</span> <span class="o">=</span> <span class="p">(</span><span class="n">baseline</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">baseline</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">baseline</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">baseline</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1e-8</span><span class="p">)</span>
+        <span class="n">baseline</span> <span class="o">=</span> <span class="n">baseline</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">baseline</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1e-8</span><span class="p">)</span>
+    
+    <span class="n">eps</span> <span class="o">=</span> <span class="mf">1e-12</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">eps</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">baseline</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">baseline</span><span class="p">,</span> <span class="n">eps</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">baseline</span><span class="p">)))</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1e-8</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="nss">
+<a class="viewcode-back" href="../../maskcompare.html#saliencytools.maskcompare.nss">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">nss</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the Normalized Scanpath Saliency (NSS).</span>
+
+<span class="sd">    Reference:</span>
+<span class="sd">        Peters, R. J., Iyer, A., Itti, L., &amp; Koch, C. (2005). Components of bottom-up gaze allocation in natural scenes. *Vision Research*, 45(18), 2397-2416.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        a (numpy.ndarray): Prediction saliency map.</span>
+<span class="sd">        b (numpy.ndarray): Ground truth saliency map (fixations).</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: NSS value.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.0</span>
+    <span class="n">a_norm</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">a_norm</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1e-8</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="linear_correlation_coefficient">
+<a class="viewcode-back" href="../../maskcompare.html#saliencytools.maskcompare.linear_correlation_coefficient">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">linear_correlation_coefficient</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the Linear Correlation Coefficient (CC).</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        a (numpy.ndarray): First saliency map.</span>
+<span class="sd">        b (numpy.ndarray): Second saliency map.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: CC value.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.0</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span></div>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">auc_judd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the Area Under ROC Curve (AUC) using Judd&#39;s implementation approach.</span>
+
+<span class="sd">    Reference:</span>
+<span class="sd">        Judd, T., Ehinger, K., Durand, F., &amp; Torralba, A. (2009). Learning to predict where humans look. *IEEE International Conference on Computer Vision (ICCV)*.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        a (numpy.ndarray): Prediction saliency map.</span>
+<span class="sd">        b (numpy.ndarray): Ground truth saliency map.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float: AUC value.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">b</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="c1"># Threshold ground truth if not binary</span>
+        <span class="n">b_bin</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">&gt;=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">90</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">b_bin</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">b_bin</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">b_bin</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">b_bin</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mf">0.5</span>
+        
+    <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">sklearn_metrics</span><span class="o">.</span><span class="n">roc_curve</span><span class="p">(</span><span class="n">b_bin</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sklearn_metrics</span><span class="o">.</span><span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">)</span>
 
 <span class="c1"># ============= Set-Theoretic Distances ==========</span>
 <div class="viewcode-block" id="jaccard_index">
@@ -645,9 +789,6 @@
 <span class="c1"># squared_error_lambda = lambda a, b: (a - b) ** 2</span>
 <span class="c1"># minkowski_lambda = lambda a, b: np.linalg.norm(a - b, ord=2)</span>
 
-
-
-
 <span class="c1"># Assign readable names to metrics</span>
 <span class="c1"># ------------- Geometric metrics</span>
 <span class="n">euclidean_distance</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;$ShapGap_</span><span class="si">{L2}</span><span class="s2">$&quot;</span>
@@ -659,6 +800,11 @@
 <span class="n">emd</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;Earth Mover&#39;s Distance&quot;</span>
 <span class="n">correlation_distance</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;Correlation Distance&quot;</span>
 <span class="n">psnr</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;PSNR&quot;</span>
+<span class="n">kl_divergence</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;KL Divergence&quot;</span>
+<span class="n">information_gain</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;Information Gain&quot;</span>
+<span class="n">nss</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;NSS&quot;</span>
+<span class="n">linear_correlation_coefficient</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;Correlation Coefficient&quot;</span>
+<span class="n">auc_judd</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;AUC&quot;</span>
 
 <span class="c1"># ------------- Set Theory metrics</span>
 <span class="n">jaccard_index</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">=</span> <span class="s2">&quot;Jaccard Index&quot;</span>
