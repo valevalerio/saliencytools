@@ -2,7 +2,6 @@
 This module contains functions to compare different saliency maps using various metrics.
 
 Metrics implemented:
-    - ResNet Feature Similarity (exclude the last layer, compare the extracted features)
     - ShapGap Cosine
     - ShapGap L2
     - Earth Mover's Distance (EMD)
@@ -23,11 +22,10 @@ Metrics implemented:
 """
 
 import numpy as np
-import torch.nn.functional as F
-import torch
 from skimage import metrics
 from scipy.stats import wasserstein_distance
 from scipy.ndimage import sobel
+from sklearn import metrics as sklearn_metrics
 
 # ============= Normalization Functions =============
 def make_histogram(mask: np.ndarray, bins: int = 256) -> np.ndarray:
@@ -67,7 +65,7 @@ def normalize_mask(mask):
         numpy.ndarray: Normalized saliency map with values in the range [-1, 1].
     """
     mask = mask - np.min(mask)
-    mask = mask / np.max(mask)
+    mask = mask / (np.max(mask) - np.min(mask) + 1e-8)
     mask = 2 * mask - 1
     return mask
 
@@ -90,7 +88,7 @@ def normalize_mask_0_1(mask):
                        The output has the same shape as the input.
     """
     mask = mask - np.min(mask)
-    mask = mask / np.max(mask)
+    mask = mask / (np.max(mask) - np.min(mask) + 1e-8)
     return mask
 
 def clip_mask(mask):
@@ -152,7 +150,11 @@ def cosine_distance(a, b):
     """
     a = a.flatten()
     b = b.flatten()
-    return 1 - np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
+    norm_a = np.linalg.norm(a)
+    norm_b = np.linalg.norm(b)
+    if norm_a == 0 or norm_b == 0:
+        return 1.0 if (norm_a != norm_b) else 0.0
+    return 1 - np.dot(a, b) / (norm_a * norm_b)
 
 def mean_absolute_error(a, b):
     """
@@ -236,6 +238,8 @@ def correlation_distance(a, b):
     """
     a = a.flatten()
     b = b.flatten()
+    if np.std(a) == 0 or np.std(b) == 0:
+        return 1.0
     return 1 - np.corrcoef(a, b)[0, 1]
 
 def psnr(a, b):
@@ -259,6 +263,134 @@ def psnr(a, b):
     """
     return 1/metrics.peak_signal_noise_ratio(a, b,
                                            data_range=np.maximum(a.max(), b.max()) - np.minimum(a.min(), b.min()))
+
+def kl_divergence(prediction, reference):
+    """
+    Compute the Kullback-Leibler (KL) divergence between two saliency maps.
+
+    Reference:
+        Kullback, S., & Leibler, R. A. (1951). On information and sufficiency. *The Annals of Mathematical Statistics*, 22(1), 79-86.
+
+    Parameters:
+        prediction (numpy.ndarray): Prediction saliency map.
+        reference (numpy.ndarray): Ground truth saliency map.
+
+    Returns:
+        float: KL divergence value.
+    """
+    prediction = prediction.flatten()
+    reference = reference.flatten()
+
+    prediction = (prediction - np.min(prediction)) / (np.max(prediction) - np.min(prediction) + 1e-8)
+    reference = (reference - np.min(reference)) / (np.max(reference) - np.min(reference) + 1e-8)
+
+    prediction = prediction / (np.sum(prediction) + 1e-8)
+    reference = reference / (np.sum(reference) + 1e-8)
+
+    eps = 1e-12
+    prediction = np.clip(prediction, eps, 1.0)
+    reference = np.clip(reference, eps, 1.0)
+
+    return np.sum(reference * np.log(reference / prediction))
+
+def information_gain(a, b, baseline=None):
+    """
+    Compute the Information Gain (IG) between a saliency map and ground truth.
+
+    Reference:
+        Kümmerer, M., Wallis, T. S., & Bethge, M. (2015). Information-theoretic framework to overcome the ambiguity of saliency metrics. *arXiv preprint arXiv:1509.01556*.
+
+    Parameters:
+        a (numpy.ndarray): Prediction saliency map.
+        b (numpy.ndarray): Ground truth saliency map.
+        baseline (numpy.ndarray, optional): Baseline saliency map. Defaults to uniform.
+
+    Returns:
+        float: Information Gain value.
+    """
+    a = a.flatten()
+    b = b.flatten()
+    
+    a = (a - np.min(a)) / (np.max(a) - np.min(a) + 1e-8)
+    a = a / (np.sum(a) + 1e-8)
+    
+    if baseline is None:
+        baseline = np.ones_like(a) / len(a)
+    else:
+        baseline = baseline.flatten()
+        baseline = (baseline - np.min(baseline)) / (np.max(baseline) - np.min(baseline) + 1e-8)
+        baseline = baseline / (np.sum(baseline) + 1e-8)
+    
+    eps = 1e-12
+    a = np.clip(a, eps, 1.0)
+    baseline = np.clip(baseline, eps, 1.0)
+    
+    return np.sum(b * (np.log2(a) - np.log2(baseline))) / (np.sum(b) + 1e-8)
+
+def nss(a, b):
+    """
+    Compute the Normalized Scanpath Saliency (NSS).
+
+    Reference:
+        Peters, R. J., Iyer, A., Itti, L., & Koch, C. (2005). Components of bottom-up gaze allocation in natural scenes. *Vision Research*, 45(18), 2397-2416.
+
+    Parameters:
+        a (numpy.ndarray): Prediction saliency map.
+        b (numpy.ndarray): Ground truth saliency map (fixations).
+
+    Returns:
+        float: NSS value.
+    """
+    if np.std(a) == 0:
+        return 0.0
+    a_norm = (a - np.mean(a)) / np.std(a)
+    return np.sum(a_norm * b) / (np.sum(b) + 1e-8)
+
+def linear_correlation_coefficient(a, b):
+    """
+    Compute the Linear Correlation Coefficient (CC).
+
+    Parameters:
+        a (numpy.ndarray): First saliency map.
+        b (numpy.ndarray): Second saliency map.
+
+    Returns:
+        float: CC value.
+    """
+    a = a.flatten()
+    b = b.flatten()
+    if np.std(a) == 0 or np.std(b) == 0:
+        return 0.0
+    return np.corrcoef(a, b)[0, 1]
+
+def auc_judd(a, b):
+    """
+    Compute the Area Under ROC Curve (AUC) using Judd's implementation approach.
+
+    Reference:
+        Judd, T., Ehinger, K., Durand, F., & Torralba, A. (2009). Learning to predict where humans look. *IEEE International Conference on Computer Vision (ICCV)*.
+
+    Parameters:
+        a (numpy.ndarray): Prediction saliency map.
+        b (numpy.ndarray): Ground truth saliency map.
+
+    Returns:
+        float: AUC value.
+    """
+    a = a.flatten()
+    b = b.flatten()
+    
+    if len(np.unique(b)) > 2:
+        # Threshold ground truth if not binary
+        b_bin = (b >= np.percentile(b, 90)).astype(int)
+    else:
+        b_bin = b.astype(int)
+    
+    if np.sum(b_bin) == 0 or np.sum(b_bin) == len(b_bin):
+        return 0.5
+        
+    fpr, tpr, _ = sklearn_metrics.roc_curve(b_bin, a)
+    return sklearn_metrics.auc(fpr, tpr)
 
 # ============= Set-Theoretic Distances ==========
 def jaccard_index(a, b):
@@ -497,9 +629,6 @@ def auc_judd(prediction, reference):
 # squared_error_lambda = lambda a, b: (a - b) ** 2
 # minkowski_lambda = lambda a, b: np.linalg.norm(a - b, ord=2)
 
-
-
-
 # Assign readable names to metrics
 # ------------- Geometric metrics
 euclidean_distance.__name__ = "$ShapGap_{L2}$"
@@ -511,6 +640,11 @@ mean_squared_error.__name__ = "MSE"
 emd.__name__ = "Earth Mover's Distance"
 correlation_distance.__name__ = "Correlation Distance"
 psnr.__name__ = "PSNR"
+kl_divergence.__name__ = "KL Divergence"
+information_gain.__name__ = "Information Gain"
+nss.__name__ = "NSS"
+linear_correlation_coefficient.__name__ = "Correlation Coefficient"
+auc_judd.__name__ = "AUC"
 
 # ------------- Set Theory metrics
 jaccard_index.__name__ = "Jaccard Index"
