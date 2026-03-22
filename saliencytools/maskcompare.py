@@ -2,7 +2,6 @@
 This module contains functions to compare different saliency maps using various metrics.
 
 Metrics implemented:
-    - ResNet Feature Similarity (exclude the last layer, compare the extracted features)
     - ShapGap Cosine
     - ShapGap L2
     - Earth Mover's Distance (EMD)
@@ -26,9 +25,6 @@ Metrics implemented:
 """
 
 import numpy as np
-import torch.nn.functional as F
-import torch
-from torchvision import models, transforms
 from skimage import metrics
 from scipy.stats import wasserstein_distance
 from scipy.ndimage import sobel
@@ -271,7 +267,7 @@ def psnr(a, b):
     return 1/metrics.peak_signal_noise_ratio(a, b,
                                            data_range=np.maximum(a.max(), b.max()) - np.minimum(a.min(), b.min()))
 
-def kl_divergence(a, b):
+def kl_divergence(prediction, reference):
     """
     Compute the Kullback-Leibler (KL) divergence between two saliency maps.
 
@@ -279,26 +275,26 @@ def kl_divergence(a, b):
         Kullback, S., & Leibler, R. A. (1951). On information and sufficiency. *The Annals of Mathematical Statistics*, 22(1), 79-86.
 
     Parameters:
-        a (numpy.ndarray): Prediction saliency map.
-        b (numpy.ndarray): Ground truth saliency map.
+        prediction (numpy.ndarray): Prediction saliency map.
+        reference (numpy.ndarray): Ground truth saliency map.
 
     Returns:
         float: KL divergence value.
     """
-    a = a.flatten()
-    b = b.flatten()
-    
-    a = (a - np.min(a)) / (np.max(a) - np.min(a) + 1e-8)
-    b = (b - np.min(b)) / (np.max(b) - np.min(b) + 1e-8)
-    
-    a = a / (np.sum(a) + 1e-8)
-    b = b / (np.sum(b) + 1e-8)
-    
+    prediction = prediction.flatten()
+    reference = reference.flatten()
+
+    prediction = (prediction - np.min(prediction)) / (np.max(prediction) - np.min(prediction) + 1e-8)
+    reference = (reference - np.min(reference)) / (np.max(reference) - np.min(reference) + 1e-8)
+
+    prediction = prediction / (np.sum(prediction) + 1e-8)
+    reference = reference / (np.sum(reference) + 1e-8)
+
     eps = 1e-12
-    a = np.clip(a, eps, 1.0)
-    b = np.clip(b, eps, 1.0)
-    
-    return np.sum(b * np.log(b / a))
+    prediction = np.clip(prediction, eps, 1.0)
+    reference = np.clip(reference, eps, 1.0)
+
+    return np.sum(reference * np.log(reference / prediction))
 
 def information_gain(a, b, baseline=None):
     """
@@ -518,60 +514,11 @@ def ssim(a, b):
     return (1 - metrics.structural_similarity(a, b, full=False,
                                               data_range=np.maximum(a.max(), b.max()) - np.minimum(a.min(), b.min()))) / 2
 
-# ============= Deep Learning Based Similarity =============
-def resnet_feature_similarity(a, b, model_name="resnet50"):
-    """
-    Compute the similarity between two images using features extracted from a pre-trained ResNet.
-
-    Parameters:
-        a (numpy.ndarray): First image.
-        b (numpy.ndarray): Second image.
-        model_name (str): Name of the ResNet model to use.
-
-    Returns:
-        float: MAE between the feature vectors.
-    """
-    if model_name == "resnet50":
-        model = models.resnet50(pretrained=True)
-    else:
-        model = models.resnet18(pretrained=True)
-    
-    model.eval()
-    # Remove the last classification layer
-    model = torch.nn.Sequential(*(list(model.children())[:-1]))
-
-    preprocess = transforms.Compose([
-        transforms.ToPILImage(),
-        transforms.Resize((224, 224)),
-        transforms.ToTensor(),
-        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
-    ])
-
-    def get_features(img):
-        # Convert to 3 channels if needed
-        if len(img.shape) == 2:
-            img = np.stack([img]*3, axis=-1)
-        elif img.shape[2] == 1:
-            img = np.concatenate([img]*3, axis=-1)
-            
-        img_tensor = preprocess(img).unsqueeze(0)
-        with torch.no_grad():
-            features = model(img_tensor)
-        return features.flatten()
-
-    feat_a = get_features(a)
-    feat_b = get_features(b)
-    
-    return torch.nn.functional.l1_loss(feat_a, feat_b).item()
-
 # ============= Pixel-wise Distances ============= 
 # These functions return an distance matrix so that we can visualize the distance between each pixel in the two images
 # abs_error_lambda = lambda a, b: np.abs(a - b)
 # squared_error_lambda = lambda a, b: (a - b) ** 2
 # minkowski_lambda = lambda a, b: np.linalg.norm(a - b, ord=2)
-
-
-
 
 # Assign readable names to metrics
 # ------------- Geometric metrics
@@ -600,6 +547,3 @@ sign_agreement_ratio.__name__ = "Sign Agreement Ratio"
 
 # ------------- Structural metrics
 ssim.__name__ = "SSIM"
-
-# ------------- Deep Learning metrics
-resnet_feature_similarity.__name__ = "ResNet Feature Similarity"

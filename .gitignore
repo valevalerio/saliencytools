@@ -13,4 +13,5 @@ docs/make.bat
 Makefile
 *.pdf
 *.png
+paper/
 #!*heatmap.png # keep the heatmap.png file for documentation
