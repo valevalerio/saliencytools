@@ -6,15 +6,21 @@ authors = [
 ]
 description = "A collection of metrics for comparing saliency maps"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
 ]
 license = "MIT"
 license-files = ["LICEN[CS]E*"]
+dependencies = [
+    "scribe",
+]
 
 [project.urls]
 Homepage = "https://github.com/valevalerio/saliencytools"
 Issues = "https://github.com/valevalerio/saliencytools/issues"
 Documentation = "https://valevalerio.github.io/saliencytools/"
+
+[tool.uv.sources]
+scribe = { git = "https://github.com/goodfire-ai/scribe.git" }
