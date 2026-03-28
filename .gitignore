@@ -14,3 +14,7 @@ Makefile
 *.pdf
 *.png
 #!*heatmap.png # keep the heatmap.png file for documentation
+data/
+notebooks/
+.gemini
+*.zip/
