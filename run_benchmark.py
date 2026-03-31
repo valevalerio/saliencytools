@@ -18,7 +18,7 @@ Estimated runtime (single machine, CPU):
     Fast metrics (L2, cosine, MAE, MSE, Jaccard, Czek, SAR, KL): ~3s/config
     AUC-Judd: ~8s/config,  PSNR: ~12s/config,  Correlation: ~17s/config
     SSIM: ~63s/config,  EMD: ~73s/config
-    Total for 10 seeds x 13 metrics x 8 configs ~ 4-5 hours
+    Total for 10 seeds x 14 metrics x 8 configs ~ 4-5 hours
 """
 
 import argparse
@@ -49,6 +49,7 @@ from saliencytools.maskcompare import (
     ssim,
     kl_divergence,
     auc_judd,
+    nss_distance,
 )
 
 METRICS = [
@@ -65,6 +66,7 @@ METRICS = [
     emd,
     kl_divergence,
     auc_judd,
+    nss_distance,
 ]
 
 K_PROTOTYPES = 20       # prototypes per class (overridden by --k)

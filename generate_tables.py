@@ -39,6 +39,7 @@ METRIC_LABELS = {
     "Earth Mover's Distance":  r"Earth Mover's Distance",
     "KL Divergence":           r"KL Divergence",
     "AUC-Judd":                r"AUC-Judd",
+    "NSS Distance":            r"NSS Distance",
 }
 
 ROW_ORDER = [
@@ -55,6 +56,7 @@ ROW_ORDER = [
     "Earth Mover's Distance",
     "KL Divergence",
     "AUC-Judd",
+    "NSS Distance",
 ]
 
 

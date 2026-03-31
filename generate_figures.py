@@ -51,6 +51,7 @@ METRIC_COLORS = {
     "SSIM":                    "brown",
     "KL Divergence":           "teal",
     "AUC-Judd":                "slateblue",
+    "NSS Distance":            "mediumseagreen",
 }
 
 
@@ -97,9 +98,12 @@ INVALID_CONFIGS = {
     # SAR measures sign agreement. normalize_mask_0_1 maps to [0,1] → all signs +1
     # → SAR = 1.0 trivially for any pair. Configs where normalize=True are invalid.
     "Sign Agreement Ratio": {"-N-", "CN-", "-NS", "CNS"},
+    # NSS divides by sum(b); on signed maps sum(b) ≈ 0 → denominator collapses.
+    # Valid only when normalize is the final op (no Sobel after).
+    "NSS Distance":          {"---", "C--", "--S", "C-S", "-NS", "CNS"},
 }
 
-def plot_heatmap(agg: pd.DataFrame, multi_seed: bool):
+def plot_heatmap(agg: pd.DataFrame, multi_seed: bool, dataset: str = "mnist"):
     """Heatmap of mean F1 per (metric × preprocessing config), best config circled.
 
     Cells where a metric's mathematical assumptions are violated are set to NaN;
@@ -161,7 +165,7 @@ def plot_heatmap(agg: pd.DataFrame, multi_seed: bool):
     ax.set_yticklabels(ax.get_yticklabels(), rotation=0)
     plt.tight_layout()
 
-    out = FIGURES_DIR / "heatmap.pdf"
+    out = _get_output_path("heatmap.pdf", dataset)
     fig.savefig(out, dpi=300, bbox_inches="tight")
     fig.savefig(str(out).replace(".pdf", ".png"), dpi=150, bbox_inches="tight")
     print(f"  Saved {out}")
@@ -170,7 +174,7 @@ def plot_heatmap(agg: pd.DataFrame, multi_seed: bool):
 
 # ── Figure 2: F1 vs Time ──────────────────────────────────────────────────────
 
-def plot_f1_vs_time(agg: pd.DataFrame, multi_seed: bool):
+def plot_f1_vs_time(agg: pd.DataFrame, multi_seed: bool, dataset: str = "mnist"):
     """Scatter of best-config mean F1 vs median inference time, with ±std error bars."""
     best = agg.loc[agg.groupby("metric_label")["f1_mean"].idxmax()].copy()
     best["color"] = best["metric_label"].map(METRIC_COLORS)
@@ -201,7 +205,7 @@ def plot_f1_vs_time(agg: pd.DataFrame, multi_seed: bool):
     )
     plt.tight_layout()
 
-    out = FIGURES_DIR / "f1_vs_time.pdf"
+    out = _get_output_path("f1_vs_time.pdf", dataset)
     fig.savefig(out, dpi=300, bbox_inches="tight")
     fig.savefig(str(out).replace(".pdf", ".png"), dpi=150, bbox_inches="tight")
     print(f"  Saved {out}")
@@ -210,7 +214,7 @@ def plot_f1_vs_time(agg: pd.DataFrame, multi_seed: bool):
 
 # ── Figure 3: Stability ───────────────────────────────────────────────────────
 
-def plot_stability(agg: pd.DataFrame):
+def plot_stability(agg: pd.DataFrame, dataset: str = "mnist"):
     """F1 std of the best config per metric — how sensitive is each metric to prototype seed?"""
     best = agg.loc[agg.groupby("metric_label")["f1_mean"].idxmax()].copy()
     best = best.sort_values("f1_std", ascending=False)
@@ -232,7 +236,7 @@ def plot_stability(agg: pd.DataFrame):
     ax.grid(axis="x", linestyle="--", alpha=0.5)
     plt.tight_layout()
 
-    out = FIGURES_DIR / "stability.pdf"
+    out = _get_output_path("stability.pdf", dataset)
     fig.savefig(out, dpi=300, bbox_inches="tight")
     fig.savefig(str(out).replace(".pdf", ".png"), dpi=150, bbox_inches="tight")
     print(f"  Saved {out}")
@@ -267,6 +271,7 @@ def plot_joyplot(
     agg_k5: pd.DataFrame = None,
     df_k50: pd.DataFrame = None,
     agg_k50: pd.DataFrame = None,
+    dataset: str = "mnist",
 ):
     """Ridgeline KDE of F1 across seeds at each metric's best preprocessing config.
 
@@ -405,7 +410,7 @@ def plot_joyplot(
              ha="center", va="bottom", fontsize=12,
              transform=fig.transFigure)
 
-    out = FIGURES_DIR / "joyplot.pdf"
+    out = _get_output_path("joyplot.pdf", dataset)
     fig.savefig(out, dpi=300, bbox_inches="tight")
     fig.savefig(str(out).replace(".pdf", ".png"), dpi=150, bbox_inches="tight")
     print(f"  Saved {out}")
@@ -414,19 +419,24 @@ def plot_joyplot(
 
 # ── Figure 5: Prototypical samples ───────────────────────────────────────────
 
-def plot_prototypes(n_classes: int = 10, n_proto: int = 2, seed: int = 42):
+def plot_prototypes(n_classes: int = 10, n_proto: int = 2, seed: int = 42, dataset: str = "mnist"):
     """Show n_proto prototypical saliency maps per class with the SHAP colormap."""
     try:
         from scipy.ndimage import sobel as scipy_sobel
         from sklearn.model_selection import train_test_split
-        from torchvision.datasets import MNIST
+        from torchvision.datasets import MNIST, FashionMNIST
     except ImportError as exc:
         print(f"  Skipping prototypes figure — missing dependency: {exc}", file=sys.stderr)
         return
 
-    dataset = MNIST(root="data", train=True, download=True)
-    X = np.array(dataset.data, dtype=np.float32) / 255.0
-    y = np.array(dataset.targets)
+    # Load appropriate dataset
+    if dataset == "fashion":
+        dataset_obj = FashionMNIST(root="data", train=True, download=True)
+    else:
+        dataset_obj = MNIST(root="data", train=True, download=True)
+
+    X = np.array(dataset_obj.data, dtype=np.float32) / 255.0
+    y = np.array(dataset_obj.targets)
     X_train, _, y_train, _ = train_test_split(X, y, test_size=0.2, stratify=y, random_state=42)
 
     mean = X_train.mean()
@@ -439,7 +449,7 @@ def plot_prototypes(n_classes: int = 10, n_proto: int = 2, seed: int = 42):
         chosen_per_class[cls] = rng.choice(idx, size=n_proto, replace=False)
 
     vmin, vmax = X_train.min(), X_train.max()
-    per_class_dir = FIGURES_DIR / "prototypes_per_class"
+    per_class_dir = FIGURES_DIR / f"prototypes_per_class_{dataset}"
     per_class_dir.mkdir(exist_ok=True)
 
     for cls in range(n_classes):
@@ -469,6 +479,17 @@ def plot_prototypes(n_classes: int = 10, n_proto: int = 2, seed: int = 42):
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
+def _get_dataset_name(filepath: str) -> str:
+    """Extract dataset name from filepath: 'fashion' if 'fashion' in name, else 'mnist'."""
+    return "fashion" if "fashion" in filepath.lower() else "mnist"
+
+
+def _get_output_path(base_name: str, dataset: str, extension: str = ".pdf") -> Path:
+    """Generate output path with dataset name: e.g., 'heatmap_mnist.pdf'."""
+    name_without_ext = base_name.replace(".pdf", "").replace(".png", "")
+    return FIGURES_DIR / f"{name_without_ext}_{dataset}{extension}"
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--results", default="results_seeds.json",
@@ -482,6 +503,9 @@ def main():
     args = parser.parse_args()
 
     FIGURES_DIR.mkdir(parents=True, exist_ok=True)
+
+    # Determine dataset name from primary results file
+    dataset = _get_dataset_name(args.results)
 
     print(f"Loading {args.results} ...")
     df = load_results(Path(args.results))
@@ -504,13 +528,13 @@ def main():
         agg_k50 = aggregate(df_k50)
         print(f"  {len(df_k50)} rows  |  {df_k50['metric_label'].nunique()} metrics")
 
-    print("Generating figures ...")
-    plot_heatmap(agg, multi_seed)
-    plot_f1_vs_time(agg, multi_seed)
+    print(f"Generating figures for {dataset} dataset ...")
+    plot_heatmap(agg, multi_seed, dataset)
+    plot_f1_vs_time(agg, multi_seed, dataset)
     if multi_seed:
-        plot_stability(agg)
-    plot_joyplot(df, agg, df_k5=df_k5, agg_k5=agg_k5, df_k50=df_k50, agg_k50=agg_k50)
-    plot_prototypes()
+        plot_stability(agg, dataset)
+    plot_joyplot(df, agg, df_k5=df_k5, agg_k5=agg_k5, df_k50=df_k50, agg_k50=agg_k50, dataset=dataset)
+    plot_prototypes(dataset=dataset)
     print("Done.")
 
 

@@ -25,7 +25,6 @@ import numpy as np
 from skimage import metrics
 from scipy.stats import wasserstein_distance
 from scipy.ndimage import sobel
-from sklearn import metrics as sklearn_metrics
 
 # ============= Normalization Functions =============
 def make_histogram(mask: np.ndarray, bins: int = 256) -> np.ndarray:
@@ -264,35 +263,6 @@ def psnr(a, b):
     return 1/metrics.peak_signal_noise_ratio(a, b,
                                            data_range=np.maximum(a.max(), b.max()) - np.minimum(a.min(), b.min()))
 
-def kl_divergence(prediction, reference):
-    """
-    Compute the Kullback-Leibler (KL) divergence between two saliency maps.
-
-    Reference:
-        Kullback, S., & Leibler, R. A. (1951). On information and sufficiency. *The Annals of Mathematical Statistics*, 22(1), 79-86.
-
-    Parameters:
-        prediction (numpy.ndarray): Prediction saliency map.
-        reference (numpy.ndarray): Ground truth saliency map.
-
-    Returns:
-        float: KL divergence value.
-    """
-    prediction = prediction.flatten()
-    reference = reference.flatten()
-
-    prediction = (prediction - np.min(prediction)) / (np.max(prediction) - np.min(prediction) + 1e-8)
-    reference = (reference - np.min(reference)) / (np.max(reference) - np.min(reference) + 1e-8)
-
-    prediction = prediction / (np.sum(prediction) + 1e-8)
-    reference = reference / (np.sum(reference) + 1e-8)
-
-    eps = 1e-12
-    prediction = np.clip(prediction, eps, 1.0)
-    reference = np.clip(reference, eps, 1.0)
-
-    return np.sum(reference * np.log(reference / prediction))
-
 def information_gain(a, b, baseline=None):
     """
     Compute the Information Gain (IG) between a saliency map and ground truth.
@@ -346,6 +316,24 @@ def nss(a, b):
     a_norm = (a - np.mean(a)) / np.std(a)
     return np.sum(a_norm * b) / (np.sum(b) + 1e-8)
 
+def nss_distance(a, b):
+    """
+    NSS converted to a distance for use in KNN benchmarks.
+
+    NSS is a similarity measure (higher = more similar), so this wrapper
+    returns ``-nss(a, b)`` so that ``argmin`` picks the most similar prototype.
+    The function is asymmetric by design: ``a`` is treated as the prediction
+    (z-scored), ``b`` as the reference whose high-valued regions are queried.
+
+    Parameters:
+        a (numpy.ndarray): Prediction saliency map.
+        b (numpy.ndarray): Reference saliency map.
+
+    Returns:
+        float: ``-nss(a, b)``.  More negative means more similar.
+    """
+    return -nss(a, b)
+
 def linear_correlation_coefficient(a, b):
     """
     Compute the Linear Correlation Coefficient (CC).
@@ -362,35 +350,6 @@ def linear_correlation_coefficient(a, b):
     if np.std(a) == 0 or np.std(b) == 0:
         return 0.0
     return np.corrcoef(a, b)[0, 1]
-
-def auc_judd(a, b):
-    """
-    Compute the Area Under ROC Curve (AUC) using Judd's implementation approach.
-
-    Reference:
-        Judd, T., Ehinger, K., Durand, F., & Torralba, A. (2009). Learning to predict where humans look. *IEEE International Conference on Computer Vision (ICCV)*.
-
-    Parameters:
-        a (numpy.ndarray): Prediction saliency map.
-        b (numpy.ndarray): Ground truth saliency map.
-
-    Returns:
-        float: AUC value.
-    """
-    a = a.flatten()
-    b = b.flatten()
-    
-    if len(np.unique(b)) > 2:
-        # Threshold ground truth if not binary
-        b_bin = (b >= np.percentile(b, 90)).astype(int)
-    else:
-        b_bin = b.astype(int)
-    
-    if np.sum(b_bin) == 0 or np.sum(b_bin) == len(b_bin):
-        return 0.5
-        
-    fpr, tpr, _ = sklearn_metrics.roc_curve(b_bin, a)
-    return sklearn_metrics.auc(fpr, tpr)
 
 # ============= Set-Theoretic Distances ==========
 def jaccard_index(a, b):
@@ -643,6 +602,7 @@ psnr.__name__ = "PSNR"
 kl_divergence.__name__ = "KL Divergence"
 information_gain.__name__ = "Information Gain"
 nss.__name__ = "NSS"
+nss_distance.__name__ = "NSS Distance"
 linear_correlation_coefficient.__name__ = "Correlation Coefficient"
 auc_judd.__name__ = "AUC"
 
