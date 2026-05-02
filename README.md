@@ -1,5 +1,7 @@
 # SaliencyTools
 
+![SaliencyTools Logo](logo.png)
+
 Comparing saliency maps produced by XAI methods.
 
 ![Tests](https://github.com/valevalerio/saliencytools/actions/workflows/test.yml/badge.svg)
