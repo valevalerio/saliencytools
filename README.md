@@ -1,6 +1,8 @@
 # SaliencyTools
 
-![SaliencyTools Logo](logo.png)
+<p align="center">
+  <img src="logo.png" width="200" alt="SaliencyTools Logo">
+</p>
 
 Comparing saliency maps produced by XAI methods.
 
