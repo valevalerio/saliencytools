@@ -17,3 +17,4 @@ paper/
 #!*heatmap.png # keep the heatmap.png file for documentation
 data/
 .gemini/
+!logo.png

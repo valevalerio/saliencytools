@@ -4,7 +4,7 @@
   <img src="logo.png" width="200" alt="SaliencyTools Logo">
 </p>
 
-Comparing saliency maps produced by XAI methods.
+Comparing saliency maps produced by XAIi methods.
 
 ![Tests](https://github.com/valevalerio/saliencytools/actions/workflows/test.yml/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
